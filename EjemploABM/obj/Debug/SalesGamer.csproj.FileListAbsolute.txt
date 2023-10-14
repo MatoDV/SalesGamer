@@ -1,0 +1,10 @@
+C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\obj\Debug\SalesGamer.csproj.AssemblyReference.cache
+C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\obj\Debug\EjemploABM.ControlesDeUsuario.Categorias_UC.resources
+C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\obj\Debug\EjemploABM.ControlesDeUsuario.Productos_UC.resources
+C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\obj\Debug\EjemploABM.ControlesDeUsuario.Usuarios_UC.resources
+C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\obj\Debug\EjemploABM.Login.resources
+C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\obj\Debug\EjemploABM.FormUsuarios.resources
+C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\obj\Debug\EjemploABM.Index.resources
+C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\obj\Debug\SalesGamer.Properties.Resources.resources
+C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\obj\Debug\SalesGamer.csproj.GenerateResource.cache
+C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\obj\Debug\SalesGamer.csproj.CoreCompileInputs.cache
