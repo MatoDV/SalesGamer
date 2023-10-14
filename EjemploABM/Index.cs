@@ -21,7 +21,7 @@ namespace EjemploABM
             Productos_UC prodsUC = new Productos_UC();
             addUserControl(prodsUC);
 
-            if(Program.logueado.Id_tipo != 1)
+            if(Program.logueado.ID_rol != 1)
             {
                 btn_users.Hide();
             }
@@ -55,6 +55,9 @@ namespace EjemploABM
             uc.BringToFront();
         }
 
+        private void Index_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }

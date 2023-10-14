@@ -94,6 +94,7 @@ namespace EjemploABM
             this.Controls.Add(this.btn_prods);
             this.Name = "Index";
             this.Text = "Index";
+            this.Load += new System.EventHandler(this.Index_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

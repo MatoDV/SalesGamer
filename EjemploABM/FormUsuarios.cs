@@ -88,7 +88,7 @@ namespace EjemploABM
                 tipo = 1;
             }
 
-            Usuario usr = new Usuario(0, txt_usuario.Text, txt_mail.Text, txt_contraseña.Text, txt_nombre.Text, txt_apellido.Text,txt_telefono.Text, txt_direccion.Text,tipo);
+            Usuario usr = new Usuario(0, txt_usuario.Text, txt_mail.Text, txt_contraseña.Text, txt_nombre.Text, txt_apellido.Text,11, txt_direccion.Text,tipo);
 
             if (Usuario_Controller.crearUsuario(usr))
             {
@@ -104,7 +104,7 @@ namespace EjemploABM
                 tipo = 1;
             }
 
-            Usuario usr = new Usuario(id_editar, txt_usuario.Text, txt_contraseña.Text, txt_nombre.Text, txt_apellido.Text, tipo);
+            Usuario usr = new Usuario(id_editar, txt_usuario.Text, txt_mail.Text, txt_contraseña.Text, txt_nombre.Text, txt_apellido.Text, 11, txt_direccion.Text, tipo);
 
             if (Usuario_Controller.editarUsuario(usr))
             {
