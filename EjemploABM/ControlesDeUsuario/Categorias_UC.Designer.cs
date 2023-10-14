@@ -48,6 +48,7 @@ namespace EjemploABM.ControlesDeUsuario
             this.Controls.Add(this.label1);
             this.Name = "Categorias_UC";
             this.Size = new System.Drawing.Size(480, 302);
+            this.Load += new System.EventHandler(this.Categorias_UC_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

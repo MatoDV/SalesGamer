@@ -16,5 +16,10 @@ namespace EjemploABM.ControlesDeUsuario
         {
             InitializeComponent();
         }
+
+        private void Productos_UC_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
