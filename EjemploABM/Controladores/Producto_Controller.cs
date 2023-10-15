@@ -31,8 +31,9 @@ namespace SalesGamer.Controladores
                             Nombre_producto = reader.GetString(1),
                             Descripcion = reader.GetString(2), 
                             Precio = reader.GetInt32(4),
-                            Distribuidor_id = reader.GetInt32(4),
-                            Oferta_id = reader.GetInt32(5)
+                            Cantidad = reader.GetInt32(5),
+                            Distribuidor_id = reader.GetInt32(6),
+                            Oferta_id = reader.GetInt32(7)
                         };
                     }
                     reader.Close();
@@ -47,13 +48,14 @@ namespace SalesGamer.Controladores
 
         public bool CrearProducto(Producto producto)
         {
-            string query = "INSERT INTO dbo.Producto (nombre_producto, descripcion, precio, Distribuidor_id, Oferta_id) " +
-                           "VALUES (@nombre, @descripcion, @precio, @distribuidorId, @ofertaId);";
+            string query = "INSERT INTO dbo.Producto (nombre_producto, descripcion, precio, cantidad, Distribuidor_id, Oferta_id) " +
+                           "VALUES (@nombre, @descripcion, @precio, @cantidad, @distribuidorId, @ofertaId);";
             using (SqlCommand cmd = new SqlCommand(query, DB_Controller.connection))
             {
                 cmd.Parameters.AddWithValue("@nombre", producto.Nombre_producto);
                 cmd.Parameters.AddWithValue("@descripcion", producto.Descripcion);
                 cmd.Parameters.AddWithValue("@precio", producto.Precio);
+                cmd.Parameters.AddWithValue("@cantidad", producto.Cantidad);
                 cmd.Parameters.AddWithValue("@distribuidorId", producto.Distribuidor_id);
                 cmd.Parameters.AddWithValue("@ofertaId", producto.Oferta_id);
                 try
