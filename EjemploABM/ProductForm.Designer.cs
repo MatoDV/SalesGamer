@@ -47,13 +47,14 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.combox_categoria = new System.Windows.Forms.ComboBox();
+            this.btn_agregar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(71, 43);
+            this.label1.Location = new System.Drawing.Point(63, 107);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(21, 13);
             this.label1.TabIndex = 0;
@@ -62,7 +63,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(71, 91);
+            this.label2.Location = new System.Drawing.Point(63, 155);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 1;
@@ -71,7 +72,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(71, 139);
+            this.label3.Location = new System.Drawing.Point(63, 203);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 13);
             this.label3.TabIndex = 2;
@@ -80,7 +81,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(71, 181);
+            this.label4.Location = new System.Drawing.Point(63, 245);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 13);
             this.label4.TabIndex = 3;
@@ -89,7 +90,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(71, 230);
+            this.label5.Location = new System.Drawing.Point(316, 110);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 13);
             this.label5.TabIndex = 4;
@@ -98,7 +99,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(71, 322);
+            this.label6.Location = new System.Drawing.Point(316, 202);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(62, 13);
             this.label6.TabIndex = 5;
@@ -107,7 +108,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(71, 369);
+            this.label7.Location = new System.Drawing.Point(316, 249);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(39, 13);
             this.label7.TabIndex = 6;
@@ -115,35 +116,35 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(142, 43);
+            this.textBox1.Location = new System.Drawing.Point(134, 107);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(130, 20);
             this.textBox1.TabIndex = 7;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(142, 88);
+            this.textBox2.Location = new System.Drawing.Point(134, 152);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(130, 20);
             this.textBox2.TabIndex = 8;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(142, 136);
+            this.textBox3.Location = new System.Drawing.Point(134, 200);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(130, 20);
             this.textBox3.TabIndex = 9;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(142, 178);
+            this.textBox4.Location = new System.Drawing.Point(134, 242);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(130, 20);
             this.textBox4.TabIndex = 10;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(142, 227);
+            this.textBox5.Location = new System.Drawing.Point(387, 107);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(130, 20);
             this.textBox5.TabIndex = 11;
@@ -151,7 +152,7 @@
             // combox_distribuidor
             // 
             this.combox_distribuidor.FormattingEnabled = true;
-            this.combox_distribuidor.Location = new System.Drawing.Point(142, 319);
+            this.combox_distribuidor.Location = new System.Drawing.Point(387, 199);
             this.combox_distribuidor.Name = "combox_distribuidor";
             this.combox_distribuidor.Size = new System.Drawing.Size(130, 21);
             this.combox_distribuidor.TabIndex = 12;
@@ -160,7 +161,7 @@
             // combox_oferta
             // 
             this.combox_oferta.FormattingEnabled = true;
-            this.combox_oferta.Location = new System.Drawing.Point(142, 366);
+            this.combox_oferta.Location = new System.Drawing.Point(387, 246);
             this.combox_oferta.Name = "combox_oferta";
             this.combox_oferta.Size = new System.Drawing.Size(130, 21);
             this.combox_oferta.TabIndex = 13;
@@ -168,7 +169,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(455, 43);
+            this.pictureBox1.Location = new System.Drawing.Point(586, 57);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(188, 163);
             this.pictureBox1.TabIndex = 14;
@@ -176,7 +177,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(505, 230);
+            this.button1.Location = new System.Drawing.Point(646, 235);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 15;
@@ -196,7 +197,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(71, 277);
+            this.label9.Location = new System.Drawing.Point(316, 157);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(55, 13);
             this.label9.TabIndex = 17;
@@ -205,17 +206,28 @@
             // combox_categoria
             // 
             this.combox_categoria.FormattingEnabled = true;
-            this.combox_categoria.Location = new System.Drawing.Point(142, 274);
+            this.combox_categoria.Location = new System.Drawing.Point(387, 154);
             this.combox_categoria.Name = "combox_categoria";
             this.combox_categoria.Size = new System.Drawing.Size(130, 21);
             this.combox_categoria.TabIndex = 18;
             this.combox_categoria.SelectedIndexChanged += new System.EventHandler(this.combox_categoria_SelectedIndexChanged);
+            // 
+            // btn_agregar
+            // 
+            this.btn_agregar.Location = new System.Drawing.Point(319, 356);
+            this.btn_agregar.Name = "btn_agregar";
+            this.btn_agregar.Size = new System.Drawing.Size(75, 23);
+            this.btn_agregar.TabIndex = 19;
+            this.btn_agregar.Text = "Agregar";
+            this.btn_agregar.UseVisualStyleBackColor = true;
+            this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
             // 
             // ProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_agregar);
             this.Controls.Add(this.combox_categoria);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -264,5 +276,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox combox_categoria;
+        private System.Windows.Forms.Button btn_agregar;
     }
 }
