@@ -10,12 +10,12 @@ namespace EjemploABM.Modelo
     {
 
         public int Id { get; set; }
-        public String Nombre { get; set; }
+        public String Nombre_categoria { get; set; }
 
-        public Categoria(int id, string name)
+        public Categoria(int id, string nombre_cat)
         {
             Id = id;
-            Nombre = name;
+            Nombre_categoria = nombre_cat;
         }
 
         public Categoria()
