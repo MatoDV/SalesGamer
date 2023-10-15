@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace SalesGamer
 {
-    public partial class ProductForm: Form
+    public partial class ProductForm : Form
     {
         public ProductForm()
         {
