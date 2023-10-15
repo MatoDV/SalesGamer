@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace EjemploABM.ControlesDeUsuario
+namespace SalesGamer.ControlesDeUsuario
 {
     public partial class Productos_UC : UserControl
     {
