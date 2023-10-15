@@ -12,20 +12,20 @@ namespace EjemploABM.Modelo
         public int Id { get; set; }
         public String Nombre_producto { get; set; }
         public String Descripcion { get; set; }
-        public Categoria Cat { get; set; }
         public int Precio { get; set; }
         public int Cantidad { get; set; }
+        public int Categoria_id { get; set; }
         public int Distribuidor_id { get; set; }
         public int Oferta_id { get; set; }
 
 
 
-        public Producto(int id, string name, string desc, Categoria cat, int precio,int cantidad, int distribuidor_id, int oferta_id)
+        public Producto(int id, string name, string desc, int cat, int precio,int cantidad, int distribuidor_id, int oferta_id)
         {
             Id = id;
             Nombre_producto = name;
             Descripcion = desc;
-            Cat = cat;
+            Categoria_id = cat;
             Precio = precio;
             Cantidad = cantidad;
             Distribuidor_id = distribuidor_id;

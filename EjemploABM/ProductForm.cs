@@ -16,5 +16,25 @@ namespace SalesGamer
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void combox_distribuidor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void combox_oferta_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void combox_categoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
