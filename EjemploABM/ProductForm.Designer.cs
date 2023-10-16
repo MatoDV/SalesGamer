@@ -172,9 +172,9 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(316, 22);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(90, 13);
+            this.label8.Size = new System.Drawing.Size(78, 13);
             this.label8.TabIndex = 16;
-            this.label8.Text = "Agregar Producto";
+            this.label8.Text = "Crear Producto";
             // 
             // label9
             // 
@@ -200,7 +200,7 @@
             this.btn_agregar.Name = "btn_agregar";
             this.btn_agregar.Size = new System.Drawing.Size(75, 23);
             this.btn_agregar.TabIndex = 19;
-            this.btn_agregar.Text = "Agregar";
+            this.btn_agregar.Text = "Crear";
             this.btn_agregar.UseVisualStyleBackColor = true;
             this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
             // 
