@@ -179,7 +179,7 @@ namespace SalesGamer.ControlesDeUsuario
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             var senderGrid = (DataGridView)sender;
 
@@ -205,11 +205,6 @@ namespace SalesGamer.ControlesDeUsuario
 
                 }
             }
-        }
-
-        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void Productos_UC_Load(object sender, EventArgs e)

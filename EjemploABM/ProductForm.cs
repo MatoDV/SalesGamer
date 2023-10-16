@@ -66,7 +66,31 @@ namespace SalesGamer
             txt_descripcion.Text = producto.Descripcion.ToString();
             txt_precio.Text = producto.Precio.ToString();
             txt_cantidad.Text = producto.Cantidad.ToString();
-            
+
+            combox_distribuidor.Items.Add("GIGABYTE");
+            combox_distribuidor.Items.Add("ASUS");
+            combox_distribuidor.Items.Add("NVIDIA");
+            combox_distribuidor.Items.Add("AMD");
+            combox_distribuidor.Items.Add("MSI");
+            combox_distribuidor.Items.Add("EVGA");
+            combox_distribuidor.Items.Add("ZOTAC");
+            combox_oferta.Items.Add("10% descuento");
+            combox_oferta.Items.Add("20% descuento");
+            combox_oferta.Items.Add("30% descuento");
+            combox_oferta.Items.Add("50% descuento");
+            combox_categoria.Items.Add("Placas de video");
+            combox_categoria.Items.Add("Procesador");
+            combox_categoria.Items.Add("Memoria Ram");
+            combox_categoria.Items.Add("Placa Madre");
+            combox_categoria.Items.Add("Fuente");
+            combox_categoria.Items.Add("Disco Rigido");
+            combox_categoria.Items.Add("Disco Solido");
+            combox_categoria.Items.Add("Mouse");
+            combox_categoria.Items.Add("Teclado");
+            combox_categoria.Items.Add("Monitor");
+            combox_categoria.Items.Add("Auricular");
+            combox_categoria.Items.Add("Microfono");
+            combox_categoria.Items.Add("Gabinete");
 
             situacion = "edicion";
 
@@ -341,5 +365,9 @@ namespace SalesGamer
 
         }
 
+        private void ProductForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -92,11 +92,11 @@ namespace SalesGamer.Controladores
                             Id = reader.GetInt32(0),
                             Nombre_producto = reader.GetString(1),
                             Descripcion = reader.GetString(2), 
-                            Precio = reader.GetInt32(4),
-                            Cantidad = reader.GetInt32(5),
-                            Categoria_id = reader.GetInt32(6),
-                            Distribuidor_id = reader.GetInt32(7),
-                            Oferta_id = reader.GetInt32(8)
+                            Precio = reader.GetInt32(3),
+                            Cantidad = reader.GetInt32(4),
+                            Categoria_id = reader.GetInt32(5),
+                            Distribuidor_id = reader.GetInt32(6),
+                            Oferta_id = reader.GetInt32(7)
                         };
                     }
                     reader.Close();
