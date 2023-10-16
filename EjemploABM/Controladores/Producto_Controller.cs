@@ -110,7 +110,7 @@ namespace SalesGamer.Controladores
         }
 
         //CREAR PRODUCTO
-        public bool CrearProducto(Producto producto)
+        public static bool CrearProducto(Producto producto)
         {
             string query = "INSERT INTO dbo.Producto (nombre_producto, descripcion, precio, cantidad, Categoria_id, Distribuidor_id, Oferta_id) " +
                            "VALUES (@nombre, @descripcion, @precio, @cantidad, @distribuidorId, @ofertaId);";
