@@ -28,18 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txt_nombre = new System.Windows.Forms.TextBox();
+            this.txt_descripcion = new System.Windows.Forms.TextBox();
+            this.txt_precio = new System.Windows.Forms.TextBox();
+            this.txt_cantidad = new System.Windows.Forms.TextBox();
             this.combox_distribuidor = new System.Windows.Forms.ComboBox();
             this.combox_oferta = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -51,19 +49,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(63, 107);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(21, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ID:";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(63, 155);
+            this.label2.Location = new System.Drawing.Point(70, 110);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 1;
@@ -72,7 +61,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(63, 203);
+            this.label3.Location = new System.Drawing.Point(70, 158);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 13);
             this.label3.TabIndex = 2;
@@ -81,7 +70,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(63, 245);
+            this.label4.Location = new System.Drawing.Point(70, 200);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 13);
             this.label4.TabIndex = 3;
@@ -90,7 +79,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(316, 110);
+            this.label5.Location = new System.Drawing.Point(70, 240);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 13);
             this.label5.TabIndex = 4;
@@ -99,7 +88,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(316, 202);
+            this.label6.Location = new System.Drawing.Point(316, 155);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(62, 13);
             this.label6.TabIndex = 5;
@@ -108,51 +97,44 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(316, 249);
+            this.label7.Location = new System.Drawing.Point(316, 202);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(39, 13);
             this.label7.TabIndex = 6;
             this.label7.Text = "Oferta:";
             // 
-            // textBox1
+            // txt_nombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(134, 107);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(130, 20);
-            this.textBox1.TabIndex = 7;
+            this.txt_nombre.Location = new System.Drawing.Point(141, 107);
+            this.txt_nombre.Name = "txt_nombre";
+            this.txt_nombre.Size = new System.Drawing.Size(130, 20);
+            this.txt_nombre.TabIndex = 8;
             // 
-            // textBox2
+            // txt_descripcion
             // 
-            this.textBox2.Location = new System.Drawing.Point(134, 152);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(130, 20);
-            this.textBox2.TabIndex = 8;
+            this.txt_descripcion.Location = new System.Drawing.Point(141, 155);
+            this.txt_descripcion.Name = "txt_descripcion";
+            this.txt_descripcion.Size = new System.Drawing.Size(130, 20);
+            this.txt_descripcion.TabIndex = 9;
             // 
-            // textBox3
+            // txt_precio
             // 
-            this.textBox3.Location = new System.Drawing.Point(134, 200);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(130, 20);
-            this.textBox3.TabIndex = 9;
+            this.txt_precio.Location = new System.Drawing.Point(141, 197);
+            this.txt_precio.Name = "txt_precio";
+            this.txt_precio.Size = new System.Drawing.Size(130, 20);
+            this.txt_precio.TabIndex = 10;
             // 
-            // textBox4
+            // txt_cantidad
             // 
-            this.textBox4.Location = new System.Drawing.Point(134, 242);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(130, 20);
-            this.textBox4.TabIndex = 10;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(387, 107);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(130, 20);
-            this.textBox5.TabIndex = 11;
+            this.txt_cantidad.Location = new System.Drawing.Point(141, 237);
+            this.txt_cantidad.Name = "txt_cantidad";
+            this.txt_cantidad.Size = new System.Drawing.Size(130, 20);
+            this.txt_cantidad.TabIndex = 11;
             // 
             // combox_distribuidor
             // 
             this.combox_distribuidor.FormattingEnabled = true;
-            this.combox_distribuidor.Location = new System.Drawing.Point(387, 199);
+            this.combox_distribuidor.Location = new System.Drawing.Point(387, 152);
             this.combox_distribuidor.Name = "combox_distribuidor";
             this.combox_distribuidor.Size = new System.Drawing.Size(130, 21);
             this.combox_distribuidor.TabIndex = 12;
@@ -161,7 +143,7 @@
             // combox_oferta
             // 
             this.combox_oferta.FormattingEnabled = true;
-            this.combox_oferta.Location = new System.Drawing.Point(387, 246);
+            this.combox_oferta.Location = new System.Drawing.Point(387, 199);
             this.combox_oferta.Name = "combox_oferta";
             this.combox_oferta.Size = new System.Drawing.Size(130, 21);
             this.combox_oferta.TabIndex = 13;
@@ -197,7 +179,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(316, 157);
+            this.label9.Location = new System.Drawing.Point(316, 110);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(55, 13);
             this.label9.TabIndex = 17;
@@ -206,7 +188,7 @@
             // combox_categoria
             // 
             this.combox_categoria.FormattingEnabled = true;
-            this.combox_categoria.Location = new System.Drawing.Point(387, 154);
+            this.combox_categoria.Location = new System.Drawing.Point(387, 107);
             this.combox_categoria.Name = "combox_categoria";
             this.combox_categoria.Size = new System.Drawing.Size(130, 21);
             this.combox_categoria.TabIndex = 18;
@@ -235,18 +217,16 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.combox_oferta);
             this.Controls.Add(this.combox_distribuidor);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_cantidad);
+            this.Controls.Add(this.txt_precio);
+            this.Controls.Add(this.txt_descripcion);
+            this.Controls.Add(this.txt_nombre);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Name = "ProductForm";
             this.Text = "ProductForm";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -256,19 +236,16 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txt_nombre;
+        private System.Windows.Forms.TextBox txt_descripcion;
+        private System.Windows.Forms.TextBox txt_precio;
+        private System.Windows.Forms.TextBox txt_cantidad;
         private System.Windows.Forms.ComboBox combox_distribuidor;
         private System.Windows.Forms.ComboBox combox_oferta;
         private System.Windows.Forms.PictureBox pictureBox1;
