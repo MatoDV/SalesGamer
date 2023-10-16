@@ -146,15 +146,15 @@ namespace SalesGamer.Controladores
             string query = "update dbo.Producto set nombre_producto = @nombre_producto , " +
                 "descripcion = @descripcion , " +
                 "precio = @precio , " +
-                "cantidad = @cantidad " +
-                "Categoria_id = @Categoria_id " +
-                "Distribuidor_id = @Distribuidor_id " +
+                "cantidad = @cantidad ," +
+                "Categoria_id = @Categoria_id ," +
+                "Distribuidor_id = @Distribuidor_id ," +
                 "Oferta_id = @Oferta_id " +
                 "where id = @id ;";
 
             SqlCommand cmd = new SqlCommand(query, DB_Controller.connection);
-            cmd.Parameters.AddWithValue("@id", obtenerMaxId() + 1);
-            cmd.Parameters.AddWithValue("@nombre_usuario", prod.Nombre_producto);
+            cmd.Parameters.AddWithValue("@id", prod.Id);
+            cmd.Parameters.AddWithValue("@nombre_producto", prod.Nombre_producto);
             cmd.Parameters.AddWithValue("@descripcion", prod.Descripcion);
             cmd.Parameters.AddWithValue("@precio", prod.Precio);
             cmd.Parameters.AddWithValue("@cantidad", prod.Cantidad);

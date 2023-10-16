@@ -209,7 +209,7 @@ namespace EjemploABM.Controladores
                 "where id = @id ;";
 
             SqlCommand cmd = new SqlCommand(query, DB_Controller.connection);
-            cmd.Parameters.AddWithValue("@id", obtenerMaxId() + 1);
+            cmd.Parameters.AddWithValue("@id", usr.Id);
             cmd.Parameters.AddWithValue("@nombre_usuario", usr.usuario);
             cmd.Parameters.AddWithValue("@mail", usr.Mail);
             cmd.Parameters.AddWithValue("@contrasena_usuario", usr.Contraseña);

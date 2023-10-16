@@ -102,37 +102,38 @@ namespace SalesGamer.ControlesDeUsuario
 
                     dataGridView1.Rows[rowIndex].Cells[5].Value = "Gabinete";
                 }
+
                 if (prod.Distribuidor_id == 1)
                 {
                     dataGridView1.Rows[rowIndex].Cells[6].Value = "GIGABYTE";
 
                 }
-                else if (prod.Categoria_id == 2)
+                else if (prod.Distribuidor_id == 2)
                 {
 
                     dataGridView1.Rows[rowIndex].Cells[6].Value = "ASUS";
                 }
-                else if (prod.Categoria_id == 3)
+                else if (prod.Distribuidor_id == 3)
                 {
 
                     dataGridView1.Rows[rowIndex].Cells[6].Value = "NVIDIA";
                 }
-                else if (prod.Categoria_id == 4)
+                else if (prod.Distribuidor_id == 4)
                 {
 
                     dataGridView1.Rows[rowIndex].Cells[6].Value = "AMD";
                 }
-                else if (prod.Categoria_id == 5)
+                else if (prod.Distribuidor_id == 5)
                 {
 
                     dataGridView1.Rows[rowIndex].Cells[6].Value = "MSI";
                 }
-                else if (prod.Categoria_id == 6)
+                else if (prod.Distribuidor_id == 6)
                 {
 
                     dataGridView1.Rows[rowIndex].Cells[6].Value = "EVGA";
                 }
-                else if (prod.Categoria_id == 7)
+                else if (prod.Distribuidor_id == 7)
                 {
 
                     dataGridView1.Rows[rowIndex].Cells[6].Value = "ZOTAC";
@@ -143,17 +144,17 @@ namespace SalesGamer.ControlesDeUsuario
                     dataGridView1.Rows[rowIndex].Cells[7].Value = "10% descuento";
 
                 }
-                else if (prod.Categoria_id == 2)
+                else if (prod.Oferta_id == 2)
                 {
 
                     dataGridView1.Rows[rowIndex].Cells[7].Value = "20% descuento";
                 }
-                else if (prod.Categoria_id == 3)
+                else if (prod.Oferta_id == 3)
                 {
 
                     dataGridView1.Rows[rowIndex].Cells[7].Value = "30% descuento";
                 }
-                else if (prod.Categoria_id == 4)
+                else if (prod.Oferta_id == 4)
                 {
 
                     dataGridView1.Rows[rowIndex].Cells[7].Value = "50% descuento";
