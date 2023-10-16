@@ -13,3 +13,6 @@ C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\bin\Debug\SalesGamer.exe
 C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\bin\Debug\SalesGamer.pdb
 C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\obj\Debug\SalesGamer.exe
 C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\obj\Debug\SalesGamer.pdb
+C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\obj\Debug\SalesGamer.CategoryForm.resources
+C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\obj\Debug\SalesGamer.ControlesDeUsuario.Productos_UC.resources
+C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\obj\Debug\SalesGamer.ProductForm.resources

@@ -20,10 +20,10 @@ namespace EjemploABM.Modelo
 
 
 
-        public Producto(int id, string name, string desc, int cat, int precio,int cantidad, int distribuidor_id, int oferta_id)
+        public Producto(int id, string nombre, string desc, int cat, int precio,int cantidad, int distribuidor_id, int oferta_id)
         {
             Id = id;
-            Nombre_producto = name;
+            Nombre_producto = nombre;
             Descripcion = desc;
             Categoria_id = cat;
             Precio = precio;
