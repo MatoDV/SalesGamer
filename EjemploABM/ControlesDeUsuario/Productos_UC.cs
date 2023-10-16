@@ -72,23 +72,28 @@ namespace SalesGamer.ControlesDeUsuario
 
                 Trace.WriteLine("el id es: " + id);
 
-                Producto prod_editar = Producto_Controller.ObtenerProductoID;
+                Producto prod_editar = Producto_Controller.ObtenerProductoID(id);
 
-                FormUsuarios frmUser = new FormUsuarios(user_editar);
+                ProductForm frmProd = new ProductForm(prod_editar);
 
-                DialogResult dr = frmUser.ShowDialog();
+                DialogResult dr = frmProd.ShowDialog();
 
                 if (dr == DialogResult.OK)
                 {
                     Trace.WriteLine("OK");
                     //ACTUALIZAR LA LISTA
-                    cargarProductos()
+                    cargarProductos();
 
                 }
             }
         }
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Productos_UC_Load(object sender, EventArgs e)
         {
 
         }

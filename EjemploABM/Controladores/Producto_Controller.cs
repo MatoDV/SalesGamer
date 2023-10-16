@@ -74,7 +74,7 @@ namespace SalesGamer.Controladores
 
 
         //OBTENER PRODUCTO POR ID
-        public Producto ObtenerProductoID(int id)
+        public static Producto ObtenerProductoID(int id)
         {
             Producto producto = new Producto();
             string query = "SELECT * FROM dbo.Producto WHERE id = @id;";
