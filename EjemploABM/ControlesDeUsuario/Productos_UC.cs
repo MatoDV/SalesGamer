@@ -37,9 +37,127 @@ namespace SalesGamer.ControlesDeUsuario
                 dataGridView1.Rows[rowIndex].Cells[2].Value = prod.Descripcion.ToString();
                 dataGridView1.Rows[rowIndex].Cells[3].Value = prod.Precio.ToString();
                 dataGridView1.Rows[rowIndex].Cells[4].Value = prod.Cantidad.ToString();
-                dataGridView1.Rows[rowIndex].Cells[5].Value = prod.Categoria_id.ToString();
-                dataGridView1.Rows[rowIndex].Cells[6].Value = prod.Distribuidor_id.ToString();
-                dataGridView1.Rows[rowIndex].Cells[7].Value = prod.Oferta_id.ToString();
+                if (prod.Categoria_id == 1)
+                {
+                    dataGridView1.Rows[rowIndex].Cells[5].Value = "Placas de video";
+
+                }
+                else if (prod.Categoria_id == 2)
+                {
+
+                    dataGridView1.Rows[rowIndex].Cells[5].Value = "Procesador";
+                }
+                else if (prod.Categoria_id == 3)
+                {
+
+                    dataGridView1.Rows[rowIndex].Cells[5].Value = "Memoria Ram";
+                }
+                else if (prod.Categoria_id == 4)
+                {
+
+                    dataGridView1.Rows[rowIndex].Cells[5].Value = "Placa Madre";
+                }
+                else if (prod.Categoria_id == 5)
+                {
+
+                    dataGridView1.Rows[rowIndex].Cells[5].Value = "Fuente";
+                }
+                else if (prod.Categoria_id == 6)
+                {
+
+                    dataGridView1.Rows[rowIndex].Cells[5].Value = "Disco Rigido";
+                }
+                else if (prod.Categoria_id == 7)
+                {
+
+                    dataGridView1.Rows[rowIndex].Cells[5].Value = "Disco Solido";
+                }
+                else if (prod.Categoria_id == 8)
+                {
+
+                    dataGridView1.Rows[rowIndex].Cells[5].Value = "Mouse";
+                }
+                else if (prod.Categoria_id == 9)
+                {
+
+                    dataGridView1.Rows[rowIndex].Cells[5].Value = "Teclado";
+                }
+                else if (prod.Categoria_id == 10)
+                {
+
+                    dataGridView1.Rows[rowIndex].Cells[5].Value = "Monitor";
+                }
+                else if (prod.Categoria_id == 11)
+                {
+
+                    dataGridView1.Rows[rowIndex].Cells[5].Value = "Auricular";
+                }
+                else if (prod.Categoria_id == 12)
+                {
+
+                    dataGridView1.Rows[rowIndex].Cells[5].Value = "Microfono";
+                }
+                else if (prod.Categoria_id == 13)
+                {
+
+                    dataGridView1.Rows[rowIndex].Cells[5].Value = "Gabinete";
+                }
+                if (prod.Distribuidor_id == 1)
+                {
+                    dataGridView1.Rows[rowIndex].Cells[6].Value = "GIGABYTE";
+
+                }
+                else if (prod.Categoria_id == 2)
+                {
+
+                    dataGridView1.Rows[rowIndex].Cells[6].Value = "ASUS";
+                }
+                else if (prod.Categoria_id == 3)
+                {
+
+                    dataGridView1.Rows[rowIndex].Cells[6].Value = "NVIDIA";
+                }
+                else if (prod.Categoria_id == 4)
+                {
+
+                    dataGridView1.Rows[rowIndex].Cells[6].Value = "AMD";
+                }
+                else if (prod.Categoria_id == 5)
+                {
+
+                    dataGridView1.Rows[rowIndex].Cells[6].Value = "MSI";
+                }
+                else if (prod.Categoria_id == 6)
+                {
+
+                    dataGridView1.Rows[rowIndex].Cells[6].Value = "EVGA";
+                }
+                else if (prod.Categoria_id == 7)
+                {
+
+                    dataGridView1.Rows[rowIndex].Cells[6].Value = "ZOTAC";
+                }
+
+                if (prod.Oferta_id == 1)
+                {
+                    dataGridView1.Rows[rowIndex].Cells[7].Value = "10% descuento";
+
+                }
+                else if (prod.Categoria_id == 2)
+                {
+
+                    dataGridView1.Rows[rowIndex].Cells[7].Value = "20% descuento";
+                }
+                else if (prod.Categoria_id == 3)
+                {
+
+                    dataGridView1.Rows[rowIndex].Cells[7].Value = "30% descuento";
+                }
+                else if (prod.Categoria_id == 4)
+                {
+
+                    dataGridView1.Rows[rowIndex].Cells[7].Value = "50% descuento";
+                }
                 dataGridView1.Rows[rowIndex].Cells[8].Value = "Editar";
                 dataGridView1.Rows[rowIndex].Cells[9].Value = "Eliminar";
 
