@@ -112,10 +112,11 @@ namespace SalesGamer.Controladores
         //CREAR PRODUCTO
         public static bool CrearProducto(Producto producto)
         {
-            string query = "INSERT INTO dbo.Producto (nombre_producto, descripcion, precio, cantidad, Categoria_id, Distribuidor_id, Oferta_id) " +
-                           "VALUES (@nombre, @descripcion, @precio, @cantidad, @distribuidorId, @ofertaId);";
+            string query = "INSERT INTO dbo.Producto (id,nombre_producto, descripcion, precio, cantidad, Categoria_id, Distribuidor_id, Oferta_id) " +
+                           "VALUES (@id,@nombre, @descripcion, @precio, @cantidad, @Categoria_id, @distribuidorId, @ofertaId);";
             using (SqlCommand cmd = new SqlCommand(query, DB_Controller.connection))
             {
+                cmd.Parameters.AddWithValue("@id", obtenerMaxId() + 1);
                 cmd.Parameters.AddWithValue("@nombre", producto.Nombre_producto);
                 cmd.Parameters.AddWithValue("@descripcion", producto.Descripcion);
                 cmd.Parameters.AddWithValue("@precio", producto.Precio);

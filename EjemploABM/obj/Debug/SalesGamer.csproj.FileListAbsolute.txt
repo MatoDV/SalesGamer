@@ -1,6 +1,5 @@
 C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\obj\Debug\SalesGamer.csproj.AssemblyReference.cache
 C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\obj\Debug\EjemploABM.ControlesDeUsuario.Categorias_UC.resources
-C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\obj\Debug\EjemploABM.ControlesDeUsuario.Productos_UC.resources
 C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\obj\Debug\EjemploABM.ControlesDeUsuario.Usuarios_UC.resources
 C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\obj\Debug\EjemploABM.Login.resources
 C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\obj\Debug\EjemploABM.FormUsuarios.resources

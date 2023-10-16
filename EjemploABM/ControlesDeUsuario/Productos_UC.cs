@@ -35,21 +35,22 @@ namespace SalesGamer.ControlesDeUsuario
                 dataGridView1.Rows[rowIndex].Cells[0].Value = prod.Id.ToString();
                 dataGridView1.Rows[rowIndex].Cells[1].Value = prod.Nombre_producto.ToString();
                 dataGridView1.Rows[rowIndex].Cells[2].Value = prod.Descripcion.ToString();
-                dataGridView1.Rows[rowIndex].Cells[2].Value = prod.Precio.ToString();
-                dataGridView1.Rows[rowIndex].Cells[2].Value = prod.Cantidad.ToString();
-                dataGridView1.Rows[rowIndex].Cells[2].Value = prod.Categoria_id.ToString();
-                dataGridView1.Rows[rowIndex].Cells[2].Value = prod.Distribuidor_id.ToString();
-                dataGridView1.Rows[rowIndex].Cells[3].Value = prod.Oferta_id.ToString();
-                dataGridView1.Rows[rowIndex].Cells[5].Value = "Editar";
-                dataGridView1.Rows[rowIndex].Cells[6].Value = "Eliminar";
+                dataGridView1.Rows[rowIndex].Cells[3].Value = prod.Precio.ToString();
+                dataGridView1.Rows[rowIndex].Cells[4].Value = prod.Cantidad.ToString();
+                dataGridView1.Rows[rowIndex].Cells[5].Value = prod.Categoria_id.ToString();
+                dataGridView1.Rows[rowIndex].Cells[6].Value = prod.Distribuidor_id.ToString();
+                dataGridView1.Rows[rowIndex].Cells[7].Value = prod.Oferta_id.ToString();
+                dataGridView1.Rows[rowIndex].Cells[8].Value = "Editar";
+                dataGridView1.Rows[rowIndex].Cells[9].Value = "Eliminar";
 
             }
         }
 
-        private void btn_new_Click(object sender, EventArgs e)
+        
+        private void btn_crear_Click(object sender, EventArgs e)
         {
-            FormUsuarios frmUser = new FormUsuarios();
-            DialogResult dr = frmUser.ShowDialog();
+            ProductForm frmProd = new ProductForm();
+            DialogResult dr = frmProd.ShowDialog();
 
             if (dr == DialogResult.OK)
             {
@@ -97,5 +98,6 @@ namespace SalesGamer.ControlesDeUsuario
         {
 
         }
+
     }
 }

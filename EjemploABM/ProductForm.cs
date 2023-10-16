@@ -197,7 +197,7 @@ namespace SalesGamer
             int cantidad;
             if (int.TryParse(txt_precio.Text, out precio) && int.TryParse(txt_cantidad.Text, out cantidad))
             {
-                Producto prod = new Producto(0, txt_nombre.Text, txt_descripcion.Text, categoria, precio, cantidad, distribuidor, oferta);
+                Producto prod = new Producto(0, txt_nombre.Text, txt_descripcion.Text, precio, cantidad, categoria, distribuidor, oferta);
                 if (Producto_Controller.CrearProducto(prod))
                 {
                     this.DialogResult = DialogResult.OK;
@@ -314,7 +314,7 @@ namespace SalesGamer
             int cantidad;
             if (int.TryParse(txt_precio.Text, out precio) && int.TryParse(txt_cantidad.Text, out cantidad))
             {
-                Producto prod = new Producto(0, txt_nombre.Text, txt_descripcion.Text, categoria, precio, cantidad, distribuidor, oferta);
+                Producto prod = new Producto(0, txt_nombre.Text, txt_descripcion.Text, precio, cantidad, categoria, distribuidor, oferta);
                 if (Producto_Controller.editarProducto(prod))
                 {
                     this.DialogResult = DialogResult.OK;

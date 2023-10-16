@@ -38,7 +38,7 @@ namespace EjemploABM
             // 
             // btn_prods
             // 
-            this.btn_prods.Location = new System.Drawing.Point(0, 0);
+            this.btn_prods.Location = new System.Drawing.Point(9, 5);
             this.btn_prods.Name = "btn_prods";
             this.btn_prods.Size = new System.Drawing.Size(75, 23);
             this.btn_prods.TabIndex = 0;
@@ -48,7 +48,7 @@ namespace EjemploABM
             // 
             // btn_cats
             // 
-            this.btn_cats.Location = new System.Drawing.Point(90, 0);
+            this.btn_cats.Location = new System.Drawing.Point(99, 5);
             this.btn_cats.Name = "btn_cats";
             this.btn_cats.Size = new System.Drawing.Size(75, 23);
             this.btn_cats.TabIndex = 1;
@@ -67,7 +67,7 @@ namespace EjemploABM
             // 
             // btn_users
             // 
-            this.btn_users.Location = new System.Drawing.Point(180, 0);
+            this.btn_users.Location = new System.Drawing.Point(191, 5);
             this.btn_users.Name = "btn_users";
             this.btn_users.Size = new System.Drawing.Size(75, 23);
             this.btn_users.TabIndex = 3;
@@ -77,16 +77,16 @@ namespace EjemploABM
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(0, 29);
+            this.panel1.Location = new System.Drawing.Point(-3, 34);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(799, 421);
+            this.panel1.Size = new System.Drawing.Size(1170, 652);
             this.panel1.TabIndex = 4;
             // 
             // Index
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1170, 709);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_users);
             this.Controls.Add(this.label1);

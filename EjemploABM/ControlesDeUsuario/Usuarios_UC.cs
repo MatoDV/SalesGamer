@@ -94,5 +94,10 @@ namespace EjemploABM.ControlesDeUsuario
             }
 
         }
+
+        private void Usuarios_UC_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
