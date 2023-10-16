@@ -31,7 +31,6 @@ namespace EjemploABM
         {
             this.btn_prods = new System.Windows.Forms.Button();
             this.btn_cats = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.btn_users = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
@@ -55,15 +54,6 @@ namespace EjemploABM
             this.btn_cats.Text = "Categorias";
             this.btn_cats.UseVisualStyleBackColor = true;
             this.btn_cats.Click += new System.EventHandler(this.btn_cats_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(589, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Bienvenido: ";
             // 
             // btn_users
             // 
@@ -89,14 +79,12 @@ namespace EjemploABM
             this.ClientSize = new System.Drawing.Size(1170, 709);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_users);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_cats);
             this.Controls.Add(this.btn_prods);
             this.Name = "Index";
             this.Text = "Index";
             this.Load += new System.EventHandler(this.Index_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -104,7 +92,6 @@ namespace EjemploABM
 
         private System.Windows.Forms.Button btn_prods;
         private System.Windows.Forms.Button btn_cats;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_users;
         private System.Windows.Forms.Panel panel1;
     }

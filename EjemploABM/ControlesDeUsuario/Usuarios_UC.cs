@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using EjemploABM.Controladores;
 using EjemploABM.Modelo;
+using SalesGamer.Controladores;
 
 namespace EjemploABM.ControlesDeUsuario
 {
@@ -91,6 +92,35 @@ namespace EjemploABM.ControlesDeUsuario
 
                 }
 
+            }
+
+            if (senderGrid.Columns[e.ColumnIndex].Name == "Eliminar")
+            {
+                //Eliminamos
+
+                int id = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+
+
+                Usuario usuario_eliminar = Usuario_Controller.obtenerPorId(id);
+
+                // Confirmar la eliminación con un mensaje de confirmación
+                DialogResult result = MessageBox.Show("¿Estás seguro que quieres eliminar este Usuario?", "Confirmar eliminación", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+
+                    bool eliminacionExitosa = Usuario_Controller.eliminarUsuario(usuario_eliminar);
+
+                    if (eliminacionExitosa)
+                    {
+                        MessageBox.Show("Usuario eliminado exitosamente.");
+                        cargarUsuarios();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al eliminar el usuario.");
+                    }
+                }
             }
 
         }

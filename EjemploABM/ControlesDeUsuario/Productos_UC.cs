@@ -206,6 +206,35 @@ namespace SalesGamer.ControlesDeUsuario
 
                 }
             }
+
+            if (senderGrid.Columns[e.ColumnIndex].Name == "Eliminar")
+            {
+                //Eliminamos
+
+                int id = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+
+                
+                Producto prod_eliminar = Producto_Controller.ObtenerProductoID(id);
+
+                // Confirmar la eliminación con un mensaje de confirmación
+                DialogResult result = MessageBox.Show("¿Estás seguro que quieres eliminar este producto?", "Confirmar eliminación", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    
+                    bool eliminacionExitosa = Producto_Controller.eliminarProducto(prod_eliminar);
+
+                    if (eliminacionExitosa)
+                    {
+                        MessageBox.Show("Producto eliminado exitosamente.");
+                        cargarProductos();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al eliminar el producto.");
+                    }
+                }
+            }
         }
 
         private void Productos_UC_Load(object sender, EventArgs e)

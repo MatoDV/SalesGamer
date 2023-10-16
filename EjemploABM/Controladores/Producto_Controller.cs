@@ -91,7 +91,7 @@ namespace SalesGamer.Controladores
                         {
                             Id = reader.GetInt32(0),
                             Nombre_producto = reader.GetString(1),
-                            Descripcion = reader.GetString(2), 
+                            Descripcion = reader.GetString(2),
                             Precio = reader.GetInt32(3),
                             Cantidad = reader.GetInt32(4),
                             Categoria_id = reader.GetInt32(5),
@@ -174,6 +174,29 @@ namespace SalesGamer.Controladores
                 throw new Exception("Hay un error en la query: " + ex.Message);
             }
 
+        }
+
+        public static bool eliminarProducto(Producto prodEliminar)
+        {
+            string query = "DELETE FROM dbo.Producto WHERE id = @id;";
+
+            using (SqlCommand cmd = new SqlCommand(query, DB_Controller.connection))
+            {
+                cmd.Parameters.AddWithValue("@id", prodEliminar.Id);
+
+                try
+                {
+                    DB_Controller.connection.Open();
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    DB_Controller.connection.Close();
+
+                    return rowsAffected > 0;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Error al intentar eliminar el producto: " + ex.Message);
+                }
+            }
         }
     }
 }

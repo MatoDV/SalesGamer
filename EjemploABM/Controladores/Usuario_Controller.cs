@@ -233,6 +233,29 @@ namespace EjemploABM.Controladores
 
         }
 
+        public static bool eliminarUsuario(Usuario usuarioEliminar)
+        {
+            string query = "DELETE FROM dbo.Usuario WHERE id = @id;";
+
+            using (SqlCommand cmd = new SqlCommand(query, DB_Controller.connection))
+            {
+                cmd.Parameters.AddWithValue("@id", usuarioEliminar.Id);
+
+                try
+                {
+                    DB_Controller.connection.Open();
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    DB_Controller.connection.Close();
+
+                    return rowsAffected > 0;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Error al intentar eliminar el producto: " + ex.Message);
+                }
+            }
+        }
+
 
 
 
