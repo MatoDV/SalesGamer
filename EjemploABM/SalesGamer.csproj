@@ -46,7 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CategoryForm.cs" />
+    <Compile Include="CategoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CategoryForm.Designer.cs">
       <DependentUpon>CategoryForm.cs</DependentUpon>
     </Compile>
@@ -54,34 +56,48 @@
     <Compile Include="Controladores\DB_Controller.cs" />
     <Compile Include="Controladores\Producto_Controller.cs" />
     <Compile Include="Controladores\Usuario_Controller.cs" />
-    <Compile Include="ControlesDeUsuario\Categorias_UC.cs" />
+    <Compile Include="ControlesDeUsuario\Categorias_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="ControlesDeUsuario\Categorias_UC.Designer.cs">
       <DependentUpon>Categorias_UC.cs</DependentUpon>
     </Compile>
-    <Compile Include="ControlesDeUsuario\Productos_UC.cs" />
+    <Compile Include="ControlesDeUsuario\Productos_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="ControlesDeUsuario\Productos_UC.Designer.cs">
       <DependentUpon>Productos_UC.cs</DependentUpon>
     </Compile>
-    <Compile Include="ControlesDeUsuario\Usuarios_UC.cs" />
+    <Compile Include="ControlesDeUsuario\Usuarios_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="ControlesDeUsuario\Usuarios_UC.Designer.cs">
       <DependentUpon>Usuarios_UC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs" />
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormUsuarios.cs" />
+    <Compile Include="FormUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormUsuarios.Designer.cs">
       <DependentUpon>FormUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Index.cs" />
+    <Compile Include="Index.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Index.Designer.cs">
       <DependentUpon>Index.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Categoria.cs" />
     <Compile Include="Modelo\Producto.cs" />
     <Compile Include="Modelo\Usuario.cs" />
-    <Compile Include="ProductForm.cs" />
+    <Compile Include="ProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ProductForm.Designer.cs">
       <DependentUpon>ProductForm.cs</DependentUpon>
     </Compile>
