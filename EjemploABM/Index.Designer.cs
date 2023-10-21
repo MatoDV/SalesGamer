@@ -33,6 +33,7 @@ namespace EjemploABM
             this.btn_cats = new System.Windows.Forms.Button();
             this.btn_users = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_distribuidores = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_prods
@@ -72,11 +73,22 @@ namespace EjemploABM
             this.panel1.Size = new System.Drawing.Size(1170, 652);
             this.panel1.TabIndex = 4;
             // 
+            // btn_distribuidores
+            // 
+            this.btn_distribuidores.Location = new System.Drawing.Point(284, 5);
+            this.btn_distribuidores.Name = "btn_distribuidores";
+            this.btn_distribuidores.Size = new System.Drawing.Size(79, 23);
+            this.btn_distribuidores.TabIndex = 5;
+            this.btn_distribuidores.Text = "Distribuidores";
+            this.btn_distribuidores.UseVisualStyleBackColor = true;
+            this.btn_distribuidores.Click += new System.EventHandler(this.btn_distribuidores_Click);
+            // 
             // Index
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1170, 709);
+            this.Controls.Add(this.btn_distribuidores);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_users);
             this.Controls.Add(this.btn_cats);
@@ -94,5 +106,6 @@ namespace EjemploABM
         private System.Windows.Forms.Button btn_cats;
         private System.Windows.Forms.Button btn_users;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btn_distribuidores;
     }
 }

@@ -47,6 +47,11 @@ namespace EjemploABM
             Usuarios_UC userUC = new Usuarios_UC();
             addUserControl(userUC);
         }
+        private void btn_distribuidores_Click(object sender, EventArgs e)
+        {
+            Distribuidores_UC disUC = new Distribuidores_UC();
+            addUserControl(disUC);
+        }
 
         private void addUserControl(UserControl uc)
         {
@@ -60,5 +65,6 @@ namespace EjemploABM
         {
 
         }
+
     }
 }
