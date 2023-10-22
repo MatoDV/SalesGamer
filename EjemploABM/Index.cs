@@ -48,6 +48,11 @@ namespace EjemploABM
             addUserControl(userUC);
         }
        
+        private void btn_ofertas_Click(object sender, EventArgs e)
+        {
+            Oferta_UC ofertaUC = new Oferta_UC();
+            addUserControl(ofertaUC);
+        }
 
         private void addUserControl(UserControl uc)
         {
