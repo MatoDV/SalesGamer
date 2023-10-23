@@ -30,16 +30,16 @@
         {
             this.btn_crear = new System.Windows.Forms.Button();
             this.text_nombre = new System.Windows.Forms.TextBox();
-            this.text_inicio = new System.Windows.Forms.TextBox();
             this.text_tipo = new System.Windows.Forms.TextBox();
             this.label_nombre = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.text_final = new System.Windows.Forms.TextBox();
             this.text_condiciones = new System.Windows.Forms.TextBox();
             this.label_titulo = new System.Windows.Forms.Label();
+            this.date_inicio = new System.Windows.Forms.DateTimePicker();
+            this.date_final = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // btn_crear
@@ -58,13 +58,6 @@
             this.text_nombre.Name = "text_nombre";
             this.text_nombre.Size = new System.Drawing.Size(169, 20);
             this.text_nombre.TabIndex = 1;
-            // 
-            // text_inicio
-            // 
-            this.text_inicio.Location = new System.Drawing.Point(306, 245);
-            this.text_inicio.Name = "text_inicio";
-            this.text_inicio.Size = new System.Drawing.Size(169, 20);
-            this.text_inicio.TabIndex = 2;
             // 
             // text_tipo
             // 
@@ -118,13 +111,6 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "Fecha Final:";
             // 
-            // text_final
-            // 
-            this.text_final.Location = new System.Drawing.Point(306, 304);
-            this.text_final.Name = "text_final";
-            this.text_final.Size = new System.Drawing.Size(169, 20);
-            this.text_final.TabIndex = 8;
-            // 
             // text_condiciones
             // 
             this.text_condiciones.Location = new System.Drawing.Point(306, 359);
@@ -141,24 +127,38 @@
             this.label_titulo.TabIndex = 11;
             this.label_titulo.Text = "Crear Oferta";
             // 
-            // OfertaForm
+            // date_inicio
+            // 
+            this.date_inicio.Location = new System.Drawing.Point(306, 242);
+            this.date_inicio.Name = "date_inicio";
+            this.date_inicio.Size = new System.Drawing.Size(169, 20);
+            this.date_inicio.TabIndex = 12;
+            // 
+            // date_final
+            // 
+            this.date_final.Location = new System.Drawing.Point(306, 301);
+            this.date_final.Name = "date_final";
+            this.date_final.Size = new System.Drawing.Size(169, 20);
+            this.date_final.TabIndex = 13;
+            // 
+            // OferForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(764, 548);
+            this.Controls.Add(this.date_final);
+            this.Controls.Add(this.date_inicio);
             this.Controls.Add(this.label_titulo);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.text_final);
             this.Controls.Add(this.text_condiciones);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label_nombre);
             this.Controls.Add(this.text_tipo);
-            this.Controls.Add(this.text_inicio);
             this.Controls.Add(this.text_nombre);
             this.Controls.Add(this.btn_crear);
-            this.Name = "OfertaForm";
+            this.Name = "OferForm";
             this.Text = "OfertaForm";
             this.Load += new System.EventHandler(this.OfertaForm_Load);
             this.ResumeLayout(false);
@@ -170,15 +170,15 @@
 
         private System.Windows.Forms.Button btn_crear;
         private System.Windows.Forms.TextBox text_nombre;
-        private System.Windows.Forms.TextBox text_inicio;
         private System.Windows.Forms.TextBox text_tipo;
         private System.Windows.Forms.Label label_nombre;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox text_final;
         private System.Windows.Forms.TextBox text_condiciones;
         private System.Windows.Forms.Label label_titulo;
+        private System.Windows.Forms.DateTimePicker date_inicio;
+        private System.Windows.Forms.DateTimePicker date_final;
     }
 }

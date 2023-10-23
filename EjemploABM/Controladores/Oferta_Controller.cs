@@ -119,7 +119,7 @@ namespace SalesGamer.Controladores
                 cmd.Parameters.AddWithValue("@tipo_oferta", ofert.Tipo_oferta);
                 cmd.Parameters.AddWithValue("@fecha_inicio", ofert.Fecha_inicio);
                 cmd.Parameters.AddWithValue("@fecha_final", ofert.Fecha_final);
-                cmd.Parameters.AddWithValue("@ncondicionesombre", ofert.Condiciones);
+                cmd.Parameters.AddWithValue("@condiciones", ofert.Condiciones);
 
                 try
                 {

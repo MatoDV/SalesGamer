@@ -31,8 +31,8 @@ namespace SalesGamer
 
             text_nombre.Text = oferta.Nombre.ToString();
             text_tipo.Text = oferta.Tipo_oferta.ToString();
-            text_inicio.Text = oferta.Fecha_inicio.ToString();
-            text_final.Text = oferta.Fecha_final.ToString();
+            date_inicio.Text = oferta.Fecha_inicio.ToString();
+            date_final.Text = oferta.Fecha_final.ToString();
             text_condiciones.Text = oferta.Condiciones.ToString();
 
             situacion = "edicion";
@@ -53,16 +53,16 @@ namespace SalesGamer
 
         private void crear()
         {
-            string fechaInicioTexto = text_inicio.Text;
-            string fechaFinalTexto = text_final.Text;
+            string fechaInicioTexto = date_inicio.Text;
+            string fechaFinalTexto = date_final.Text;
 
             if (DateTime.TryParse(fechaInicioTexto, out DateTime fechaInicio) && DateTime.TryParse(fechaFinalTexto, out DateTime fechaFinal))
             {
                 Oferta ofer = new Oferta(0, text_nombre.Text, text_tipo.Text, fechaInicio, fechaFinal, text_condiciones.Text);
 
-                if (text_nombre.SelectedText.ToString() == "10% descuento" && text_nombre.SelectedText.ToString() == "20% descuento"
-                && text_nombre.SelectedText.ToString() == "30% descuento" && text_nombre.SelectedText.ToString() == "50% descuento"
-                && text_nombre.SelectedText.ToString() == "sin descuento")
+                if (text_tipo.SelectedText.ToString() == "10% descuento" && text_tipo.SelectedText.ToString() == "20% descuento"
+                && text_tipo.SelectedText.ToString() == "30% descuento" && text_tipo.SelectedText.ToString() == "50% descuento"
+                && text_tipo.SelectedText.ToString() == "sin descuento")
                 {
                     DialogResult result = MessageBox.Show("La categoria que se intento crear ya esta creada");
                 }
@@ -80,8 +80,8 @@ namespace SalesGamer
         }
         private void editar()
         {
-            string fechaInicioTexto = text_inicio.Text;
-            string fechaFinalTexto = text_final.Text;
+            string fechaInicioTexto = date_inicio.Text;
+            string fechaFinalTexto = date_final.Text;
             if (DateTime.TryParse(fechaInicioTexto, out DateTime fechaInicio) && DateTime.TryParse(fechaFinalTexto, out DateTime fechaFinal))
             {
                 Oferta ofer = new Oferta(id_editar, text_nombre.Text, text_tipo.Text, fechaInicio, fechaFinal, text_condiciones.Text);
