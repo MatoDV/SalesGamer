@@ -41,6 +41,8 @@
             this.Oferta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Agregar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btn_carrito = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,10 +59,11 @@
             this.Distribuidor,
             this.Oferta,
             this.Editar,
-            this.Eliminar});
+            this.Eliminar,
+            this.Agregar});
             this.dataGridView1.Location = new System.Drawing.Point(51, 70);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1041, 425);
+            this.dataGridView1.Size = new System.Drawing.Size(1166, 463);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
@@ -75,7 +78,7 @@
             // 
             // btn_crear
             // 
-            this.btn_crear.Location = new System.Drawing.Point(515, 31);
+            this.btn_crear.Location = new System.Drawing.Point(547, 31);
             this.btn_crear.Name = "btn_crear";
             this.btn_crear.Size = new System.Drawing.Size(91, 23);
             this.btn_crear.TabIndex = 6;
@@ -133,15 +136,31 @@
             this.Eliminar.HeaderText = "Eliminar";
             this.Eliminar.Name = "Eliminar";
             // 
+            // Agregar
+            // 
+            this.Agregar.HeaderText = "Agregar";
+            this.Agregar.Name = "Agregar";
+            // 
+            // btn_carrito
+            // 
+            this.btn_carrito.Location = new System.Drawing.Point(1105, 31);
+            this.btn_carrito.Name = "btn_carrito";
+            this.btn_carrito.Size = new System.Drawing.Size(91, 23);
+            this.btn_carrito.TabIndex = 7;
+            this.btn_carrito.Text = "Carrito";
+            this.btn_carrito.UseVisualStyleBackColor = true;
+            this.btn_carrito.Click += new System.EventHandler(this.btn_carrito_Click);
+            // 
             // Productos_UC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btn_carrito);
             this.Controls.Add(this.btn_crear);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Productos_UC";
-            this.Size = new System.Drawing.Size(1178, 599);
+            this.Size = new System.Drawing.Size(1249, 564);
             this.Load += new System.EventHandler(this.Productos_UC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -164,5 +183,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Oferta;
         private System.Windows.Forms.DataGridViewButtonColumn Editar;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
+        private System.Windows.Forms.DataGridViewButtonColumn Agregar;
+        private System.Windows.Forms.Button btn_carrito;
     }
 }

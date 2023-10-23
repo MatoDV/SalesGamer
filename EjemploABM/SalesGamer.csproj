@@ -46,14 +46,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CarritoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarritoForm.Designer.cs">
+      <DependentUpon>CarritoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CategoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CategoryForm.Designer.cs">
       <DependentUpon>CategoryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controladores\Carrito_Controller.cs" />
     <Compile Include="Controladores\Categoria_Controller.cs" />
     <Compile Include="Controladores\DB_Controller.cs" />
+    <Compile Include="Controladores\Oferta_Controller.cs" />
     <Compile Include="Controladores\Producto_Controller.cs" />
     <Compile Include="Controladores\Usuario_Controller.cs" />
     <Compile Include="ControlesDeUsuario\Categorias_UC.cs">
@@ -61,6 +69,12 @@
     </Compile>
     <Compile Include="ControlesDeUsuario\Categorias_UC.Designer.cs">
       <DependentUpon>Categorias_UC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlesDeUsuario\Oferta_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlesDeUsuario\Oferta_UC.Designer.cs">
+      <DependentUpon>Oferta_UC.cs</DependentUpon>
     </Compile>
     <Compile Include="ControlesDeUsuario\Productos_UC.cs">
       <SubType>UserControl</SubType>
@@ -92,9 +106,17 @@
     <Compile Include="Index.Designer.cs">
       <DependentUpon>Index.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\Carrito.cs" />
     <Compile Include="Modelo\Categoria.cs" />
+    <Compile Include="Modelo\Oferta.cs" />
     <Compile Include="Modelo\Producto.cs" />
     <Compile Include="Modelo\Usuario.cs" />
+    <Compile Include="OferForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OferForm.Designer.cs">
+      <DependentUpon>OferForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,11 +125,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CarritoForm.resx">
+      <DependentUpon>CarritoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CategoryForm.resx">
       <DependentUpon>CategoryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ControlesDeUsuario\Categorias_UC.resx">
       <DependentUpon>Categorias_UC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlesDeUsuario\Oferta_UC.resx">
+      <DependentUpon>Oferta_UC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ControlesDeUsuario\Productos_UC.resx">
       <DependentUpon>Productos_UC.cs</DependentUpon>
@@ -123,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Index.resx">
       <DependentUpon>Index.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OferForm.resx">
+      <DependentUpon>OferForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductForm.resx">
       <DependentUpon>ProductForm.cs</DependentUpon>

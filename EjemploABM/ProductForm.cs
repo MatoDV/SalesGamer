@@ -26,16 +26,18 @@ namespace SalesGamer
             combox_categoria.Items.Clear();
 
             combox_distribuidor.Items.Add("GIGABYTE");
-            combox_distribuidor.Items.Add("ASUS");
+            combox_distribuidor.Items.Add("LOGITECH");
             combox_distribuidor.Items.Add("NVIDIA");
             combox_distribuidor.Items.Add("AMD");
             combox_distribuidor.Items.Add("MSI");
-            combox_distribuidor.Items.Add("EVGA");
-            combox_distribuidor.Items.Add("ZOTAC");
+            combox_distribuidor.Items.Add("KINGSTON");
+            combox_distribuidor.Items.Add("CORSAIR");
+            combox_distribuidor.Items.Add("INTEL");
             combox_oferta.Items.Add("10% descuento");
             combox_oferta.Items.Add("20% descuento");
             combox_oferta.Items.Add("30% descuento");
             combox_oferta.Items.Add("50% descuento");
+            combox_oferta.Items.Add("sin descuento");
             combox_categoria.Items.Add("Placas de video");
             combox_categoria.Items.Add("Procesador");
             combox_categoria.Items.Add("Memoria Ram");
@@ -68,16 +70,18 @@ namespace SalesGamer
             txt_cantidad.Text = producto.Cantidad.ToString();
 
             combox_distribuidor.Items.Add("GIGABYTE");
-            combox_distribuidor.Items.Add("ASUS");
+            combox_distribuidor.Items.Add("LOGITECH");
             combox_distribuidor.Items.Add("NVIDIA");
             combox_distribuidor.Items.Add("AMD");
             combox_distribuidor.Items.Add("MSI");
-            combox_distribuidor.Items.Add("EVGA");
-            combox_distribuidor.Items.Add("ZOTAC");
+            combox_distribuidor.Items.Add("KINGSTON");
+            combox_distribuidor.Items.Add("CORSAIR");
+            combox_distribuidor.Items.Add("INTEL");
             combox_oferta.Items.Add("10% descuento");
             combox_oferta.Items.Add("20% descuento");
             combox_oferta.Items.Add("30% descuento");
             combox_oferta.Items.Add("50% descuento");
+            combox_oferta.Items.Add("sin descuento");
             combox_categoria.Items.Add("Placas de video");
             combox_categoria.Items.Add("Procesador");
             combox_categoria.Items.Add("Memoria Ram");
@@ -119,7 +123,7 @@ namespace SalesGamer
             {
                 distribuidor = 1;
             }
-            else if (combox_distribuidor.SelectedItem.ToString() == "ASUS")
+            else if (combox_distribuidor.SelectedItem.ToString() == "LOGITECH")
             {
                 distribuidor = 2;
             }
@@ -135,15 +139,19 @@ namespace SalesGamer
             {
                 distribuidor = 5;
             }
-            else if (combox_distribuidor.SelectedItem.ToString() == "EVGA")
+            else if (combox_distribuidor.SelectedItem.ToString() == "KINGSTON")
             {
                 distribuidor = 6;
             }
-            else if (combox_distribuidor.SelectedItem.ToString() == "ZOTAC")
+            else if (combox_distribuidor.SelectedItem.ToString() == "CORSAIR")
             {
                 distribuidor = 7;
             }
-        
+            else if (combox_distribuidor.SelectedItem.ToString() == "INTEL")
+            {
+                distribuidor = 8;
+            }
+
             int categoria = 0;
             if (combox_categoria.SelectedItem.ToString() == "Placas de video")
             {
@@ -214,6 +222,10 @@ namespace SalesGamer
             else if (combox_oferta.SelectedItem.ToString() == "50% descuento")
             {
                 oferta = 4;
+            }
+            else if (combox_oferta.SelectedItem.ToString() == "sin descuento")
+            {
+                oferta = 5;
             }
 
 
@@ -237,7 +249,7 @@ namespace SalesGamer
             {
                 distribuidor = 1;
             }
-            else if (combox_distribuidor.SelectedItem.ToString() == "ASUS")
+            else if (combox_distribuidor.SelectedItem.ToString() == "LOGITECH")
             {
                 distribuidor = 2;
             }
@@ -253,13 +265,17 @@ namespace SalesGamer
             {
                 distribuidor = 5;
             }
-            else if (combox_distribuidor.SelectedItem.ToString() == "EVGA")
+            else if (combox_distribuidor.SelectedItem.ToString() == "KINGSTON")
             {
                 distribuidor = 6;
             }
-            else if (combox_distribuidor.SelectedItem.ToString() == "ZOTAC")
+            else if (combox_distribuidor.SelectedItem.ToString() == "CORSAIR")
             {
                 distribuidor = 7;
+            }
+            else if (combox_distribuidor.SelectedItem.ToString() == "INTEL")
+            {
+                distribuidor = 8;
             }
 
             int categoria = 0;
@@ -332,6 +348,10 @@ namespace SalesGamer
             else if (combox_oferta.SelectedItem.ToString() == "50% descuento")
             {
                 oferta = 4;
+            }
+            else if (combox_oferta.SelectedItem.ToString() == "sin descuento")
+            {
+                oferta = 5;
             }
 
             int precio;
