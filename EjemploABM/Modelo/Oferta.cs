@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SalesGamer.Modelo
 {
-    internal class Oferta
+    public class Oferta
     {
         public int Id { get; set; }
         public string Nombre { get; set; }

@@ -76,7 +76,7 @@ namespace SalesGamer.Controladores
         //OBTENER OFERTA POR ID
         public static Oferta ObtenerOfertaID(int id)
         {
-            Oferta oferta = new Oferta();
+            Oferta ofer = new Oferta();
             string query = "SELECT * FROM dbo.Oferta WHERE id = @id;";
             using (SqlCommand cmd = new SqlCommand(query, DB_Controller.connection))
             {
@@ -87,7 +87,7 @@ namespace SalesGamer.Controladores
                     SqlDataReader reader = cmd.ExecuteReader();
                     while (reader.Read())
                     {
-                        oferta = new Oferta
+                        ofer = new Oferta
                         {
                             Id = reader.GetInt32(0),
                             Nombre = reader.GetString(1),
@@ -104,22 +104,22 @@ namespace SalesGamer.Controladores
                     DB_Controller.connection.Close();
                 }
             }
-            return oferta;
+            return ofer;
         }
 
         //CREAR OFERTA
-        public static bool CrearOferta(Oferta oferta)
+        public static bool CrearOferta(Oferta ofert)
         {
             string query = "INSERT INTO dbo.Oferta (id,nombre,tipo_oferta,fecha_inicio,fecha_final,condiciones) " +
                            "VALUES (@id,@nombre,@tipo_oferta,@fecha_inicio,@fecha_final,@condiciones);";
             using (SqlCommand cmd = new SqlCommand(query, DB_Controller.connection))
             {
                 cmd.Parameters.AddWithValue("@id", obtenerMaxId() + 1);
-                cmd.Parameters.AddWithValue("@nombre", oferta.Nombre);
-                cmd.Parameters.AddWithValue("@tipo_oferta", oferta.Tipo_oferta);
-                cmd.Parameters.AddWithValue("@fecha_inicio", oferta.Fecha_inicio);
-                cmd.Parameters.AddWithValue("@fecha_final", oferta.Fecha_final);
-                cmd.Parameters.AddWithValue("@ncondicionesombre", oferta.Condiciones);
+                cmd.Parameters.AddWithValue("@nombre", ofert.Nombre);
+                cmd.Parameters.AddWithValue("@tipo_oferta", ofert.Tipo_oferta);
+                cmd.Parameters.AddWithValue("@fecha_inicio", ofert.Fecha_inicio);
+                cmd.Parameters.AddWithValue("@fecha_final", ofert.Fecha_final);
+                cmd.Parameters.AddWithValue("@ncondicionesombre", ofert.Condiciones);
 
                 try
                 {
@@ -149,7 +149,7 @@ namespace SalesGamer.Controladores
 
             SqlCommand cmd = new SqlCommand(query, DB_Controller.connection);
             cmd.Parameters.AddWithValue("@id", ofer.Id);
-            cmd.Parameters.AddWithValue("@nombre_categoria", ofer.Nombre);
+            cmd.Parameters.AddWithValue("@nombre", ofer.Nombre);
             cmd.Parameters.AddWithValue("@tipo_oferta", ofer.Tipo_oferta);
             cmd.Parameters.AddWithValue("@fecha_inicio", ofer.Fecha_inicio);
             cmd.Parameters.AddWithValue("@fecha_final", ofer.Fecha_final);

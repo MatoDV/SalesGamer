@@ -29,14 +29,16 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btn_titulo = new System.Windows.Forms.Label();
+            this.btn_crear = new System.Windows.Forms.Button();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha_inicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha_Final = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Condiciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_titulo = new System.Windows.Forms.Label();
-            this.btn_crear = new System.Windows.Forms.Button();
+            this.Editar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,11 +51,33 @@
             this.Tipo,
             this.Fecha_inicio,
             this.Fecha_Final,
-            this.Condiciones});
+            this.Condiciones,
+            this.Editar,
+            this.Eliminar});
             this.dataGridView1.Location = new System.Drawing.Point(31, 51);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(646, 482);
+            this.dataGridView1.Size = new System.Drawing.Size(836, 482);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // btn_titulo
+            // 
+            this.btn_titulo.AutoSize = true;
+            this.btn_titulo.Location = new System.Drawing.Point(28, 24);
+            this.btn_titulo.Name = "btn_titulo";
+            this.btn_titulo.Size = new System.Drawing.Size(44, 13);
+            this.btn_titulo.TabIndex = 1;
+            this.btn_titulo.Text = "Ofertas:";
+            // 
+            // btn_crear
+            // 
+            this.btn_crear.Location = new System.Drawing.Point(421, 16);
+            this.btn_crear.Name = "btn_crear";
+            this.btn_crear.Size = new System.Drawing.Size(66, 29);
+            this.btn_crear.TabIndex = 2;
+            this.btn_crear.Text = "Crear";
+            this.btn_crear.UseVisualStyleBackColor = true;
+            this.btn_crear.Click += new System.EventHandler(this.btn_crear_Click);
             // 
             // Id
             // 
@@ -85,23 +109,15 @@
             this.Condiciones.HeaderText = "Condiciones";
             this.Condiciones.Name = "Condiciones";
             // 
-            // btn_titulo
+            // Editar
             // 
-            this.btn_titulo.AutoSize = true;
-            this.btn_titulo.Location = new System.Drawing.Point(28, 24);
-            this.btn_titulo.Name = "btn_titulo";
-            this.btn_titulo.Size = new System.Drawing.Size(44, 13);
-            this.btn_titulo.TabIndex = 1;
-            this.btn_titulo.Text = "Ofertas:";
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Name = "Editar";
             // 
-            // btn_crear
+            // Eliminar
             // 
-            this.btn_crear.Location = new System.Drawing.Point(315, 16);
-            this.btn_crear.Name = "btn_crear";
-            this.btn_crear.Size = new System.Drawing.Size(66, 29);
-            this.btn_crear.TabIndex = 2;
-            this.btn_crear.Text = "Crear";
-            this.btn_crear.UseVisualStyleBackColor = true;
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Name = "Eliminar";
             // 
             // Oferta_UC
             // 
@@ -111,7 +127,8 @@
             this.Controls.Add(this.btn_titulo);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Oferta_UC";
-            this.Size = new System.Drawing.Size(713, 583);
+            this.Size = new System.Drawing.Size(906, 583);
+            this.Load += new System.EventHandler(this.Oferta_UC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -121,13 +138,15 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label btn_titulo;
+        private System.Windows.Forms.Button btn_crear;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha_inicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha_Final;
         private System.Windows.Forms.DataGridViewTextBoxColumn Condiciones;
-        private System.Windows.Forms.Label btn_titulo;
-        private System.Windows.Forms.Button btn_crear;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Editar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Eliminar;
     }
 }

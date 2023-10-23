@@ -1,6 +1,6 @@
 ﻿namespace SalesGamer
 {
-    partial class OfertaForm
+    partial class OferForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_editar = new System.Windows.Forms.Button();
+            this.btn_crear = new System.Windows.Forms.Button();
             this.text_nombre = new System.Windows.Forms.TextBox();
             this.text_inicio = new System.Windows.Forms.TextBox();
             this.text_tipo = new System.Windows.Forms.TextBox();
@@ -42,14 +42,15 @@
             this.label_titulo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // btn_editar
+            // btn_crear
             // 
-            this.btn_editar.Location = new System.Drawing.Point(348, 428);
-            this.btn_editar.Name = "btn_editar";
-            this.btn_editar.Size = new System.Drawing.Size(75, 33);
-            this.btn_editar.TabIndex = 0;
-            this.btn_editar.Text = "Editar";
-            this.btn_editar.UseVisualStyleBackColor = true;
+            this.btn_crear.Location = new System.Drawing.Point(348, 428);
+            this.btn_crear.Name = "btn_crear";
+            this.btn_crear.Size = new System.Drawing.Size(75, 33);
+            this.btn_crear.TabIndex = 0;
+            this.btn_crear.Text = "Crear";
+            this.btn_crear.UseVisualStyleBackColor = true;
+            this.btn_crear.Click += new System.EventHandler(this.btn_editar_Click);
             // 
             // text_nombre
             // 
@@ -136,9 +137,9 @@
             this.label_titulo.AutoSize = true;
             this.label_titulo.Location = new System.Drawing.Point(345, 71);
             this.label_titulo.Name = "label_titulo";
-            this.label_titulo.Size = new System.Drawing.Size(66, 13);
+            this.label_titulo.Size = new System.Drawing.Size(64, 13);
             this.label_titulo.TabIndex = 11;
-            this.label_titulo.Text = "Editar Oferta";
+            this.label_titulo.Text = "Crear Oferta";
             // 
             // OfertaForm
             // 
@@ -156,9 +157,10 @@
             this.Controls.Add(this.text_tipo);
             this.Controls.Add(this.text_inicio);
             this.Controls.Add(this.text_nombre);
-            this.Controls.Add(this.btn_editar);
+            this.Controls.Add(this.btn_crear);
             this.Name = "OfertaForm";
             this.Text = "OfertaForm";
+            this.Load += new System.EventHandler(this.OfertaForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -166,7 +168,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btn_editar;
+        private System.Windows.Forms.Button btn_crear;
         private System.Windows.Forms.TextBox text_nombre;
         private System.Windows.Forms.TextBox text_inicio;
         private System.Windows.Forms.TextBox text_tipo;
