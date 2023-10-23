@@ -17,3 +17,4 @@ C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\obj\Debug\SalesGamer.Contr
 C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\obj\Debug\SalesGamer.ProductForm.resources
 C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\obj\Debug\SalesGamer.ControlesDeUsuario.Oferta_UC.resources
 C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\obj\Debug\SalesGamer.OferForm.resources
+C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\obj\Debug\SalesGamer.CarritoForm.resources

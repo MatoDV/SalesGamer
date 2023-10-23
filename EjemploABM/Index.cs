@@ -25,9 +25,8 @@ namespace EjemploABM
             if(Program.logueado.ID_rol != 1)
             {
                 btn_users.Hide();
+                btn_cats.Hide();
             }
-
-
         }
 
         private void btn_prods_Click(object sender, EventArgs e)
