@@ -9,30 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using EjemploABM.Controladores;
 using SalesGamer;
+using MaterialSkin;
+using MaterialSkin.Controls;
 
 namespace EjemploABM
 {
-    public partial class Login : Form
+    public partial class Login : MaterialForm
     {
         public Login()
         {
             InitializeComponent();
-        }
-
-        private void btn_login_Click(object sender, EventArgs e)
-        {
-            if (Usuario_Controller.autenticar(txt_login_user.Text, txt_login_pass.Text, true))
-            {
-                /*if (MantenerSesion.Checked)
-                {
-                    Usuario_Controlador.persistirUsuario(Program.logueado);
-                }*/
-
-                Index index = new Index();
-                index.Show();
-                this.Hide();
-            }
-
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -55,6 +41,24 @@ namespace EjemploABM
             else
                 errorP.Clear();
 
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_login_Click_1(object sender, EventArgs e)
+        {
+            if(Validaciones.textVacios(txt_login_user) == false || Validaciones.textVacios(txt_login_pass) == false)
+            {
+                if (Usuario_Controller.autenticar(txt_login_user.Text, txt_login_pass.Text, true))
+                {
+                    Index index = new Index();
+                    index.Show();
+                    this.Hide();
+                }
+            }
         }
     }
 }

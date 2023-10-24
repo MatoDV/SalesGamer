@@ -29,26 +29,16 @@ namespace EjemploABM
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_login = new System.Windows.Forms.Button();
             this.txt_login_user = new System.Windows.Forms.TextBox();
             this.txt_login_pass = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.btn_login = new MaterialSkin.Controls.MaterialButton();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.SuspendLayout();
-            // 
-            // btn_login
-            // 
-            this.btn_login.Location = new System.Drawing.Point(313, 202);
-            this.btn_login.Name = "btn_login";
-            this.btn_login.Size = new System.Drawing.Size(139, 52);
-            this.btn_login.TabIndex = 0;
-            this.btn_login.Text = "Iniciar Sesion";
-            this.btn_login.UseVisualStyleBackColor = true;
-            this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
             // 
             // txt_login_user
             // 
-            this.txt_login_user.Location = new System.Drawing.Point(313, 69);
+            this.txt_login_user.Location = new System.Drawing.Point(313, 99);
             this.txt_login_user.Name = "txt_login_user";
             this.txt_login_user.Size = new System.Drawing.Size(188, 20);
             this.txt_login_user.TabIndex = 1;
@@ -57,54 +47,79 @@ namespace EjemploABM
             // 
             // txt_login_pass
             // 
-            this.txt_login_pass.Location = new System.Drawing.Point(313, 125);
+            this.txt_login_pass.Location = new System.Drawing.Point(313, 155);
             this.txt_login_pass.Name = "txt_login_pass";
             this.txt_login_pass.Size = new System.Drawing.Size(188, 20);
             this.txt_login_pass.TabIndex = 2;
             this.txt_login_pass.Leave += new System.EventHandler(this.txt_login_pass_Leave);
             // 
-            // label1
+            // btn_login
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(231, 72);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Usuario:";
+            this.btn_login.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_login.Depth = 0;
+            this.btn_login.DrawShadows = true;
+            this.btn_login.HighEmphasis = true;
+            this.btn_login.Icon = null;
+            this.btn_login.Location = new System.Drawing.Point(329, 225);
+            this.btn_login.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_login.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_login.Name = "btn_login";
+            this.btn_login.Size = new System.Drawing.Size(128, 36);
+            this.btn_login.TabIndex = 5;
+            this.btn_login.Text = "Iniciar Sesion";
+            this.btn_login.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_login.UseAccentColor = false;
+            this.btn_login.UseVisualStyleBackColor = true;
+            this.btn_login.Click += new System.EventHandler(this.btn_login_Click_1);
             // 
-            // label2
+            // materialLabel1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(231, 128);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Contraseña:";
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel1.Location = new System.Drawing.Point(221, 99);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(59, 19);
+            this.materialLabel1.TabIndex = 6;
+            this.materialLabel1.Text = "Usuario:";
+            // 
+            // materialLabel2
+            // 
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel2.Location = new System.Drawing.Point(221, 155);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(86, 19);
+            this.materialLabel2.TabIndex = 7;
+            this.materialLabel2.Text = "Contraseña:";
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.materialLabel2);
+            this.Controls.Add(this.materialLabel1);
+            this.Controls.Add(this.btn_login);
             this.Controls.Add(this.txt_login_pass);
             this.Controls.Add(this.txt_login_user);
-            this.Controls.Add(this.btn_login);
             this.Name = "Login";
-            this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btn_login;
         private System.Windows.Forms.TextBox txt_login_user;
         private System.Windows.Forms.TextBox txt_login_pass;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private MaterialSkin.Controls.MaterialButton btn_login;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
     }
 }
 

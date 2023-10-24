@@ -38,3 +38,5 @@ C:\Users\Luis Diaz\OneDrive\Documentos\GitHub\SalesGamer\SalesGamer\EjemploABM\o
 C:\Users\Luis Diaz\OneDrive\Documentos\GitHub\SalesGamer\SalesGamer\EjemploABM\obj\Debug\SalesGamer.csproj.CoreCompileInputs.cache
 C:\Users\Luis Diaz\OneDrive\Documentos\GitHub\SalesGamer\SalesGamer\EjemploABM\obj\Debug\SalesGamer.exe
 C:\Users\Luis Diaz\OneDrive\Documentos\GitHub\SalesGamer\SalesGamer\EjemploABM\obj\Debug\SalesGamer.pdb
+C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\bin\Debug\MaterialSkin.dll
+C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\obj\Debug\SalesGamer.csproj.CopyComplete

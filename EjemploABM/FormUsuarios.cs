@@ -12,10 +12,12 @@ using EjemploABM.Controladores;
 using EjemploABM.Modelo;
 using SalesGamer;
 using MessageBox = System.Windows.MessageBox;
+using MaterialSkin;
+using MaterialSkin.Controls;
 
 namespace EjemploABM
 {
-    public partial class FormUsuarios : Form
+    public partial class FormUsuarios : MaterialForm
     {
         string situacion;
         int id_editar;
@@ -69,10 +71,8 @@ namespace EjemploABM
 
 
         }
-
-        private void btn_crear_Click(object sender, EventArgs e)
+        private void btn_crear_Click_1(object sender, EventArgs e)
         {
-
             if (situacion == "creacion")
             {
                 crear();
@@ -85,33 +85,39 @@ namespace EjemploABM
 
         private void crear()
         {
-            int tipo = 2;
-            if (combo_tipo.SelectedItem.ToString() == "Admin")
+            if (Validaciones.textVacios(txt_usuario) == false || Validaciones.textVacios(txt_mail) == false || Validaciones.textVacios(txt_contraseña) == false || Validaciones.textVacios(txt_nombre) == false || Validaciones.textVacios(txt_direccion) == false || Validaciones.textVacios(txt_nombre) == false)
             {
-                tipo = 1;
-            }
+                int tipo = 2;
+                if (combo_tipo.SelectedItem.ToString() == "Admin")
+                {
+                    tipo = 1;
+                }
 
-            Usuario usr = new Usuario(0, txt_usuario.Text, txt_mail.Text, txt_contraseña.Text, txt_nombre.Text, txt_apellido.Text,11, txt_direccion.Text,tipo);
+                Usuario usr = new Usuario(0, txt_usuario.Text, txt_mail.Text, txt_contraseña.Text, txt_nombre.Text, txt_apellido.Text, 11, txt_direccion.Text, tipo);
 
-            if (Usuario_Controller.crearUsuario(usr))
-            {
-                this.DialogResult = DialogResult.OK;
+                if (Usuario_Controller.crearUsuario(usr))
+                {
+                    this.DialogResult = DialogResult.OK;
+                }
             }
         }
 
         private void editar()
         {
-            int tipo = 2;
-            if (combo_tipo.SelectedItem.ToString() == "Admin")
+            if (Validaciones.textVacios(txt_usuario) == false || Validaciones.textVacios(txt_mail) == false || Validaciones.textVacios(txt_contraseña) == false || Validaciones.textVacios(txt_nombre) == false || Validaciones.textVacios(txt_direccion) == false || Validaciones.textVacios(txt_nombre) == false)
             {
-                tipo = 1;
-            }
+                int tipo = 2;
+                if (combo_tipo.SelectedItem.ToString() == "Admin")
+                {
+                    tipo = 1;
+                }
 
-            Usuario usr = new Usuario(id_editar, txt_usuario.Text, txt_mail.Text, txt_contraseña.Text, txt_nombre.Text, txt_apellido.Text, 11, txt_direccion.Text, tipo);
+                Usuario usr = new Usuario(id_editar, txt_usuario.Text, txt_mail.Text, txt_contraseña.Text, txt_nombre.Text, txt_apellido.Text, 11, txt_direccion.Text, tipo);
 
-            if (Usuario_Controller.editarUsuario(usr))
-            {
-                this.DialogResult = DialogResult.OK;
+                if (Usuario_Controller.editarUsuario(usr))
+                {
+                    this.DialogResult = DialogResult.OK;
+                }
             }
         }
 
@@ -253,9 +259,6 @@ namespace EjemploABM
             else
                 errorP.Clear();
         }
-
-
-
 
     }
 }

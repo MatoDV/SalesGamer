@@ -10,11 +10,20 @@ namespace SalesGamer.Controladores
 {
     public class Carrito_Controller
     {
+        private static Carrito_Controller instancia;
         private  Carrito carrito;
 
         public Carrito_Controller()
         {
             carrito = new Carrito();
+        }
+        public static Carrito_Controller ObtenerInstancia()
+        {
+            if (instancia == null)
+            {
+                instancia = new Carrito_Controller();
+            }
+            return instancia;
         }
 
         public  void AgregarProductoAlCarrito(int id)

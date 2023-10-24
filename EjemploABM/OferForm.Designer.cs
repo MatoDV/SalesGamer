@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_crear = new System.Windows.Forms.Button();
             this.text_nombre = new System.Windows.Forms.TextBox();
             this.text_tipo = new System.Windows.Forms.TextBox();
             this.label_nombre = new System.Windows.Forms.Label();
@@ -37,20 +36,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.text_condiciones = new System.Windows.Forms.TextBox();
-            this.label_titulo = new System.Windows.Forms.Label();
             this.date_inicio = new System.Windows.Forms.DateTimePicker();
             this.date_final = new System.Windows.Forms.DateTimePicker();
+            this.btn_crear = new MaterialSkin.Controls.MaterialButton();
+            this.label_titulo = new MaterialSkin.Controls.MaterialLabel();
             this.SuspendLayout();
-            // 
-            // btn_crear
-            // 
-            this.btn_crear.Location = new System.Drawing.Point(348, 428);
-            this.btn_crear.Name = "btn_crear";
-            this.btn_crear.Size = new System.Drawing.Size(75, 33);
-            this.btn_crear.TabIndex = 0;
-            this.btn_crear.Text = "Crear";
-            this.btn_crear.UseVisualStyleBackColor = true;
-            this.btn_crear.Click += new System.EventHandler(this.btn_editar_Click);
             // 
             // text_nombre
             // 
@@ -118,15 +108,6 @@
             this.text_condiciones.Size = new System.Drawing.Size(169, 20);
             this.text_condiciones.TabIndex = 7;
             // 
-            // label_titulo
-            // 
-            this.label_titulo.AutoSize = true;
-            this.label_titulo.Location = new System.Drawing.Point(345, 71);
-            this.label_titulo.Name = "label_titulo";
-            this.label_titulo.Size = new System.Drawing.Size(64, 13);
-            this.label_titulo.TabIndex = 11;
-            this.label_titulo.Text = "Crear Oferta";
-            // 
             // date_inicio
             // 
             this.date_inicio.Location = new System.Drawing.Point(306, 242);
@@ -141,14 +122,46 @@
             this.date_final.Size = new System.Drawing.Size(169, 20);
             this.date_final.TabIndex = 13;
             // 
+            // btn_crear
+            // 
+            this.btn_crear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_crear.Depth = 0;
+            this.btn_crear.DrawShadows = true;
+            this.btn_crear.HighEmphasis = true;
+            this.btn_crear.Icon = null;
+            this.btn_crear.Location = new System.Drawing.Point(348, 420);
+            this.btn_crear.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_crear.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_crear.Name = "btn_crear";
+            this.btn_crear.Size = new System.Drawing.Size(67, 36);
+            this.btn_crear.TabIndex = 14;
+            this.btn_crear.Text = "Crear";
+            this.btn_crear.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_crear.UseAccentColor = false;
+            this.btn_crear.UseVisualStyleBackColor = true;
+            this.btn_crear.Click += new System.EventHandler(this.btn_crear_Click);
+            // 
+            // label_titulo
+            // 
+            this.label_titulo.AutoSize = true;
+            this.label_titulo.Depth = 0;
+            this.label_titulo.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label_titulo.Location = new System.Drawing.Point(345, 36);
+            this.label_titulo.MouseState = MaterialSkin.MouseState.HOVER;
+            this.label_titulo.Name = "label_titulo";
+            this.label_titulo.Size = new System.Drawing.Size(86, 19);
+            this.label_titulo.TabIndex = 15;
+            this.label_titulo.Text = "Crear Oferta";
+            // 
             // OferForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(764, 548);
+            this.Controls.Add(this.label_titulo);
+            this.Controls.Add(this.btn_crear);
             this.Controls.Add(this.date_final);
             this.Controls.Add(this.date_inicio);
-            this.Controls.Add(this.label_titulo);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.text_condiciones);
@@ -157,9 +170,7 @@
             this.Controls.Add(this.label_nombre);
             this.Controls.Add(this.text_tipo);
             this.Controls.Add(this.text_nombre);
-            this.Controls.Add(this.btn_crear);
             this.Name = "OferForm";
-            this.Text = "OfertaForm";
             this.Load += new System.EventHandler(this.OfertaForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -167,8 +178,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btn_crear;
         private System.Windows.Forms.TextBox text_nombre;
         private System.Windows.Forms.TextBox text_tipo;
         private System.Windows.Forms.Label label_nombre;
@@ -177,8 +186,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox text_condiciones;
-        private System.Windows.Forms.Label label_titulo;
         private System.Windows.Forms.DateTimePicker date_inicio;
         private System.Windows.Forms.DateTimePicker date_final;
+        private MaterialSkin.Controls.MaterialButton btn_crear;
+        private MaterialSkin.Controls.MaterialLabel label_titulo;
     }
 }

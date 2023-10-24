@@ -12,10 +12,12 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
 using MessageBox = System.Windows.Forms.MessageBox;
+using MaterialSkin;
+using MaterialSkin.Controls;
 
 namespace SalesGamer
 {
-    public partial class ProductForm : Form
+    public partial class ProductForm : MaterialForm
     {
         string situacion;
         int id_editar;
@@ -105,8 +107,7 @@ namespace SalesGamer
 
 
         }
-
-        private void btn_agregar_Click(object sender, EventArgs e)
+        private void btn_agregar_Click_1(object sender, EventArgs e)
         {
             if (situacion == "creacion")
             {
@@ -120,250 +121,257 @@ namespace SalesGamer
 
         private void crear()
         {
-            int distribuidor = 0;
-            if (combox_distribuidor.SelectedItem.ToString() == "GIGABYTE")
+            if(Validaciones.textVacios(txt_nombre) == false || Validaciones.textVacios(txt_descripcion) == false || Validaciones.textVacios(txt_cantidad) == false || Validaciones.textVacios(txt_precio) == false)
             {
-                distribuidor = 1;
-            }
-            else if (combox_distribuidor.SelectedItem.ToString() == "LOGITECH")
-            {
-                distribuidor = 2;
-            }
-            else if (combox_distribuidor.SelectedItem.ToString() == "NVIDIA")
-            {
-                distribuidor = 3;
-            }
-            else if (combox_distribuidor.SelectedItem.ToString() == "AMD")
-            {
-                distribuidor = 4;
-            }
-            else if (combox_distribuidor.SelectedItem.ToString() == "MSI")
-            {
-                distribuidor = 5;
-            }
-            else if (combox_distribuidor.SelectedItem.ToString() == "KINGSTON")
-            {
-                distribuidor = 6;
-            }
-            else if (combox_distribuidor.SelectedItem.ToString() == "CORSAIR")
-            {
-                distribuidor = 7;
-            }
-            else if (combox_distribuidor.SelectedItem.ToString() == "INTEL")
-            {
-                distribuidor = 8;
-            }
-
-            int categoria = 0;
-            if (combox_categoria.SelectedItem.ToString() == "Placas de video")
-            {
-                categoria = 1;
-            }
-            else if (combox_categoria.SelectedItem.ToString() == "Procesador")
-            {
-                categoria = 2;
-            }
-            else if (combox_categoria.SelectedItem.ToString() == "Memoria Ram")
-            {
-                categoria = 3;
-            }
-            else if (combox_categoria.SelectedItem.ToString() == "Placa Madre")
-            {
-                categoria = 4;
-            }
-            else if (combox_categoria.SelectedItem.ToString() == "Fuente")
-            {
-                categoria = 5;
-            }
-            else if (combox_categoria.SelectedItem.ToString() == "Disco Rigido")
-            {
-                categoria = 6;
-            }
-            else if (combox_categoria.SelectedItem.ToString() == "Disco Solido")
-            {
-                categoria = 7;
-            }
-            else if (combox_categoria.SelectedItem.ToString() == "Mouse")
-            {
-                categoria = 8;
-            }
-            else if (combox_categoria.SelectedItem.ToString() == "Teclado")
-            {
-                categoria = 9;
-            }
-            else if (combox_categoria.SelectedItem.ToString() == "Monitor")
-            {
-                categoria = 10;
-            }
-            else if (combox_categoria.SelectedItem.ToString() == "Auricular")
-            {
-                categoria = 11;
-            }
-            else if (combox_categoria.SelectedItem.ToString() == "Microfono")
-            {
-                categoria = 12;
-            }
-            else if (combox_categoria.SelectedItem.ToString() == "Gabinete")
-            {
-                categoria = 13;
-            }
-
-            int oferta = 0;
-            if (combox_oferta.SelectedItem.ToString() == "10% descuento")
-            {
-                oferta = 1;
-            }
-            else if (combox_oferta.SelectedItem.ToString() == "20% descuento")
-            {
-                oferta = 2;
-            }
-            else if (combox_oferta.SelectedItem.ToString() == "30% descuento")
-            {
-                oferta = 3;
-            }
-            else if (combox_oferta.SelectedItem.ToString() == "50% descuento")
-            {
-                oferta = 4;
-            }
-            else if (combox_oferta.SelectedItem.ToString() == "sin descuento")
-            {
-                oferta = 5;
-            }
-
-
-            int precio;
-            int cantidad;
-            if (int.TryParse(txt_precio.Text, out precio) && int.TryParse(txt_cantidad.Text, out cantidad))
-            {
-                Producto prod = new Producto(0, txt_nombre.Text, txt_descripcion.Text, precio, cantidad, categoria, distribuidor, oferta);
-                if (Producto_Controller.CrearProducto(prod))
+                int distribuidor = 0;
+                if (combox_distribuidor.SelectedItem.ToString() == "GIGABYTE")
                 {
-                    this.DialogResult = DialogResult.OK;
+                    distribuidor = 1;
                 }
-            }
+                else if (combox_distribuidor.SelectedItem.ToString() == "LOGITECH")
+                {
+                    distribuidor = 2;
+                }
+                else if (combox_distribuidor.SelectedItem.ToString() == "NVIDIA")
+                {
+                    distribuidor = 3;
+                }
+                else if (combox_distribuidor.SelectedItem.ToString() == "AMD")
+                {
+                    distribuidor = 4;
+                }
+                else if (combox_distribuidor.SelectedItem.ToString() == "MSI")
+                {
+                    distribuidor = 5;
+                }
+                else if (combox_distribuidor.SelectedItem.ToString() == "KINGSTON")
+                {
+                    distribuidor = 6;
+                }
+                else if (combox_distribuidor.SelectedItem.ToString() == "CORSAIR")
+                {
+                    distribuidor = 7;
+                }
+                else if (combox_distribuidor.SelectedItem.ToString() == "INTEL")
+                {
+                    distribuidor = 8;
+                }
+
+                int categoria = 0;
+                if (combox_categoria.SelectedItem.ToString() == "Placas de video")
+                {
+                    categoria = 1;
+                }
+                else if (combox_categoria.SelectedItem.ToString() == "Procesador")
+                {
+                    categoria = 2;
+                }
+                else if (combox_categoria.SelectedItem.ToString() == "Memoria Ram")
+                {
+                    categoria = 3;
+                }
+                else if (combox_categoria.SelectedItem.ToString() == "Placa Madre")
+                {
+                    categoria = 4;
+                }
+                else if (combox_categoria.SelectedItem.ToString() == "Fuente")
+                {
+                    categoria = 5;
+                }
+                else if (combox_categoria.SelectedItem.ToString() == "Disco Rigido")
+                {
+                    categoria = 6;
+                }
+                else if (combox_categoria.SelectedItem.ToString() == "Disco Solido")
+                {
+                    categoria = 7;
+                }
+                else if (combox_categoria.SelectedItem.ToString() == "Mouse")
+                {
+                    categoria = 8;
+                }
+                else if (combox_categoria.SelectedItem.ToString() == "Teclado")
+                {
+                    categoria = 9;
+                }
+                else if (combox_categoria.SelectedItem.ToString() == "Monitor")
+                {
+                    categoria = 10;
+                }
+                else if (combox_categoria.SelectedItem.ToString() == "Auricular")
+                {
+                    categoria = 11;
+                }
+                else if (combox_categoria.SelectedItem.ToString() == "Microfono")
+                {
+                    categoria = 12;
+                }
+                else if (combox_categoria.SelectedItem.ToString() == "Gabinete")
+                {
+                    categoria = 13;
+                }
+
+                int oferta = 0;
+                if (combox_oferta.SelectedItem.ToString() == "10% descuento")
+                {
+                    oferta = 1;
+                }
+                else if (combox_oferta.SelectedItem.ToString() == "20% descuento")
+                {
+                    oferta = 2;
+                }
+                else if (combox_oferta.SelectedItem.ToString() == "30% descuento")
+                {
+                    oferta = 3;
+                }
+                else if (combox_oferta.SelectedItem.ToString() == "50% descuento")
+                {
+                    oferta = 4;
+                }
+                else if (combox_oferta.SelectedItem.ToString() == "sin descuento")
+                {
+                    oferta = 5;
+                }
+
+
+                int precio;
+                int cantidad;
+                if (int.TryParse(txt_precio.Text, out precio) && int.TryParse(txt_cantidad.Text, out cantidad))
+                {
+                    Producto prod = new Producto(0, txt_nombre.Text, txt_descripcion.Text, precio, cantidad, categoria, distribuidor, oferta);
+                    if (Producto_Controller.CrearProducto(prod))
+                    {
+                        this.DialogResult = DialogResult.OK;
+                    }
+                }
             
+            }
+
         }
 
         private void editar()
         {
-            int distribuidor = 0;
-            if (combox_distribuidor.SelectedItem.ToString() == "GIGABYTE")
+            if (Validaciones.textVacios(txt_nombre) == false || Validaciones.textVacios(txt_descripcion) == false || Validaciones.textVacios(txt_cantidad) == false || Validaciones.textVacios(txt_precio) == false)
             {
-                distribuidor = 1;
-            }
-            else if (combox_distribuidor.SelectedItem.ToString() == "LOGITECH")
-            {
-                distribuidor = 2;
-            }
-            else if (combox_distribuidor.SelectedItem.ToString() == "NVIDIA")
-            {
-                distribuidor = 3;
-            }
-            else if (combox_distribuidor.SelectedItem.ToString() == "AMD")
-            {
-                distribuidor = 4;
-            }
-            else if (combox_distribuidor.SelectedItem.ToString() == "MSI")
-            {
-                distribuidor = 5;
-            }
-            else if (combox_distribuidor.SelectedItem.ToString() == "KINGSTON")
-            {
-                distribuidor = 6;
-            }
-            else if (combox_distribuidor.SelectedItem.ToString() == "CORSAIR")
-            {
-                distribuidor = 7;
-            }
-            else if (combox_distribuidor.SelectedItem.ToString() == "INTEL")
-            {
-                distribuidor = 8;
-            }
-
-            int categoria = 0;
-            if (combox_categoria.SelectedItem.ToString() == "Placas de video")
-            {
-                categoria = 1;
-            }
-            else if (combox_categoria.SelectedItem.ToString() == "Procesador")
-            {
-                categoria = 2;
-            }
-            else if (combox_categoria.SelectedItem.ToString() == "Memoria Ram")
-            {
-                categoria = 3;
-            }
-            else if (combox_categoria.SelectedItem.ToString() == "Placa Madre")
-            {
-                categoria = 4;
-            }
-            else if (combox_categoria.SelectedItem.ToString() == "Fuente")
-            {
-                categoria = 5;
-            }
-            else if (combox_categoria.SelectedItem.ToString() == "Disco Rigido")
-            {
-                categoria = 6;
-            }
-            else if (combox_categoria.SelectedItem.ToString() == "Disco Solido")
-            {
-                categoria = 7;
-            }
-            else if (combox_categoria.SelectedItem.ToString() == "Mouse")
-            {
-                categoria = 8;
-            }
-            else if (combox_categoria.SelectedItem.ToString() == "Teclado")
-            {
-                categoria = 9;
-            }
-            else if (combox_categoria.SelectedItem.ToString() == "Monitor")
-            {
-                categoria = 10;
-            }
-            else if (combox_categoria.SelectedItem.ToString() == "Auricular")
-            {
-                categoria = 11;
-            }
-            else if (combox_categoria.SelectedItem.ToString() == "Microfono")
-            {
-                categoria = 12;
-            }
-            else if (combox_categoria.SelectedItem.ToString() == "Gabinete")
-            {
-                categoria = 13;
-            }
-
-            int oferta = 0;
-            if (combox_oferta.SelectedItem.ToString() == "10% descuento")
-            {
-                oferta = 1;
-            }
-            else if (combox_oferta.SelectedItem.ToString() == "20% descuento")
-            {
-                oferta = 2;
-            }
-            else if (combox_oferta.SelectedItem.ToString() == "30% descuento")
-            {
-                oferta = 3;
-            }
-            else if (combox_oferta.SelectedItem.ToString() == "50% descuento")
-            {
-                oferta = 4;
-            }
-            else if (combox_oferta.SelectedItem.ToString() == "sin descuento")
-            {
-                oferta = 5;
-            }
-
-            int precio;
-            int cantidad;
-            if (int.TryParse(txt_precio.Text, out precio) && int.TryParse(txt_cantidad.Text, out cantidad))
-            {
-                Producto prod = new Producto(id_editar, txt_nombre.Text, txt_descripcion.Text, precio, cantidad, categoria, distribuidor, oferta);
-                if (Producto_Controller.editarProducto(prod))
+                int distribuidor = 0;
+                if (combox_distribuidor.SelectedItem.ToString() == "GIGABYTE")
                 {
-                    this.DialogResult = DialogResult.OK;
+                    distribuidor = 1;
+                }
+                else if (combox_distribuidor.SelectedItem.ToString() == "LOGITECH")
+                {
+                    distribuidor = 2;
+                }
+                else if (combox_distribuidor.SelectedItem.ToString() == "NVIDIA")
+                {
+                    distribuidor = 3;
+                }
+                else if (combox_distribuidor.SelectedItem.ToString() == "AMD")
+                {
+                    distribuidor = 4;
+                }
+                else if (combox_distribuidor.SelectedItem.ToString() == "MSI")
+                {
+                    distribuidor = 5;
+                }
+                else if (combox_distribuidor.SelectedItem.ToString() == "KINGSTON")
+                {
+                    distribuidor = 6;
+                }
+                else if (combox_distribuidor.SelectedItem.ToString() == "CORSAIR")
+                {
+                    distribuidor = 7;
+                }
+                else if (combox_distribuidor.SelectedItem.ToString() == "INTEL")
+                {
+                    distribuidor = 8;
+                }
+
+                int categoria = 0;
+                if (combox_categoria.SelectedItem.ToString() == "Placas de video")
+                {
+                    categoria = 1;
+                }
+                else if (combox_categoria.SelectedItem.ToString() == "Procesador")
+                {
+                    categoria = 2;
+                }
+                else if (combox_categoria.SelectedItem.ToString() == "Memoria Ram")
+                {
+                    categoria = 3;
+                }
+                else if (combox_categoria.SelectedItem.ToString() == "Placa Madre")
+                {
+                    categoria = 4;
+                }
+                else if (combox_categoria.SelectedItem.ToString() == "Fuente")
+                {
+                    categoria = 5;
+                }
+                else if (combox_categoria.SelectedItem.ToString() == "Disco Rigido")
+                {
+                    categoria = 6;
+                }
+                else if (combox_categoria.SelectedItem.ToString() == "Disco Solido")
+                {
+                    categoria = 7;
+                }
+                else if (combox_categoria.SelectedItem.ToString() == "Mouse")
+                {
+                    categoria = 8;
+                }
+                else if (combox_categoria.SelectedItem.ToString() == "Teclado")
+                {
+                    categoria = 9;
+                }
+                else if (combox_categoria.SelectedItem.ToString() == "Monitor")
+                {
+                    categoria = 10;
+                }
+                else if (combox_categoria.SelectedItem.ToString() == "Auricular")
+                {
+                    categoria = 11;
+                }
+                else if (combox_categoria.SelectedItem.ToString() == "Microfono")
+                {
+                    categoria = 12;
+                }
+                else if (combox_categoria.SelectedItem.ToString() == "Gabinete")
+                {
+                    categoria = 13;
+                }
+
+                int oferta = 0;
+                if (combox_oferta.SelectedItem.ToString() == "10% descuento")
+                {
+                    oferta = 1;
+                }
+                else if (combox_oferta.SelectedItem.ToString() == "20% descuento")
+                {
+                    oferta = 2;
+                }
+                else if (combox_oferta.SelectedItem.ToString() == "30% descuento")
+                {
+                    oferta = 3;
+                }
+                else if (combox_oferta.SelectedItem.ToString() == "50% descuento")
+                {
+                    oferta = 4;
+                }
+                else if (combox_oferta.SelectedItem.ToString() == "sin descuento")
+                {
+                    oferta = 5;
+                }
+
+                int precio;
+                int cantidad;
+                if (int.TryParse(txt_precio.Text, out precio) && int.TryParse(txt_cantidad.Text, out cantidad))
+                {
+                    Producto prod = new Producto(id_editar, txt_nombre.Text, txt_descripcion.Text, precio, cantidad, categoria, distribuidor, oferta);
+                    if (Producto_Controller.editarProducto(prod))
+                    {
+                        this.DialogResult = DialogResult.OK;
+                    }
                 }
             }
         }
@@ -469,5 +477,6 @@ namespace SalesGamer
         {
 
         }
+
     }
 }

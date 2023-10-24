@@ -11,10 +11,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MaterialSkin;
+using MaterialSkin.Controls;
 
 namespace SalesGamer
 {
-    public partial class OferForm : Form
+    public partial class OferForm : MaterialForm
     {
         string situacion;
         int id_editar;
@@ -39,7 +41,7 @@ namespace SalesGamer
             label_titulo.Text = "Editar Categoria";
             btn_crear.Text = "Editar";
         }
-        private void btn_editar_Click(object sender, EventArgs e)
+        private void btn_crear_Click(object sender, EventArgs e)
         {
             if (situacion == "creacion")
             {

@@ -31,7 +31,6 @@ namespace EjemploABM
         {
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.txt_apellido = new System.Windows.Forms.TextBox();
             this.txt_usuario = new System.Windows.Forms.TextBox();
@@ -41,7 +40,6 @@ namespace EjemploABM
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.combo_tipo = new System.Windows.Forms.ComboBox();
-            this.btn_crear = new System.Windows.Forms.Button();
             this.txt_mail = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.label7 = new System.Windows.Forms.Label();
@@ -49,29 +47,22 @@ namespace EjemploABM
             this.txt_telefono = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txt_direccion = new System.Windows.Forms.TextBox();
+            this.label2 = new MaterialSkin.Controls.MaterialLabel();
+            this.btn_crear = new MaterialSkin.Controls.MaterialButton();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(91, 74);
+            this.label1.Location = new System.Drawing.Point(92, 90);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre:";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(214, 31);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Crear Usuario";
-            // 
             // txt_nombre
             // 
-            this.txt_nombre.Location = new System.Drawing.Point(187, 71);
+            this.txt_nombre.Location = new System.Drawing.Point(188, 87);
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.ShortcutsEnabled = false;
             this.txt_nombre.Size = new System.Drawing.Size(132, 20);
@@ -82,7 +73,7 @@ namespace EjemploABM
             // 
             // txt_apellido
             // 
-            this.txt_apellido.Location = new System.Drawing.Point(187, 105);
+            this.txt_apellido.Location = new System.Drawing.Point(188, 121);
             this.txt_apellido.Name = "txt_apellido";
             this.txt_apellido.ShortcutsEnabled = false;
             this.txt_apellido.Size = new System.Drawing.Size(132, 20);
@@ -92,7 +83,7 @@ namespace EjemploABM
             // 
             // txt_usuario
             // 
-            this.txt_usuario.Location = new System.Drawing.Point(187, 177);
+            this.txt_usuario.Location = new System.Drawing.Point(188, 193);
             this.txt_usuario.Name = "txt_usuario";
             this.txt_usuario.ShortcutsEnabled = false;
             this.txt_usuario.Size = new System.Drawing.Size(132, 20);
@@ -102,7 +93,7 @@ namespace EjemploABM
             // 
             // txt_contraseña
             // 
-            this.txt_contraseña.Location = new System.Drawing.Point(187, 215);
+            this.txt_contraseña.Location = new System.Drawing.Point(188, 231);
             this.txt_contraseña.Name = "txt_contraseña";
             this.txt_contraseña.ShortcutsEnabled = false;
             this.txt_contraseña.Size = new System.Drawing.Size(132, 20);
@@ -112,7 +103,7 @@ namespace EjemploABM
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(91, 108);
+            this.label3.Location = new System.Drawing.Point(92, 124);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 6;
@@ -121,7 +112,7 @@ namespace EjemploABM
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(91, 180);
+            this.label4.Location = new System.Drawing.Point(92, 196);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 13);
             this.label4.TabIndex = 7;
@@ -131,7 +122,7 @@ namespace EjemploABM
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(91, 218);
+            this.label5.Location = new System.Drawing.Point(92, 234);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 13);
             this.label5.TabIndex = 8;
@@ -140,7 +131,7 @@ namespace EjemploABM
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(91, 325);
+            this.label6.Location = new System.Drawing.Point(92, 341);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(26, 13);
             this.label6.TabIndex = 9;
@@ -149,24 +140,14 @@ namespace EjemploABM
             // combo_tipo
             // 
             this.combo_tipo.FormattingEnabled = true;
-            this.combo_tipo.Location = new System.Drawing.Point(187, 322);
+            this.combo_tipo.Location = new System.Drawing.Point(188, 338);
             this.combo_tipo.Name = "combo_tipo";
             this.combo_tipo.Size = new System.Drawing.Size(132, 21);
             this.combo_tipo.TabIndex = 10;
             // 
-            // btn_crear
-            // 
-            this.btn_crear.Location = new System.Drawing.Point(217, 365);
-            this.btn_crear.Name = "btn_crear";
-            this.btn_crear.Size = new System.Drawing.Size(75, 23);
-            this.btn_crear.TabIndex = 11;
-            this.btn_crear.Text = "Crear";
-            this.btn_crear.UseVisualStyleBackColor = true;
-            this.btn_crear.Click += new System.EventHandler(this.btn_crear_Click);
-            // 
             // txt_mail
             // 
-            this.txt_mail.Location = new System.Drawing.Point(187, 140);
+            this.txt_mail.Location = new System.Drawing.Point(188, 156);
             this.txt_mail.Name = "txt_mail";
             this.txt_mail.ShortcutsEnabled = false;
             this.txt_mail.Size = new System.Drawing.Size(132, 20);
@@ -182,7 +163,7 @@ namespace EjemploABM
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(91, 143);
+            this.label7.Location = new System.Drawing.Point(92, 159);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(29, 13);
             this.label7.TabIndex = 13;
@@ -192,7 +173,7 @@ namespace EjemploABM
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(91, 255);
+            this.label8.Location = new System.Drawing.Point(92, 271);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(52, 13);
             this.label8.TabIndex = 16;
@@ -201,7 +182,7 @@ namespace EjemploABM
             // 
             // txt_telefono
             // 
-            this.txt_telefono.Location = new System.Drawing.Point(187, 252);
+            this.txt_telefono.Location = new System.Drawing.Point(188, 268);
             this.txt_telefono.Name = "txt_telefono";
             this.txt_telefono.ShortcutsEnabled = false;
             this.txt_telefono.Size = new System.Drawing.Size(132, 20);
@@ -213,7 +194,7 @@ namespace EjemploABM
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(91, 290);
+            this.label9.Location = new System.Drawing.Point(92, 306);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(55, 13);
             this.label9.TabIndex = 18;
@@ -221,24 +202,58 @@ namespace EjemploABM
             // 
             // txt_direccion
             // 
-            this.txt_direccion.Location = new System.Drawing.Point(187, 287);
+            this.txt_direccion.Location = new System.Drawing.Point(188, 303);
             this.txt_direccion.Name = "txt_direccion";
             this.txt_direccion.Size = new System.Drawing.Size(132, 20);
             this.txt_direccion.TabIndex = 17;
             this.txt_direccion.Leave += new System.EventHandler(this.txt_direccion_Leave);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label2.Depth = 0;
+            this.label2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label2.Location = new System.Drawing.Point(206, 33);
+            this.label2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(96, 19);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Crear Usuario";
+            // 
+            // btn_crear
+            // 
+            this.btn_crear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_crear.Depth = 0;
+            this.btn_crear.DrawShadows = true;
+            this.btn_crear.HighEmphasis = true;
+            this.btn_crear.Icon = null;
+            this.btn_crear.Location = new System.Drawing.Point(218, 382);
+            this.btn_crear.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_crear.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_crear.Name = "btn_crear";
+            this.btn_crear.Size = new System.Drawing.Size(67, 36);
+            this.btn_crear.TabIndex = 20;
+            this.btn_crear.Text = "Crear";
+            this.btn_crear.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_crear.UseAccentColor = false;
+            this.btn_crear.UseVisualStyleBackColor = true;
+            this.btn_crear.Click += new System.EventHandler(this.btn_crear_Click_1);
+            // 
             // FormUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(515, 450);
+            this.Controls.Add(this.btn_crear);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txt_direccion);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txt_telefono);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txt_mail);
-            this.Controls.Add(this.btn_crear);
             this.Controls.Add(this.combo_tipo);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -248,10 +263,8 @@ namespace EjemploABM
             this.Controls.Add(this.txt_usuario);
             this.Controls.Add(this.txt_apellido);
             this.Controls.Add(this.txt_nombre);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FormUsuarios";
-            this.Text = "FormUsuarios";
             this.Load += new System.EventHandler(this.FormUsuarios_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -261,7 +274,6 @@ namespace EjemploABM
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_nombre;
         private System.Windows.Forms.TextBox txt_apellido;
         private System.Windows.Forms.TextBox txt_usuario;
@@ -271,7 +283,6 @@ namespace EjemploABM
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox combo_tipo;
-        private System.Windows.Forms.Button btn_crear;
         private System.Windows.Forms.TextBox txt_mail;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Label label7;
@@ -279,5 +290,7 @@ namespace EjemploABM
         private System.Windows.Forms.TextBox txt_telefono;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txt_direccion;
+        private MaterialSkin.Controls.MaterialLabel label2;
+        private MaterialSkin.Controls.MaterialButton btn_crear;
     }
 }

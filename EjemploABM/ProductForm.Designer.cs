@@ -40,10 +40,10 @@
             this.txt_cantidad = new System.Windows.Forms.TextBox();
             this.combox_distribuidor = new System.Windows.Forms.ComboBox();
             this.combox_oferta = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.combox_categoria = new System.Windows.Forms.ComboBox();
-            this.btn_agregar = new System.Windows.Forms.Button();
+            this.btn_agregar = new MaterialSkin.Controls.MaterialButton();
+            this.label8 = new MaterialSkin.Controls.MaterialLabel();
             this.SuspendLayout();
             // 
             // label2
@@ -158,15 +158,6 @@
             this.combox_oferta.TabIndex = 13;
             this.combox_oferta.SelectedIndexChanged += new System.EventHandler(this.combox_oferta_SelectedIndexChanged);
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(363, 46);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(78, 13);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "Crear Producto";
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -187,23 +178,45 @@
             // 
             // btn_agregar
             // 
-            this.btn_agregar.Location = new System.Drawing.Point(366, 343);
+            this.btn_agregar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_agregar.Depth = 0;
+            this.btn_agregar.DrawShadows = true;
+            this.btn_agregar.HighEmphasis = true;
+            this.btn_agregar.Icon = null;
+            this.btn_agregar.Location = new System.Drawing.Point(366, 357);
+            this.btn_agregar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_agregar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_agregar.Name = "btn_agregar";
-            this.btn_agregar.Size = new System.Drawing.Size(75, 23);
-            this.btn_agregar.TabIndex = 19;
+            this.btn_agregar.Size = new System.Drawing.Size(67, 36);
+            this.btn_agregar.TabIndex = 20;
             this.btn_agregar.Text = "Crear";
+            this.btn_agregar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_agregar.UseAccentColor = false;
             this.btn_agregar.UseVisualStyleBackColor = true;
-            this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
+            this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click_1);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Depth = 0;
+            this.label8.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label8.Location = new System.Drawing.Point(346, 35);
+            this.label8.MouseState = MaterialSkin.MouseState.HOVER;
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(106, 19);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "Crear Producto";
             // 
             // ProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.btn_agregar);
             this.Controls.Add(this.combox_categoria);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.combox_oferta);
             this.Controls.Add(this.combox_distribuidor);
             this.Controls.Add(this.txt_cantidad);
@@ -217,7 +230,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Name = "ProductForm";
-            this.Text = "ProductForm";
             this.Load += new System.EventHandler(this.ProductForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -237,9 +249,9 @@
         private System.Windows.Forms.TextBox txt_cantidad;
         private System.Windows.Forms.ComboBox combox_distribuidor;
         private System.Windows.Forms.ComboBox combox_oferta;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox combox_categoria;
-        private System.Windows.Forms.Button btn_agregar;
+        private MaterialSkin.Controls.MaterialButton btn_agregar;
+        private MaterialSkin.Controls.MaterialLabel label8;
     }
 }
