@@ -104,29 +104,41 @@
             // 
             this.txt_nombre.Location = new System.Drawing.Point(254, 119);
             this.txt_nombre.Name = "txt_nombre";
+            this.txt_nombre.ShortcutsEnabled = false;
             this.txt_nombre.Size = new System.Drawing.Size(130, 20);
             this.txt_nombre.TabIndex = 8;
+            this.txt_nombre.TextChanged += new System.EventHandler(this.txt_nombre_TextChanged);
+            this.txt_nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombre_KeyPress);
+            this.txt_nombre.Leave += new System.EventHandler(this.txt_nombre_Leave);
             // 
             // txt_descripcion
             // 
             this.txt_descripcion.Location = new System.Drawing.Point(254, 167);
             this.txt_descripcion.Name = "txt_descripcion";
+            this.txt_descripcion.ShortcutsEnabled = false;
             this.txt_descripcion.Size = new System.Drawing.Size(130, 20);
             this.txt_descripcion.TabIndex = 9;
+            this.txt_descripcion.Leave += new System.EventHandler(this.txt_descripcion_Leave);
             // 
             // txt_precio
             // 
             this.txt_precio.Location = new System.Drawing.Point(254, 209);
             this.txt_precio.Name = "txt_precio";
+            this.txt_precio.ShortcutsEnabled = false;
             this.txt_precio.Size = new System.Drawing.Size(130, 20);
             this.txt_precio.TabIndex = 10;
+            this.txt_precio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_precio_KeyPress);
+            this.txt_precio.Leave += new System.EventHandler(this.txt_precio_Leave);
             // 
             // txt_cantidad
             // 
             this.txt_cantidad.Location = new System.Drawing.Point(254, 249);
             this.txt_cantidad.Name = "txt_cantidad";
+            this.txt_cantidad.ShortcutsEnabled = false;
             this.txt_cantidad.Size = new System.Drawing.Size(130, 20);
             this.txt_cantidad.TabIndex = 11;
+            this.txt_cantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cantidad_KeyPress);
+            this.txt_cantidad.Leave += new System.EventHandler(this.txt_cantidad_Leave);
             // 
             // combox_distribuidor
             // 

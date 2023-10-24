@@ -73,6 +73,7 @@ namespace EjemploABM
             // 
             this.txt_nombre.Location = new System.Drawing.Point(187, 71);
             this.txt_nombre.Name = "txt_nombre";
+            this.txt_nombre.ShortcutsEnabled = false;
             this.txt_nombre.Size = new System.Drawing.Size(132, 20);
             this.txt_nombre.TabIndex = 2;
             this.txt_nombre.TextChanged += new System.EventHandler(this.txt_nombre_TextChanged);
@@ -83,6 +84,7 @@ namespace EjemploABM
             // 
             this.txt_apellido.Location = new System.Drawing.Point(187, 105);
             this.txt_apellido.Name = "txt_apellido";
+            this.txt_apellido.ShortcutsEnabled = false;
             this.txt_apellido.Size = new System.Drawing.Size(132, 20);
             this.txt_apellido.TabIndex = 3;
             this.txt_apellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_apellido_KeyPress);
@@ -92,6 +94,7 @@ namespace EjemploABM
             // 
             this.txt_usuario.Location = new System.Drawing.Point(187, 177);
             this.txt_usuario.Name = "txt_usuario";
+            this.txt_usuario.ShortcutsEnabled = false;
             this.txt_usuario.Size = new System.Drawing.Size(132, 20);
             this.txt_usuario.TabIndex = 4;
             this.txt_usuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_usuario_KeyPress);
@@ -101,6 +104,7 @@ namespace EjemploABM
             // 
             this.txt_contraseña.Location = new System.Drawing.Point(187, 215);
             this.txt_contraseña.Name = "txt_contraseña";
+            this.txt_contraseña.ShortcutsEnabled = false;
             this.txt_contraseña.Size = new System.Drawing.Size(132, 20);
             this.txt_contraseña.TabIndex = 5;
             this.txt_contraseña.Leave += new System.EventHandler(this.txt_contraseña_Leave);
@@ -164,6 +168,7 @@ namespace EjemploABM
             // 
             this.txt_mail.Location = new System.Drawing.Point(187, 140);
             this.txt_mail.Name = "txt_mail";
+            this.txt_mail.ShortcutsEnabled = false;
             this.txt_mail.Size = new System.Drawing.Size(132, 20);
             this.txt_mail.TabIndex = 12;
             this.txt_mail.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -198,6 +203,7 @@ namespace EjemploABM
             // 
             this.txt_telefono.Location = new System.Drawing.Point(187, 252);
             this.txt_telefono.Name = "txt_telefono";
+            this.txt_telefono.ShortcutsEnabled = false;
             this.txt_telefono.Size = new System.Drawing.Size(132, 20);
             this.txt_telefono.TabIndex = 15;
             this.txt_telefono.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);

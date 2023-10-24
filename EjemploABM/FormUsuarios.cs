@@ -149,7 +149,7 @@ namespace EjemploABM
         {
 
         }
-
+        //Validaciones de solo letras y solo números
         private void txt_nombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((e.KeyChar >= 32 && e.KeyChar <= 64 ) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255)){
@@ -190,6 +190,8 @@ namespace EjemploABM
             }
         }
         ErrorProvider errorP = new ErrorProvider();
+
+        //Validaciones de no dejar Campos Vacios
         private void txt_nombre_Leave(object sender, EventArgs e)
         {
             if (Validaciones.textVacios(txt_nombre))
@@ -202,14 +204,6 @@ namespace EjemploABM
         {
             if (Validaciones.textVacios(txt_apellido))
                 errorP.SetError(txt_apellido, "No puede dejar vacio");
-            else
-                errorP.Clear();
-        }
-
-        private void txt_mail_Leave(object sender, EventArgs e)
-        {
-            if (Validaciones.textVacios(txt_mail))
-                errorP.SetError(txt_mail, "No puede dejar vacio");
             else
                 errorP.Clear();
         }
@@ -245,5 +239,23 @@ namespace EjemploABM
             else
                 errorP.Clear();
         }
+
+        //Validacion de Mail
+        private void txt_mail_Leave(object sender, EventArgs e)
+        {
+            if (Validaciones.textVacios(txt_mail))
+                errorP.SetError(txt_mail, "No puede dejar vacio");
+            else
+                errorP.Clear();
+
+            if (!Validaciones.validarEmail(txt_mail.Text))
+                errorP.SetError(txt_mail, "Mail invalido");
+            else
+                errorP.Clear();
+        }
+
+
+
+
     }
 }

@@ -49,8 +49,11 @@
             // 
             this.txt_nombre.Location = new System.Drawing.Point(312, 175);
             this.txt_nombre.Name = "txt_nombre";
+            this.txt_nombre.ShortcutsEnabled = false;
             this.txt_nombre.Size = new System.Drawing.Size(146, 20);
             this.txt_nombre.TabIndex = 2;
+            this.txt_nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombre_KeyPress);
+            this.txt_nombre.Leave += new System.EventHandler(this.txt_nombre_Leave);
             // 
             // label3
             // 
@@ -65,8 +68,12 @@
             // 
             this.txt_id.Location = new System.Drawing.Point(312, 145);
             this.txt_id.Name = "txt_id";
+            this.txt_id.ShortcutsEnabled = false;
             this.txt_id.Size = new System.Drawing.Size(146, 20);
             this.txt_id.TabIndex = 5;
+            this.txt_id.TextChanged += new System.EventHandler(this.txt_id_TextChanged);
+            this.txt_id.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_id_KeyPress);
+            this.txt_id.Leave += new System.EventHandler(this.txt_id_Leave);
             // 
             // label_titulo
             // 

@@ -9,7 +9,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Forms;
+using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace SalesGamer
 {
@@ -386,6 +388,84 @@ namespace SalesGamer
         }
 
         private void ProductForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_nombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Dato inválido, sólo letras", "Alerta", (MessageBoxButtons)MessageBoxButton.OK, (MessageBoxIcon)(MessageBoxImage)MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txt_descripcion_Leave(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Dato inválido, sólo letras", "Alerta", (MessageBoxButtons)MessageBoxButton.OK, (MessageBoxIcon)(MessageBoxImage)MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+
+        }
+
+        private void txt_precio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Dato inválido, sólo números", "Alerta", (MessageBoxButtons)MessageBoxButton.OK, (MessageBoxIcon)(MessageBoxImage)MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txt_cantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Dato inválido, sólo números", "Alerta", (MessageBoxButtons)MessageBoxButton.OK, (MessageBoxIcon)(MessageBoxImage)MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+        ErrorProvider errorP = new ErrorProvider();
+        private void txt_nombre_Leave(object sender, EventArgs e)
+        {
+            if (Validaciones.textVacios(txt_nombre))
+                errorP.SetError(txt_nombre, "No puede dejar vacio");
+            else
+                errorP.Clear();
+        }
+
+        private void txt_descripcion_Leave(object sender, EventArgs e)
+        {
+            if (Validaciones.textVacios(txt_descripcion))
+                errorP.SetError(txt_descripcion, "No puede dejar vacio");
+            else
+                errorP.Clear();
+        }
+
+        private void txt_precio_Leave(object sender, EventArgs e)
+        {
+            if (Validaciones.textVacios(txt_precio))
+                errorP.SetError(txt_precio, "No puede dejar vacio");
+            else
+                errorP.Clear();
+        }
+
+        private void txt_cantidad_Leave(object sender, EventArgs e)
+        {
+            if (Validaciones.textVacios(txt_cantidad))
+                errorP.SetError(txt_cantidad, "No puede dejar vacio");
+            else
+                errorP.Clear();
+        }
+
+        private void txt_nombre_TextChanged(object sender, EventArgs e)
         {
 
         }
