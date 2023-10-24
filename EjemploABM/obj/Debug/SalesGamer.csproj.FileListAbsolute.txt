@@ -40,3 +40,7 @@ C:\Users\Luis Diaz\OneDrive\Documentos\GitHub\SalesGamer\SalesGamer\EjemploABM\o
 C:\Users\Luis Diaz\OneDrive\Documentos\GitHub\SalesGamer\SalesGamer\EjemploABM\obj\Debug\SalesGamer.pdb
 C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\bin\Debug\MaterialSkin.dll
 C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\obj\Debug\SalesGamer.csproj.CopyComplete
+C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\bin\Debug\itextsharp.dll
+C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\bin\Debug\itextsharp.xmlworker.dll
+C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\bin\Debug\itextsharp.xml

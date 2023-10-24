@@ -58,6 +58,7 @@ namespace EjemploABM
                     index.Show();
                     this.Hide();
                 }
+                
             }
         }
     }

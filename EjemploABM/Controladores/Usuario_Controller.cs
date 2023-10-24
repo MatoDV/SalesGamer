@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace EjemploABM.Controladores
 {
@@ -25,10 +26,7 @@ namespace EjemploABM.Controladores
             {
                 cmd.Parameters.AddWithValue("@pass", pass);
             }
-            else
-            {
-                //cmd.Parameters.AddWithValue("@pass", hc.PassHash(pass));
-            }
+
 
             try
             {
