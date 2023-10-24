@@ -75,6 +75,9 @@ namespace EjemploABM
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(132, 20);
             this.txt_nombre.TabIndex = 2;
+            this.txt_nombre.TextChanged += new System.EventHandler(this.txt_nombre_TextChanged);
+            this.txt_nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombre_KeyPress);
+            this.txt_nombre.Leave += new System.EventHandler(this.txt_nombre_Leave);
             // 
             // txt_apellido
             // 
@@ -82,6 +85,8 @@ namespace EjemploABM
             this.txt_apellido.Name = "txt_apellido";
             this.txt_apellido.Size = new System.Drawing.Size(132, 20);
             this.txt_apellido.TabIndex = 3;
+            this.txt_apellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_apellido_KeyPress);
+            this.txt_apellido.Leave += new System.EventHandler(this.txt_apellido_Leave);
             // 
             // txt_usuario
             // 
@@ -89,6 +94,8 @@ namespace EjemploABM
             this.txt_usuario.Name = "txt_usuario";
             this.txt_usuario.Size = new System.Drawing.Size(132, 20);
             this.txt_usuario.TabIndex = 4;
+            this.txt_usuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_usuario_KeyPress);
+            this.txt_usuario.Leave += new System.EventHandler(this.txt_usuario_Leave);
             // 
             // txt_contraseña
             // 
@@ -96,6 +103,7 @@ namespace EjemploABM
             this.txt_contraseña.Name = "txt_contraseña";
             this.txt_contraseña.Size = new System.Drawing.Size(132, 20);
             this.txt_contraseña.TabIndex = 5;
+            this.txt_contraseña.Leave += new System.EventHandler(this.txt_contraseña_Leave);
             // 
             // label3
             // 
@@ -159,6 +167,7 @@ namespace EjemploABM
             this.txt_mail.Size = new System.Drawing.Size(132, 20);
             this.txt_mail.TabIndex = 12;
             this.txt_mail.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txt_mail.Leave += new System.EventHandler(this.txt_mail_Leave);
             // 
             // contextMenuStrip1
             // 
@@ -192,6 +201,8 @@ namespace EjemploABM
             this.txt_telefono.Size = new System.Drawing.Size(132, 20);
             this.txt_telefono.TabIndex = 15;
             this.txt_telefono.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            this.txt_telefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_telefono_KeyPress);
+            this.txt_telefono.Leave += new System.EventHandler(this.txt_telefono_Leave);
             // 
             // label9
             // 
@@ -208,6 +219,7 @@ namespace EjemploABM
             this.txt_direccion.Name = "txt_direccion";
             this.txt_direccion.Size = new System.Drawing.Size(132, 20);
             this.txt_direccion.TabIndex = 17;
+            this.txt_direccion.Leave += new System.EventHandler(this.txt_direccion_Leave);
             // 
             // FormUsuarios
             // 

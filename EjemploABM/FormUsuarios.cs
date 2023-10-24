@@ -6,9 +6,12 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Forms;
 using EjemploABM.Controladores;
 using EjemploABM.Modelo;
+using SalesGamer;
+using MessageBox = System.Windows.MessageBox;
 
 namespace EjemploABM
 {
@@ -140,6 +143,107 @@ namespace EjemploABM
         private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void txt_nombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_nombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64 ) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255)){
+                MessageBox.Show("Dato inválido, sólo letras", "Alerta", MessageBoxButton.OK, (MessageBoxImage)MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txt_apellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Dato inválido, sólo letras", "Alerta", MessageBoxButton.OK, (MessageBoxImage)MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txt_usuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Dato inválido, sólo letras", "Alerta", MessageBoxButton.OK, (MessageBoxImage)MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+
+        }
+
+        private void txt_telefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255) )
+            {
+                MessageBox.Show("Dato inválido, sólo números", "Alerta", MessageBoxButton.OK, (MessageBoxImage)MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+        ErrorProvider errorP = new ErrorProvider();
+        private void txt_nombre_Leave(object sender, EventArgs e)
+        {
+            if (Validaciones.textVacios(txt_nombre))
+                errorP.SetError(txt_nombre, "No puede dejar vacio");
+            else
+                errorP.Clear();
+        }
+
+        private void txt_apellido_Leave(object sender, EventArgs e)
+        {
+            if (Validaciones.textVacios(txt_apellido))
+                errorP.SetError(txt_apellido, "No puede dejar vacio");
+            else
+                errorP.Clear();
+        }
+
+        private void txt_mail_Leave(object sender, EventArgs e)
+        {
+            if (Validaciones.textVacios(txt_mail))
+                errorP.SetError(txt_mail, "No puede dejar vacio");
+            else
+                errorP.Clear();
+        }
+
+        private void txt_usuario_Leave(object sender, EventArgs e)
+        {
+            if (Validaciones.textVacios(txt_usuario))
+                errorP.SetError(txt_usuario, "No puede dejar vacio");
+            else
+                errorP.Clear();
+        }
+
+        private void txt_contraseña_Leave(object sender, EventArgs e)
+        {
+            if (Validaciones.textVacios(txt_contraseña))
+                errorP.SetError(txt_contraseña, "No puede dejar vacio");
+            else
+                errorP.Clear();
+        }
+
+        private void txt_telefono_Leave(object sender, EventArgs e)
+        {
+            if (Validaciones.textVacios(txt_telefono))
+                errorP.SetError(txt_telefono, "No puede dejar vacio");
+            else
+                errorP.Clear();
+        }
+
+        private void txt_direccion_Leave(object sender, EventArgs e)
+        {
+            if (Validaciones.textVacios(txt_direccion))
+                errorP.SetError(txt_direccion, "No puede dejar vacio");
+            else
+                errorP.Clear();
         }
     }
 }
