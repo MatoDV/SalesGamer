@@ -25,9 +25,8 @@ namespace EjemploABM
             if(Program.logueado.ID_rol != 1)
             {
                 btn_users.Hide();
+                btn_cats.Hide();
             }
-
-
         }
 
         private void btn_prods_Click(object sender, EventArgs e)
@@ -47,6 +46,12 @@ namespace EjemploABM
             Usuarios_UC userUC = new Usuarios_UC();
             addUserControl(userUC);
         }
+       
+        private void btn_ofertas_Click(object sender, EventArgs e)
+        {
+            Oferta_UC ofertaUC = new Oferta_UC();
+            addUserControl(ofertaUC);
+        }
 
         private void addUserControl(UserControl uc)
         {
@@ -60,5 +65,6 @@ namespace EjemploABM
         {
 
         }
+
     }
 }

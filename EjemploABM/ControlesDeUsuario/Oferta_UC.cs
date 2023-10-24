@@ -1,6 +1,6 @@
 ﻿using EjemploABM.Modelo;
-using SalesGamer;
 using SalesGamer.Controladores;
+using SalesGamer.Modelo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,49 +12,50 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace EjemploABM.ControlesDeUsuario
+namespace SalesGamer.ControlesDeUsuario
 {
-    public partial class Categorias_UC : UserControl
+    public partial class Oferta_UC : UserControl
     {
-        private List<Categoria>categorias;
-        public Categorias_UC()
+        private List<Oferta> ofertas;
+        public Oferta_UC()
         {
             InitializeComponent();
-            cargarCategorias();
+            cargarOfertas();
         }
-        private void cargarCategorias()
+        private void cargarOfertas()
         {
-            categorias = Categoria_Controller.obtenerCategoria();
+            ofertas = Oferta_Controller.obtenerOferta();
             dataGridView1.Rows.Clear();
-            foreach (Categoria cat in categorias)
+            foreach (Oferta ofer in ofertas)
             {
                 int rowIndex = dataGridView1.Rows.Add();
-                dataGridView1.Rows[rowIndex].Cells[0].Value = cat.Id.ToString();
-                dataGridView1.Rows[rowIndex].Cells[1].Value = cat.Nombre_categoria.ToString();
-                dataGridView1.Rows[rowIndex].Cells[2].Value = "Editar";
-                dataGridView1.Rows[rowIndex].Cells[3].Value = "Eliminar";
+                dataGridView1.Rows[rowIndex].Cells[0].Value = ofer.Id.ToString();
+                dataGridView1.Rows[rowIndex].Cells[1].Value = ofer.Nombre.ToString();
+                dataGridView1.Rows[rowIndex].Cells[2].Value = ofer.Tipo_oferta.ToString();
+                dataGridView1.Rows[rowIndex].Cells[3].Value = ofer.Fecha_inicio.ToString();
+                dataGridView1.Rows[rowIndex].Cells[4].Value = ofer.Fecha_final.ToString();
+                dataGridView1.Rows[rowIndex].Cells[5].Value = ofer.Condiciones.ToString();
+                dataGridView1.Rows[rowIndex].Cells[6].Value = "Editar";
+                dataGridView1.Rows[rowIndex].Cells[7].Value = "Eliminar";
             }
         }
-        private void btn_crear_Click_1(object sender, EventArgs e)
+        private void Oferta_UC_Load(object sender, EventArgs e)
         {
-            CategoryForm frmCat = new CategoryForm();
-            DialogResult dr = frmCat.ShowDialog();
+
+        }
+
+        private void btn_crear_Click(object sender, EventArgs e)
+        {
+            OferForm frmOfer = new OferForm();
+            DialogResult dr = frmOfer.ShowDialog();
 
             if (dr == DialogResult.OK)
             {
                 Trace.WriteLine("OK");
                 //ACTUALIZAR LA LISTA
-                cargarCategorias();
+                cargarOfertas();
 
             }
-        }
-
-       
-
-
-        private void Categorias_UC_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -69,17 +70,17 @@ namespace EjemploABM.ControlesDeUsuario
 
                 Trace.WriteLine("el id es: " + id);
 
-                Categoria cat_editar = Categoria_Controller.ObtenerCategoriaID(id);
+                Oferta ofer_editar = Oferta_Controller.ObtenerOfertaID(id);
 
-                CategoryForm frmCat = new CategoryForm(cat_editar);
+                OferForm frmOfer = new OferForm(ofer_editar);
 
-                DialogResult dr = frmCat.ShowDialog();
+                DialogResult dr = frmOfer.ShowDialog();
 
                 if (dr == DialogResult.OK)
                 {
                     Trace.WriteLine("OK");
                     //ACTUALIZAR LA LISTA
-                    cargarCategorias();
+                    cargarOfertas();
 
                 }
             }
@@ -91,7 +92,7 @@ namespace EjemploABM.ControlesDeUsuario
                 int id = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
 
 
-                Categoria cat_eliminar = Categoria_Controller.ObtenerCategoriaID(id);
+                Oferta ofer_eliminar = Oferta_Controller.ObtenerOfertaID(id);
 
                 // Confirmar la eliminación con un mensaje de confirmación
                 DialogResult result = MessageBox.Show("¿Estás seguro que quieres eliminar este producto?", "Confirmar eliminación", MessageBoxButtons.YesNo);
@@ -99,12 +100,12 @@ namespace EjemploABM.ControlesDeUsuario
                 if (result == DialogResult.Yes)
                 {
 
-                    bool eliminacionExitosa = Categoria_Controller.eliminarCategoria(cat_eliminar);
+                    bool eliminacionExitosa = Oferta_Controller.eliminarOferta(ofer_eliminar);
 
                     if (eliminacionExitosa)
                     {
                         MessageBox.Show("Producto eliminado exitosamente.");
-                        cargarCategorias();
+                        cargarOfertas();
                     }
                     else
                     {
@@ -115,3 +116,4 @@ namespace EjemploABM.ControlesDeUsuario
         }
     }
 }
+

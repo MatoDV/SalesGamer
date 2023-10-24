@@ -12,17 +12,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SalesGamer.Controladores;
+using SalesGamer.Modelo;
+using System.Drawing.Text;
 
 namespace SalesGamer.ControlesDeUsuario
 {
     public partial class Productos_UC : UserControl
     {
+        private Carrito_Controller carritoController;
         private List<Producto> prods;
 
         public Productos_UC()
         {
             InitializeComponent();
             cargarProductos();
+        }
+        private void MostrarFormularioCarrito()
+        {
+            CarritoForm formularioCarrito = new CarritoForm(carritoController);
+            formularioCarrito.Show();
         }
         private void cargarProductos()
         {
@@ -111,7 +119,7 @@ namespace SalesGamer.ControlesDeUsuario
                 else if (prod.Distribuidor_id == 2)
                 {
 
-                    dataGridView1.Rows[rowIndex].Cells[6].Value = "ASUS";
+                    dataGridView1.Rows[rowIndex].Cells[6].Value = "LOGITECH";
                 }
                 else if (prod.Distribuidor_id == 3)
                 {
@@ -131,12 +139,17 @@ namespace SalesGamer.ControlesDeUsuario
                 else if (prod.Distribuidor_id == 6)
                 {
 
-                    dataGridView1.Rows[rowIndex].Cells[6].Value = "EVGA";
+                    dataGridView1.Rows[rowIndex].Cells[6].Value = "KINGSTON";
                 }
                 else if (prod.Distribuidor_id == 7)
                 {
 
-                    dataGridView1.Rows[rowIndex].Cells[6].Value = "ZOTAC";
+                    dataGridView1.Rows[rowIndex].Cells[6].Value = "CORSAIR";
+                }
+                else if (prod.Distribuidor_id == 8)
+                {
+
+                    dataGridView1.Rows[rowIndex].Cells[6].Value = "INTEL";
                 }
 
                 if (prod.Oferta_id == 1)
@@ -159,8 +172,14 @@ namespace SalesGamer.ControlesDeUsuario
 
                     dataGridView1.Rows[rowIndex].Cells[7].Value = "50% descuento";
                 }
+                else if (prod.Oferta_id == 5)
+                {
+
+                    dataGridView1.Rows[rowIndex].Cells[7].Value = "sin descuento";
+                }
                 dataGridView1.Rows[rowIndex].Cells[8].Value = "Editar";
                 dataGridView1.Rows[rowIndex].Cells[9].Value = "Eliminar";
+                dataGridView1.Rows[rowIndex].Cells[10].Value = "Agregar";
 
             }
         }
@@ -213,7 +232,7 @@ namespace SalesGamer.ControlesDeUsuario
 
                 int id = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
 
-                
+
                 Producto prod_eliminar = Producto_Controller.ObtenerProductoID(id);
 
                 // Confirmar la eliminación con un mensaje de confirmación
@@ -235,6 +254,21 @@ namespace SalesGamer.ControlesDeUsuario
                     }
                 }
             }
+
+
+
+            if (senderGrid.Columns[e.ColumnIndex].Name == "Agregar")
+            {
+                int id = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+
+
+                carritoController = new Carrito_Controller();
+                
+
+                carritoController.AgregarProductoAlCarrito(id);
+
+                MessageBox.Show("Producto agregado al carrito de compras.");
+            }
         }
 
         private void Productos_UC_Load(object sender, EventArgs e)
@@ -242,5 +276,9 @@ namespace SalesGamer.ControlesDeUsuario
 
         }
 
+        private void btn_carrito_Click(object sender, EventArgs e)
+        {
+            MostrarFormularioCarrito();
+        }
     }
 }
