@@ -50,7 +50,7 @@ namespace EjemploABM
 
         private void btn_login_Click_1(object sender, EventArgs e)
         {
-            if(Validaciones.textVacios(txt_login_user) == false || Validaciones.textVacios(txt_login_pass) == false)
+            if (Validaciones.textVacios(txt_login_user) == false || Validaciones.textVacios(txt_login_pass) == false)
             {
                 if (Usuario_Controller.autenticar(txt_login_user.Text, txt_login_pass.Text, true))
                 {
@@ -58,7 +58,16 @@ namespace EjemploABM
                     index.Show();
                     this.Hide();
                 }
-                
+                else
+                {
+                    // Mostrar un mensaje de error indicando que la autenticación ha fallado
+                    MessageBox.Show("Error: Nombre de usuario o contraseña incorrectos", "Error de autenticación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                // Mostrar un mensaje de error indicando que los campos están vacíos
+                MessageBox.Show("Error: Nombre de usuario y contraseña son obligatorios", "Error de autenticación", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

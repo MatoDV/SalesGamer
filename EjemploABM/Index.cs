@@ -67,5 +67,12 @@ namespace EjemploABM
             Categorias_UC catsUC = new Categorias_UC();
             addUserControl(catsUC);
         }
+
+        private void btn_cerrarSesion_Click(object sender, EventArgs e)
+        {
+            Login formLogin = new Login();
+            formLogin.Show();
+            this.Hide();
+        }
     }
 }

@@ -34,6 +34,7 @@ namespace EjemploABM
             this.btn_ofertas = new MaterialSkin.Controls.MaterialButton();
             this.btn_users = new MaterialSkin.Controls.MaterialButton();
             this.btn_cats = new MaterialSkin.Controls.MaterialButton();
+            this.btn_cerrarSesion = new MaterialSkin.Controls.MaterialButton();
             this.SuspendLayout();
             // 
             // panel1
@@ -88,7 +89,7 @@ namespace EjemploABM
             this.btn_users.DrawShadows = true;
             this.btn_users.HighEmphasis = true;
             this.btn_users.Icon = null;
-            this.btn_users.Location = new System.Drawing.Point(1139, 21);
+            this.btn_users.Location = new System.Drawing.Point(327, 21);
             this.btn_users.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btn_users.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_users.Name = "btn_users";
@@ -107,7 +108,7 @@ namespace EjemploABM
             this.btn_cats.DrawShadows = true;
             this.btn_cats.HighEmphasis = true;
             this.btn_cats.Icon = null;
-            this.btn_cats.Location = new System.Drawing.Point(1238, 21);
+            this.btn_cats.Location = new System.Drawing.Point(209, 21);
             this.btn_cats.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btn_cats.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_cats.Name = "btn_cats";
@@ -119,11 +120,31 @@ namespace EjemploABM
             this.btn_cats.UseVisualStyleBackColor = true;
             this.btn_cats.Click += new System.EventHandler(this.btn_cats_Click_1);
             // 
+            // btn_cerrarSesion
+            // 
+            this.btn_cerrarSesion.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_cerrarSesion.Depth = 0;
+            this.btn_cerrarSesion.DrawShadows = true;
+            this.btn_cerrarSesion.HighEmphasis = true;
+            this.btn_cerrarSesion.Icon = null;
+            this.btn_cerrarSesion.Location = new System.Drawing.Point(1217, 21);
+            this.btn_cerrarSesion.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_cerrarSesion.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_cerrarSesion.Name = "btn_cerrarSesion";
+            this.btn_cerrarSesion.Size = new System.Drawing.Size(131, 36);
+            this.btn_cerrarSesion.TabIndex = 10;
+            this.btn_cerrarSesion.Text = "Cerrar Sesion";
+            this.btn_cerrarSesion.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_cerrarSesion.UseAccentColor = false;
+            this.btn_cerrarSesion.UseVisualStyleBackColor = true;
+            this.btn_cerrarSesion.Click += new System.EventHandler(this.btn_cerrarSesion_Click);
+            // 
             // Index
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1348, 709);
+            this.Controls.Add(this.btn_cerrarSesion);
             this.Controls.Add(this.btn_cats);
             this.Controls.Add(this.btn_users);
             this.Controls.Add(this.btn_ofertas);
@@ -142,5 +163,6 @@ namespace EjemploABM
         private MaterialSkin.Controls.MaterialButton btn_ofertas;
         private MaterialSkin.Controls.MaterialButton btn_users;
         private MaterialSkin.Controls.MaterialButton btn_cats;
+        private MaterialSkin.Controls.MaterialButton btn_cerrarSesion;
     }
 }
