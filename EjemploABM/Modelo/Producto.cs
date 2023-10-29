@@ -17,10 +17,11 @@ namespace EjemploABM.Modelo
         public int Categoria_id { get; set; }
         public int Distribuidor_id { get; set; }
         public int Oferta_id { get; set; }
+        public int Is_active { get; set; }
 
 
 
-        public Producto(int id, string nombre, string desc, int precio,int cantidad, int cat, int distribuidor_id, int oferta_id)
+        public Producto(int id, string nombre, string desc, int precio,int cantidad, int cat, int distribuidor_id, int oferta_id, int is_active)
         {
             Id = id;
             Nombre_producto = nombre;
@@ -30,6 +31,7 @@ namespace EjemploABM.Modelo
             Categoria_id = cat;
             Distribuidor_id = distribuidor_id;
             Oferta_id = oferta_id;
+            Is_active = is_active;
         }
 
         public Producto()

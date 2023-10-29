@@ -177,9 +177,19 @@ namespace SalesGamer.ControlesDeUsuario
 
                     dataGridView1.Rows[rowIndex].Cells[7].Value = "sin descuento";
                 }
-                dataGridView1.Rows[rowIndex].Cells[8].Value = "Editar";
-                dataGridView1.Rows[rowIndex].Cells[9].Value = "Eliminar";
-                dataGridView1.Rows[rowIndex].Cells[10].Value = "Agregar";
+                if(prod.Is_active == 1)
+                {
+                    dataGridView1.Rows[rowIndex].Cells[8].Value = "Activo";
+
+                }
+                else
+                {
+                    dataGridView1.Rows[rowIndex].Cells[8].Value = "Desactivado";
+
+                }
+                dataGridView1.Rows[rowIndex].Cells[9].Value = "Editar";
+                dataGridView1.Rows[rowIndex].Cells[10].Value = "Eliminar";
+                dataGridView1.Rows[rowIndex].Cells[11].Value = "Agregar";
 
             }
         }

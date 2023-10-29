@@ -44,6 +44,8 @@
             this.combox_categoria = new System.Windows.Forms.ComboBox();
             this.btn_agregar = new MaterialSkin.Controls.MaterialButton();
             this.label8 = new MaterialSkin.Controls.MaterialLabel();
+            this.combox_activo = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label2
@@ -207,12 +209,31 @@
             this.label8.TabIndex = 21;
             this.label8.Text = "Crear Producto";
             // 
+            // combox_activo
+            // 
+            this.combox_activo.FormattingEnabled = true;
+            this.combox_activo.Location = new System.Drawing.Point(500, 252);
+            this.combox_activo.Name = "combox_activo";
+            this.combox_activo.Size = new System.Drawing.Size(130, 21);
+            this.combox_activo.TabIndex = 23;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(429, 255);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Activo:";
+            // 
             // ProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.combox_activo);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btn_agregar);
             this.Controls.Add(this.combox_categoria);
@@ -253,5 +274,7 @@
         private System.Windows.Forms.ComboBox combox_categoria;
         private MaterialSkin.Controls.MaterialButton btn_agregar;
         private MaterialSkin.Controls.MaterialLabel label8;
+        private System.Windows.Forms.ComboBox combox_activo;
+        private System.Windows.Forms.Label label1;
     }
 }

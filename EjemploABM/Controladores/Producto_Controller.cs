@@ -28,7 +28,7 @@ namespace SalesGamer.Controladores
 
                 while (reader.Read())
                 {
-                    list.Add(new Producto(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetInt32(3), reader.GetInt32(4), reader.GetInt32(5), reader.GetInt32(6), reader.GetInt32(7)));
+                    list.Add(new Producto(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetInt32(3), reader.GetInt32(4), reader.GetInt32(5), reader.GetInt32(6), reader.GetInt32(7), reader.GetInt32(8)));
                     Trace.WriteLine("Producto encontrado, nombre: " + reader.GetString(1));
                 }
 
@@ -96,7 +96,8 @@ namespace SalesGamer.Controladores
                             Cantidad = reader.GetInt32(4),
                             Categoria_id = reader.GetInt32(5),
                             Distribuidor_id = reader.GetInt32(6),
-                            Oferta_id = reader.GetInt32(7)
+                            Oferta_id = reader.GetInt32(7),
+                            Is_active = reader.GetInt32(8)
                         };
                     }
                     reader.Close();
@@ -112,8 +113,8 @@ namespace SalesGamer.Controladores
         //CREAR PRODUCTO
         public static bool CrearProducto(Producto producto)
         {
-            string query = "INSERT INTO dbo.Producto (id,nombre_producto, descripcion, precio, cantidad, Categoria_id, Distribuidor_id, Oferta_id) " +
-                           "VALUES (@id,@nombre, @descripcion, @precio, @cantidad, @Categoria_id, @distribuidorId, @ofertaId);";
+            string query = "INSERT INTO dbo.Producto (id,nombre_producto, descripcion, precio, cantidad, Categoria_id, Distribuidor_id, Oferta_id, is_active) " +
+                           "VALUES (@id,@nombre, @descripcion, @precio, @cantidad, @Categoria_id, @distribuidorId, @ofertaId, @active);";
             using (SqlCommand cmd = new SqlCommand(query, DB_Controller.connection))
             {
                 cmd.Parameters.AddWithValue("@id", obtenerMaxId() + 1);
@@ -124,6 +125,7 @@ namespace SalesGamer.Controladores
                 cmd.Parameters.AddWithValue("@Categoria_id", producto.Categoria_id);
                 cmd.Parameters.AddWithValue("@distribuidorId", producto.Distribuidor_id);
                 cmd.Parameters.AddWithValue("@ofertaId", producto.Oferta_id);
+                cmd.Parameters.AddWithValue("@active", producto.Is_active);
                 try
                 {
                     DB_Controller.connection.Open();
@@ -150,6 +152,7 @@ namespace SalesGamer.Controladores
                 "Categoria_id = @Categoria_id ," +
                 "Distribuidor_id = @Distribuidor_id ," +
                 "Oferta_id = @Oferta_id " +
+                "is_active = @active " +
                 "where id = @id ;";
 
             SqlCommand cmd = new SqlCommand(query, DB_Controller.connection);
@@ -161,6 +164,7 @@ namespace SalesGamer.Controladores
             cmd.Parameters.AddWithValue("@Categoria_id", prod.Categoria_id);
             cmd.Parameters.AddWithValue("@Distribuidor_id", prod.Distribuidor_id);
             cmd.Parameters.AddWithValue("@Oferta_id", prod.Oferta_id);
+            cmd.Parameters.AddWithValue("@active", prod.Is_active);
 
             try
             {
@@ -178,7 +182,7 @@ namespace SalesGamer.Controladores
 
         public static bool eliminarProducto(Producto prodEliminar)
         {
-            string query = "DELETE FROM dbo.Producto WHERE id = @id;";
+            string query = "UPDATE dbo.Producto set is_active = '2' WHERE id = @id;";
 
             using (SqlCommand cmd = new SqlCommand(query, DB_Controller.connection))
             {

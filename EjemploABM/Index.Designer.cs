@@ -40,7 +40,7 @@ namespace EjemploABM
             // 
             this.panel1.Location = new System.Drawing.Point(1, 66);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1277, 641);
+            this.panel1.Size = new System.Drawing.Size(1347, 641);
             this.panel1.TabIndex = 4;
             // 
             // btn_prods
@@ -88,7 +88,7 @@ namespace EjemploABM
             this.btn_users.DrawShadows = true;
             this.btn_users.HighEmphasis = true;
             this.btn_users.Icon = null;
-            this.btn_users.Location = new System.Drawing.Point(1069, 21);
+            this.btn_users.Location = new System.Drawing.Point(1139, 21);
             this.btn_users.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btn_users.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_users.Name = "btn_users";
@@ -107,7 +107,7 @@ namespace EjemploABM
             this.btn_cats.DrawShadows = true;
             this.btn_cats.HighEmphasis = true;
             this.btn_cats.Icon = null;
-            this.btn_cats.Location = new System.Drawing.Point(1168, 21);
+            this.btn_cats.Location = new System.Drawing.Point(1238, 21);
             this.btn_cats.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btn_cats.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_cats.Name = "btn_cats";
@@ -123,7 +123,7 @@ namespace EjemploABM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1280, 709);
+            this.ClientSize = new System.Drawing.Size(1348, 709);
             this.Controls.Add(this.btn_cats);
             this.Controls.Add(this.btn_users);
             this.Controls.Add(this.btn_ofertas);

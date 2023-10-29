@@ -55,6 +55,8 @@ namespace SalesGamer
             combox_categoria.Items.Add("Auricular");
             combox_categoria.Items.Add("Microfono");
             combox_categoria.Items.Add("Gabinete");
+            combox_activo.Items.Add("Activo");
+            combox_activo.Items.Add("Desactivado");
 
 
 
@@ -99,6 +101,8 @@ namespace SalesGamer
             combox_categoria.Items.Add("Auricular");
             combox_categoria.Items.Add("Microfono");
             combox_categoria.Items.Add("Gabinete");
+            combox_activo.Items.Add("Activo");
+            combox_activo.Items.Add("Desactivado");
 
             situacion = "edicion";
 
@@ -233,12 +237,22 @@ namespace SalesGamer
                     oferta = 5;
                 }
 
+                int activo = 0;
+                if(combox_activo.SelectedItem.ToString() == "Activo")
+                {
+                    activo = 1;
+                }
+                else
+                {
+                    activo= 2;
+                }
+
 
                 int precio;
                 int cantidad;
                 if (int.TryParse(txt_precio.Text, out precio) && int.TryParse(txt_cantidad.Text, out cantidad))
                 {
-                    Producto prod = new Producto(0, txt_nombre.Text, txt_descripcion.Text, precio, cantidad, categoria, distribuidor, oferta);
+                    Producto prod = new Producto(0, txt_nombre.Text, txt_descripcion.Text, precio, cantidad, categoria, distribuidor, oferta,activo);
                     if (Producto_Controller.CrearProducto(prod))
                     {
                         this.DialogResult = DialogResult.OK;
@@ -362,12 +376,21 @@ namespace SalesGamer
                 {
                     oferta = 5;
                 }
+                int activo = 0;
+                if (combox_activo.SelectedItem.ToString() == "Activo")
+                {
+                    activo = 1;
+                }
+                else
+                {
+                    activo = 2;
+                }
 
                 int precio;
                 int cantidad;
                 if (int.TryParse(txt_precio.Text, out precio) && int.TryParse(txt_cantidad.Text, out cantidad))
                 {
-                    Producto prod = new Producto(id_editar, txt_nombre.Text, txt_descripcion.Text, precio, cantidad, categoria, distribuidor, oferta);
+                    Producto prod = new Producto(id_editar, txt_nombre.Text, txt_descripcion.Text, precio, cantidad, categoria, distribuidor, oferta,activo);
                     if (Producto_Controller.editarProducto(prod))
                     {
                         this.DialogResult = DialogResult.OK;
