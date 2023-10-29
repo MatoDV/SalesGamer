@@ -30,16 +30,16 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.txt_nombre = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txt_id = new System.Windows.Forms.TextBox();
             this.btn_crear = new MaterialSkin.Controls.MaterialButton();
             this.label_titulo = new MaterialSkin.Controls.MaterialLabel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.combox_activo = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(231, 178);
+            this.label1.Location = new System.Drawing.Point(234, 161);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 0;
@@ -47,33 +47,13 @@
             // 
             // txt_nombre
             // 
-            this.txt_nombre.Location = new System.Drawing.Point(312, 175);
+            this.txt_nombre.Location = new System.Drawing.Point(315, 158);
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.ShortcutsEnabled = false;
             this.txt_nombre.Size = new System.Drawing.Size(146, 20);
             this.txt_nombre.TabIndex = 2;
             this.txt_nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombre_KeyPress);
             this.txt_nombre.Leave += new System.EventHandler(this.txt_nombre_Leave);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(231, 148);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(21, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "ID:";
-            // 
-            // txt_id
-            // 
-            this.txt_id.Location = new System.Drawing.Point(312, 145);
-            this.txt_id.Name = "txt_id";
-            this.txt_id.ShortcutsEnabled = false;
-            this.txt_id.Size = new System.Drawing.Size(146, 20);
-            this.txt_id.TabIndex = 5;
-            this.txt_id.TextChanged += new System.EventHandler(this.txt_id_TextChanged);
-            this.txt_id.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_id_KeyPress);
-            this.txt_id.Leave += new System.EventHandler(this.txt_id_Leave);
             // 
             // btn_crear
             // 
@@ -82,7 +62,7 @@
             this.btn_crear.DrawShadows = true;
             this.btn_crear.HighEmphasis = true;
             this.btn_crear.Icon = null;
-            this.btn_crear.Location = new System.Drawing.Point(341, 252);
+            this.btn_crear.Location = new System.Drawing.Point(347, 258);
             this.btn_crear.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btn_crear.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_crear.Name = "btn_crear";
@@ -106,15 +86,32 @@
             this.label_titulo.TabIndex = 9;
             this.label_titulo.Text = "Crear Categoria";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(234, 196);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Activo:";
+            // 
+            // combox_activo
+            // 
+            this.combox_activo.FormattingEnabled = true;
+            this.combox_activo.Location = new System.Drawing.Point(315, 193);
+            this.combox_activo.Name = "combox_activo";
+            this.combox_activo.Size = new System.Drawing.Size(146, 21);
+            this.combox_activo.TabIndex = 11;
+            // 
             // CategoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.combox_activo);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label_titulo);
             this.Controls.Add(this.btn_crear);
-            this.Controls.Add(this.txt_id);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.txt_nombre);
             this.Controls.Add(this.label1);
             this.Name = "CategoryForm";
@@ -128,9 +125,9 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_nombre;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txt_id;
         private MaterialSkin.Controls.MaterialButton btn_crear;
         private MaterialSkin.Controls.MaterialLabel label_titulo;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox combox_activo;
     }
 }

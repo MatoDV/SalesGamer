@@ -23,6 +23,8 @@ namespace SalesGamer
         public CategoryForm()
         {
             InitializeComponent();
+            combox_activo.Items.Add("Activo");
+            combox_activo.Items.Add("Desactivado");
             situacion = "creacion";
 
         }
@@ -32,6 +34,8 @@ namespace SalesGamer
             id_editar = categoria.Id;
 
             txt_nombre.Text = categoria.Nombre_categoria.ToString();
+            combox_activo.Items.Add("Activo");
+            combox_activo.Items.Add("Desactivado");
 
             situacion = "edicion";
             label_titulo.Text = "Editar Categoria";
@@ -52,9 +56,18 @@ namespace SalesGamer
         }
         private void crear()
         {
-            if(Validaciones.textVacios(txt_nombre) == false || Validaciones.textVacios(txt_id) == false)
-            { 
-                Categoria cat = new Categoria(0, txt_nombre.Text);
+            if(Validaciones.textVacios(txt_nombre) == false)
+            {
+                int activo = 0;
+                if (combox_activo.SelectedItem.ToString() == "Activo")
+                {
+                    activo = 1;
+                }
+                else
+                {
+                    activo = 2;
+                }
+                Categoria cat = new Categoria(0, txt_nombre.Text, activo);
                 if (txt_nombre.SelectedText.ToString() == "Placas de video" && txt_nombre.SelectedText.ToString() == "Procesador" 
                     && txt_nombre.SelectedText.ToString() == "Memoria Ram" && txt_nombre.SelectedText.ToString() == "Placa Madre" 
                     && txt_nombre.SelectedText.ToString() == "Fuente" && txt_nombre.SelectedText.ToString() == "Disco Rigido"
@@ -73,9 +86,18 @@ namespace SalesGamer
         }
         private void editar()
         {
-            if(Validaciones.textVacios(txt_nombre) == false || Validaciones.textVacios(txt_id) == false) 
+            int activo = 0;
+            if (combox_activo.SelectedItem.ToString() == "Activo")
+            {
+                activo = 1;
+            }
+            else
+            {
+                activo = 2;
+            }
+            if (Validaciones.textVacios(txt_nombre) == false) 
             { 
-                Categoria cat = new Categoria(id_editar, txt_nombre.Text);
+                Categoria cat = new Categoria(id_editar, txt_nombre.Text, activo);
                 if (Categoria_Controller.editarCategoria(cat))
                 {
                     this.DialogResult = DialogResult.OK;
@@ -114,15 +136,6 @@ namespace SalesGamer
                 errorP.SetError(txt_nombre, "No puede dejar vacio");
             else
                 errorP.Clear();
-        }
-
-        private void txt_id_Leave(object sender, EventArgs e)
-        {
-            if (Validaciones.textVacios(txt_id))
-                errorP.SetError(txt_id, "No puede dejar vacio");
-            else
-                errorP.Clear();
-
         }
 
         private void txt_id_TextChanged(object sender, EventArgs e)

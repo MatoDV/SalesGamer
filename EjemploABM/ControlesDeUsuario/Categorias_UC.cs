@@ -31,8 +31,18 @@ namespace EjemploABM.ControlesDeUsuario
                 int rowIndex = dataGridView1.Rows.Add();
                 dataGridView1.Rows[rowIndex].Cells[0].Value = cat.Id.ToString();
                 dataGridView1.Rows[rowIndex].Cells[1].Value = cat.Nombre_categoria.ToString();
-                dataGridView1.Rows[rowIndex].Cells[2].Value = "Editar";
-                dataGridView1.Rows[rowIndex].Cells[3].Value = "Eliminar";
+                if (cat.Is_active == 1)
+                {
+                    dataGridView1.Rows[rowIndex].Cells[2].Value = "Activo";
+
+                }
+                else
+                {
+                    dataGridView1.Rows[rowIndex].Cells[2].Value = "Desactivado";
+
+                }
+                dataGridView1.Rows[rowIndex].Cells[3].Value = "Editar";
+                dataGridView1.Rows[rowIndex].Cells[4].Value = "Eliminar";
             }
         }
         private void btn_crear_Click_1(object sender, EventArgs e)

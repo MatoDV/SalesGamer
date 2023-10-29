@@ -182,7 +182,7 @@ namespace SalesGamer.Controladores
 
         public static bool eliminarProducto(Producto prodEliminar)
         {
-            string query = "UPDATE dbo.Producto set is_active = '2' WHERE id = @id;";
+            string query = "UPDATE dbo.Producto set is_active = 2 WHERE id = @id;";
 
             using (SqlCommand cmd = new SqlCommand(query, DB_Controller.connection))
             {

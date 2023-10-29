@@ -28,7 +28,7 @@ namespace SalesGamer.Controladores
 
                 while (reader.Read())
                 {
-                    list.Add(new Categoria(reader.GetInt32(0), reader.GetString(1)));
+                    list.Add(new Categoria(reader.GetInt32(0), reader.GetString(1), reader.GetInt32(2)));
                     Trace.WriteLine("Categoria encontrado, nombre: " + reader.GetString(1));
                 }
 
@@ -106,13 +106,14 @@ namespace SalesGamer.Controladores
         //CREAR CATEGORIA
         public static bool CrearCategoria(Categoria categoria)
         {
-            string query = "INSERT INTO dbo.Categoria (id,nombre_categoria) " +
-                           "VALUES (@id,@nombre);";
+            string query = "INSERT INTO dbo.Categoria (id,nombre_categoria,is_active) " +
+                           "VALUES (@id,@nombre,@active);";
             using (SqlCommand cmd = new SqlCommand(query, DB_Controller.connection))
             {
                 cmd.Parameters.AddWithValue("@id", obtenerMaxId() + 1);
                 cmd.Parameters.AddWithValue("@nombre", categoria.Nombre_categoria);
-                
+                cmd.Parameters.AddWithValue("@active", categoria.Is_active);
+
                 try
                 {
                     DB_Controller.connection.Open();
@@ -132,12 +133,15 @@ namespace SalesGamer.Controladores
         {
             //Darlo de alta en la BBDD
 
-            string query = "update dbo.Categoria set nombre_categoria = @nombre_categoria , " + "where id = @id ;";
+            string query = "update dbo.Categoria set nombre_categoria = @nombre_categoria , " +
+                "is_active = @active " +
+                "where id = @id ;";
 
             SqlCommand cmd = new SqlCommand(query, DB_Controller.connection);
             cmd.Parameters.AddWithValue("@id", cat.Id);
             cmd.Parameters.AddWithValue("@nombre_categoria", cat.Nombre_categoria);
-            
+            cmd.Parameters.AddWithValue("@active", cat.Is_active);
+
 
             try
             {
@@ -156,7 +160,7 @@ namespace SalesGamer.Controladores
         //Eliminar Categoria
         public static bool eliminarCategoria(Categoria catEliminar)
         {
-            string query = "DELETE FROM dbo.Categoria WHERE id = @id;";
+            string query = "UPDATE dbo.Categoria set is_active = 2 WHERE id = @id;";
 
             using (SqlCommand cmd = new SqlCommand(query, DB_Controller.connection))
             {

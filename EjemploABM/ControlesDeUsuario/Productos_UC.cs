@@ -40,6 +40,7 @@ namespace SalesGamer.ControlesDeUsuario
             {
                 int rowIndex = dataGridView1.Rows.Add();
 
+
                 dataGridView1.Rows[rowIndex].Cells[0].Value = prod.Id.ToString();
                 dataGridView1.Rows[rowIndex].Cells[1].Value = prod.Nombre_producto.ToString();
                 dataGridView1.Rows[rowIndex].Cells[2].Value = prod.Descripcion.ToString();
