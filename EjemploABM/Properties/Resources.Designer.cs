@@ -59,5 +59,6 @@ namespace SalesGamer.Properties {
                 resourceCulture = value;
             }
         }
+        
     }
 }
