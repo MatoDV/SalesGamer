@@ -16,15 +16,12 @@ namespace EjemploABM
 {
     public partial class Login : MaterialForm
     {
+
         public Login()
         {
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
         ErrorProvider errorP = new ErrorProvider();
         private void txt_login_user_Leave(object sender, EventArgs e)
         {

@@ -11,18 +11,20 @@ using EjemploABM.ControlesDeUsuario;
 using SalesGamer.ControlesDeUsuario;
 using MaterialSkin;
 using MaterialSkin.Controls;
+using SalesGamer.Controladores;
 
 namespace EjemploABM
 {
     public partial class Index : MaterialForm
     {
+        Carrito_Controller carritoController = new Carrito_Controller();
         public Index()
         {
             InitializeComponent();
 
 
-            Productos_UC prodsUC = new Productos_UC();
-            addUserControl(prodsUC);
+            Productos_UC productosUC = new Productos_UC(carritoController);
+            addUserControl(productosUC);
 
             if(Program.logueado.ID_rol != 1)
             {
@@ -46,8 +48,8 @@ namespace EjemploABM
 
         private void btn_prods_Click_1(object sender, EventArgs e)
         {
-            Productos_UC prodsUC = new Productos_UC();
-            addUserControl(prodsUC);
+            Productos_UC productosUC = new Productos_UC(carritoController);
+            addUserControl(productosUC);
         }
 
         private void btn_ofertas_Click_1(object sender, EventArgs e)
@@ -73,6 +75,12 @@ namespace EjemploABM
             Login formLogin = new Login();
             formLogin.Show();
             this.Hide();
+        }
+
+        private void btn_carrito_Click(object sender, EventArgs e)
+        {
+            Carrito_UC carritoUC = new Carrito_UC(carritoController);
+            addUserControl(carritoUC);
         }
     }
 }

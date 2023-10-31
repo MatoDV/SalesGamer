@@ -15,6 +15,7 @@ namespace EjemploABM.Controladores
 
         // GET ONE
 
+
         public static bool autenticar(string usr, string pass, bool hasheado)
         {
             Usuario user = new Usuario();

@@ -42,7 +42,6 @@ namespace EjemploABM
             this.txt_login_user.Name = "txt_login_user";
             this.txt_login_user.Size = new System.Drawing.Size(188, 20);
             this.txt_login_user.TabIndex = 1;
-            this.txt_login_user.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.txt_login_user.Leave += new System.EventHandler(this.txt_login_user_Leave);
             // 
             // txt_login_pass

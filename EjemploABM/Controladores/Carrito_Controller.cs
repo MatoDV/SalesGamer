@@ -10,31 +10,21 @@ namespace SalesGamer.Controladores
 {
     public class Carrito_Controller
     {
-        private static Carrito_Controller instancia;
-        private  Carrito carrito;
+        public Carrito carrito;
 
         public Carrito_Controller()
         {
             carrito = new Carrito();
         }
-        public static Carrito_Controller ObtenerInstancia()
+
+        public void AgregarProductoAlCarrito(Producto producto)
         {
-            if (instancia == null)
-            {
-                instancia = new Carrito_Controller();
-            }
-            return instancia;
+            carrito.AgregarProductoAlCarrito(producto);
         }
 
-        public  void AgregarProductoAlCarrito(int id)
+        public void EliminarProductoDelCarrito(int productId)
         {
-            Producto producto = Producto_Controller.ObtenerProductoID(id);
-            carrito.AgregarProducto(producto);
-        }
-
-        public void EliminarProductoDelCarrito(int id)
-        {
-            carrito.EliminarProducto(id);
+            carrito.EliminarProductoDelCarrito(productId);
         }
 
         public List<Producto> ObtenerProductosEnCarrito()

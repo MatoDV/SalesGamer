@@ -19,18 +19,14 @@ namespace SalesGamer.ControlesDeUsuario
 {
     public partial class Productos_UC : UserControl
     {
-        private Carrito_Controller carritoController;
+        Carrito_Controller carritoController;
         private List<Producto> prods;
 
-        public Productos_UC()
+        public Productos_UC(Carrito_Controller carritoController)
         {
             InitializeComponent();
+            this.carritoController = carritoController;
             cargarProductos();
-        }
-        private void MostrarFormularioCarrito()
-        {
-            CarritoForm formularioCarrito = new CarritoForm(carritoController);
-            formularioCarrito.Show();
         }
         private void cargarProductos()
         {
@@ -271,25 +267,23 @@ namespace SalesGamer.ControlesDeUsuario
             if (senderGrid.Columns[e.ColumnIndex].Name == "Agregar")
             {
                 int id = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+                Producto producto = Producto_Controller.ObtenerProductoID(id);
 
-
-                carritoController = new Carrito_Controller();
-                
-
-                carritoController.AgregarProductoAlCarrito(id);
-
-                MessageBox.Show("Producto agregado al carrito de compras.");
+                if (producto != null)
+                {
+                    carritoController.AgregarProductoAlCarrito(producto);
+                    MessageBox.Show("Producto agregado al carrito de compras.");
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo encontrar el producto con el ID proporcionado.");
+                }
             }
         }
 
         private void Productos_UC_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void btn_carrito_Click(object sender, EventArgs e)
-        {
-            MostrarFormularioCarrito();
         }
     }
 }

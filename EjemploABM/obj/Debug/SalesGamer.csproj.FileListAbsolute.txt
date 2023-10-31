@@ -17,7 +17,6 @@ C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\obj\Debug\SalesGamer.Contr
 C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\obj\Debug\SalesGamer.ProductForm.resources
 C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\obj\Debug\SalesGamer.ControlesDeUsuario.Oferta_UC.resources
 C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\obj\Debug\SalesGamer.OferForm.resources
-C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\obj\Debug\SalesGamer.CarritoForm.resources
 C:\Users\Luis Diaz\OneDrive\Documentos\GitHub\SalesGamer\SalesGamer\EjemploABM\bin\Debug\SalesGamer.exe.config
 C:\Users\Luis Diaz\OneDrive\Documentos\GitHub\SalesGamer\SalesGamer\EjemploABM\bin\Debug\SalesGamer.exe
 C:\Users\Luis Diaz\OneDrive\Documentos\GitHub\SalesGamer\SalesGamer\EjemploABM\bin\Debug\SalesGamer.pdb
@@ -44,3 +43,4 @@ C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\bin\Debug\BouncyCastle.Cry
 C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\bin\Debug\itextsharp.dll
 C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\bin\Debug\itextsharp.xmlworker.dll
 C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\bin\Debug\itextsharp.xml
+C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\obj\Debug\SalesGamer.ControlesDeUsuario.Carrito_UC.resources

@@ -7,20 +7,26 @@ using System.Threading.Tasks;
 
 namespace SalesGamer.Modelo
 {
-    internal class Carrito
+    public class Carrito
     {
-        private List<Producto> productosEnCarrito = new List<Producto>();
-        public void  AgregarProducto(Producto producto)
+        public List<Producto> productosEnCarrito;
+
+        public Carrito()
+        {
+            productosEnCarrito = new List<Producto>();
+        }
+
+        public void AgregarProductoAlCarrito(Producto producto)
         {
             productosEnCarrito.Add(producto);
         }
 
-        public void EliminarProducto(int id)
+        public void EliminarProductoDelCarrito(int productId)
         {
-            Producto productoAEliminar = productosEnCarrito.FirstOrDefault(p => p.Id == id);
-            if (productoAEliminar != null)
+            Producto producto = productosEnCarrito.FirstOrDefault(p => p.Id == productId);
+            if (producto != null)
             {
-                productosEnCarrito.Remove(productoAEliminar);
+                productosEnCarrito.Remove(producto);
             }
         }
 

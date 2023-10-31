@@ -35,13 +35,14 @@ namespace EjemploABM
             this.btn_users = new MaterialSkin.Controls.MaterialButton();
             this.btn_cats = new MaterialSkin.Controls.MaterialButton();
             this.btn_cerrarSesion = new MaterialSkin.Controls.MaterialButton();
+            this.btn_carrito = new MaterialSkin.Controls.MaterialButton();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Location = new System.Drawing.Point(1, 66);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1347, 641);
+            this.panel1.Size = new System.Drawing.Size(1347, 712);
             this.panel1.TabIndex = 4;
             // 
             // btn_prods
@@ -139,11 +140,31 @@ namespace EjemploABM
             this.btn_cerrarSesion.UseVisualStyleBackColor = true;
             this.btn_cerrarSesion.Click += new System.EventHandler(this.btn_cerrarSesion_Click);
             // 
+            // btn_carrito
+            // 
+            this.btn_carrito.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_carrito.Depth = 0;
+            this.btn_carrito.DrawShadows = true;
+            this.btn_carrito.HighEmphasis = true;
+            this.btn_carrito.Icon = null;
+            this.btn_carrito.Location = new System.Drawing.Point(1127, 21);
+            this.btn_carrito.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_carrito.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_carrito.Name = "btn_carrito";
+            this.btn_carrito.Size = new System.Drawing.Size(82, 36);
+            this.btn_carrito.TabIndex = 11;
+            this.btn_carrito.Text = "Carrito";
+            this.btn_carrito.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_carrito.UseAccentColor = false;
+            this.btn_carrito.UseVisualStyleBackColor = true;
+            this.btn_carrito.Click += new System.EventHandler(this.btn_carrito_Click);
+            // 
             // Index
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1348, 709);
+            this.ClientSize = new System.Drawing.Size(1348, 781);
+            this.Controls.Add(this.btn_carrito);
             this.Controls.Add(this.btn_cerrarSesion);
             this.Controls.Add(this.btn_cats);
             this.Controls.Add(this.btn_users);
@@ -164,5 +185,6 @@ namespace EjemploABM
         private MaterialSkin.Controls.MaterialButton btn_users;
         private MaterialSkin.Controls.MaterialButton btn_cats;
         private MaterialSkin.Controls.MaterialButton btn_cerrarSesion;
+        private MaterialSkin.Controls.MaterialButton btn_carrito;
     }
 }

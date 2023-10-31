@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btn_crear = new System.Windows.Forms.Button();
-            this.btn_carrito = new System.Windows.Forms.Button();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,6 +41,8 @@
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Agregar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btn_crear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,35 +67,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1261, 463);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Productos:";
-            // 
-            // btn_crear
-            // 
-            this.btn_crear.Location = new System.Drawing.Point(547, 31);
-            this.btn_crear.Name = "btn_crear";
-            this.btn_crear.Size = new System.Drawing.Size(91, 23);
-            this.btn_crear.TabIndex = 6;
-            this.btn_crear.Text = "Crear";
-            this.btn_crear.UseVisualStyleBackColor = true;
-            this.btn_crear.Click += new System.EventHandler(this.btn_crear_Click);
-            // 
-            // btn_carrito
-            // 
-            this.btn_carrito.Location = new System.Drawing.Point(1105, 31);
-            this.btn_carrito.Name = "btn_carrito";
-            this.btn_carrito.Size = new System.Drawing.Size(91, 23);
-            this.btn_carrito.TabIndex = 7;
-            this.btn_carrito.Text = "Carrito";
-            this.btn_carrito.UseVisualStyleBackColor = true;
-            this.btn_carrito.Click += new System.EventHandler(this.btn_carrito_Click);
             // 
             // Id
             // 
@@ -158,11 +128,29 @@
             this.Agregar.HeaderText = "Agregar";
             this.Agregar.Name = "Agregar";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(34, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Productos:";
+            // 
+            // btn_crear
+            // 
+            this.btn_crear.Location = new System.Drawing.Point(547, 31);
+            this.btn_crear.Name = "btn_crear";
+            this.btn_crear.Size = new System.Drawing.Size(91, 23);
+            this.btn_crear.TabIndex = 6;
+            this.btn_crear.Text = "Crear";
+            this.btn_crear.UseVisualStyleBackColor = true;
+            this.btn_crear.Click += new System.EventHandler(this.btn_crear_Click);
+            // 
             // Productos_UC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btn_carrito);
             this.Controls.Add(this.btn_crear);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
@@ -180,7 +168,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_crear;
-        private System.Windows.Forms.Button btn_carrito;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;

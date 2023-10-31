@@ -1,5 +1,6 @@
 ﻿using EjemploABM.Controladores;
 using EjemploABM.Modelo;
+using SalesGamer.Modelo;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -136,6 +137,26 @@ namespace SalesGamer.Controladores
                 {
                     DB_Controller.connection.Close();
                 }
+            }
+        }
+
+        // AGREGAR PRODUCTO AL CARRITO
+        public static void AgregarAlCarrito(Producto producto, Carrito carrito)
+        {
+            carrito.AgregarProductoAlCarrito(producto);
+        }
+
+        // REMOVER PRODUCTO DEL CARRITO
+        public static void RemoverProductoDelCarrito(Producto producto, Carrito carrito)
+        {
+            // Verifica si el producto está en el carrito
+            Producto productoEnCarrito = carrito.productosEnCarrito.FirstOrDefault(p => p.Id == producto.Id);
+
+            if (productoEnCarrito != null)
+            {
+                // Remueve el producto del carrito
+                carrito.productosEnCarrito.Remove(productoEnCarrito);
+
             }
         }
 
