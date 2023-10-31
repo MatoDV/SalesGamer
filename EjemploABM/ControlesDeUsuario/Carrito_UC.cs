@@ -15,6 +15,7 @@ using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
 using System.IO;
+using iTextSharp.tool.xml;
 
 namespace SalesGamer.ControlesDeUsuario
 {
@@ -68,21 +69,64 @@ namespace SalesGamer.ControlesDeUsuario
         private void btn_comprar_Click(object sender, EventArgs e)
         {
             SaveFileDialog guardar = new SaveFileDialog();
+            guardar.FileName = "Factura" + ".pdf";
             guardar.ShowDialog();
-            string filePath = "output.pdf";
-            PdfWriter pdfWriter = new PdfWriter(filePath);
-            PdfDocument pdf = new PdfDocument(pdfWriter);
-            Document document = new Document(pdf);
 
-            // Agrega contenido al PDF
-            document.Add(new Paragraph("¡Hola, este es mi PDF generado desde una aplicación de Windows Forms!"));
+            string PaginaHTML_Texto = Properties.Resources.Plantilla.ToString();
+            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@CLIENTE", txtnombres.Text);
+            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@DOCUMENTO", txtdocumento.Text);
+            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@FECHA", DateTime.Now.ToString("dd/MM/yyyy"));
 
-            // Cierra el documento
-            document.Close();
+            string filas = string.Empty;
+            decimal total = 0;
+            foreach (DataGridViewRow row in dgvproductos.Rows)
+            {
+                filas += "<tr>";
+                filas += "<td>" + row.Cells["Cantidad"].Value.ToString() + "</td>";
+                filas += "<td>" + row.Cells["Descripcion"].Value.ToString() + "</td>";
+                filas += "<td>" + row.Cells["PrecioUnitario"].Value.ToString() + "</td>";
+                filas += "<td>" + row.Cells["Importe"].Value.ToString() + "</td>";
+                filas += "</tr>";
+                total += decimal.Parse(row.Cells["Importe"].Value.ToString());
+            }
+            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@FILAS", filas);
+            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@TOTAL", total.ToString());
 
-            // Muestra un mensaje de éxito
-            MessageBox.Show("PDF generado correctamente y guardado en el archivo 'output.pdf'");
+
+
+            if (savefile.ShowDialog() == DialogResult.OK)
+            {
+                using (FileStream stream = new FileStream(savefile.FileName, FileMode.Create))
+                {
+                    //Creamos un nuevo documento y lo definimos como PDF
+                    Document pdfDoc = new Document(PageSize.A4, 25, 25, 25, 25);
+
+                    PdfWriter writer = PdfWriter.GetInstance(pdfDoc, stream);
+                    pdfDoc.Open();
+                    pdfDoc.Add(new Phrase(""));
+
+                    //Agregamos la imagen del banner al documento
+                    iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(Properties.Resources.shop, System.Drawing.Imaging.ImageFormat.Png);
+                    img.ScaleToFit(60, 60);
+                    img.Alignment = iTextSharp.text.Image.UNDERLYING;
+
+                    //img.SetAbsolutePosition(10,100);
+                    img.SetAbsolutePosition(pdfDoc.LeftMargin, pdfDoc.Top - 60);
+                    pdfDoc.Add(img);
+
+
+                    //pdfDoc.Add(new Phrase("Hola Mundo"));
+                    using (StringReader sr = new StringReader(PaginaHTML_Texto))
+                    {
+                        XMLWorkerHelper.GetInstance().ParseXHtml(writer, pdfDoc, sr);
+                    }
+
+                    pdfDoc.Close();
+                    stream.Close();
+                }
+
+            }
         }
-    }
+    
     }
 }
