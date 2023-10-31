@@ -34,7 +34,7 @@ namespace EjemploABM.ControlesDeUsuario
             this.btn_crear = new System.Windows.Forms.Button();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -55,7 +55,7 @@ namespace EjemploABM.ControlesDeUsuario
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
             this.Nombre,
-            this.Activo,
+            this.Estado,
             this.Editar,
             this.Eliminar});
             this.dataGridView1.Location = new System.Drawing.Point(38, 51);
@@ -84,10 +84,10 @@ namespace EjemploABM.ControlesDeUsuario
             this.Nombre.HeaderText = "Nombre";
             this.Nombre.Name = "Nombre";
             // 
-            // Activo
+            // Estado
             // 
-            this.Activo.HeaderText = "Activo";
-            this.Activo.Name = "Activo";
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
             // 
             // Editar
             // 
@@ -122,7 +122,7 @@ namespace EjemploABM.ControlesDeUsuario
         private System.Windows.Forms.Button btn_crear;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Activo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         private System.Windows.Forms.DataGridViewButtonColumn Editar;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
     }

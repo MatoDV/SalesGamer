@@ -35,8 +35,18 @@ namespace SalesGamer.ControlesDeUsuario
                 dataGridView1.Rows[rowIndex].Cells[3].Value = ofer.Fecha_inicio.ToString();
                 dataGridView1.Rows[rowIndex].Cells[4].Value = ofer.Fecha_final.ToString();
                 dataGridView1.Rows[rowIndex].Cells[5].Value = ofer.Condiciones.ToString();
-                dataGridView1.Rows[rowIndex].Cells[6].Value = "Editar";
-                dataGridView1.Rows[rowIndex].Cells[7].Value = "Eliminar";
+                if (ofer.Is_active == 1)
+                {
+                    dataGridView1.Rows[rowIndex].Cells[6].Value = "Activo";
+
+                }
+                else
+                {
+                    dataGridView1.Rows[rowIndex].Cells[6].Value = "Desactivado";
+
+                }
+                dataGridView1.Rows[rowIndex].Cells[7].Value = "Editar";
+                dataGridView1.Rows[rowIndex].Cells[8].Value = "Eliminar";
             }
         }
         private void Oferta_UC_Load(object sender, EventArgs e)

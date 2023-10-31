@@ -91,9 +91,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(234, 196);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.Size = new System.Drawing.Size(43, 13);
             this.label2.TabIndex = 10;
-            this.label2.Text = "Activo:";
+            this.label2.Text = "Estado:";
             // 
             // combox_activo
             // 

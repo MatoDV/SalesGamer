@@ -37,6 +37,7 @@
             this.Fecha_inicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha_Final = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Condiciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -52,11 +53,12 @@
             this.Fecha_inicio,
             this.Fecha_Final,
             this.Condiciones,
+            this.Estado,
             this.Editar,
             this.Eliminar});
             this.dataGridView1.Location = new System.Drawing.Point(31, 51);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(836, 482);
+            this.dataGridView1.Size = new System.Drawing.Size(957, 482);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -71,7 +73,7 @@
             // 
             // btn_crear
             // 
-            this.btn_crear.Location = new System.Drawing.Point(421, 16);
+            this.btn_crear.Location = new System.Drawing.Point(468, 16);
             this.btn_crear.Name = "btn_crear";
             this.btn_crear.Size = new System.Drawing.Size(66, 29);
             this.btn_crear.TabIndex = 2;
@@ -109,6 +111,11 @@
             this.Condiciones.HeaderText = "Condiciones";
             this.Condiciones.Name = "Condiciones";
             // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            // 
             // Editar
             // 
             this.Editar.HeaderText = "Editar";
@@ -131,7 +138,7 @@
             this.Controls.Add(this.btn_titulo);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Oferta_UC";
-            this.Size = new System.Drawing.Size(906, 583);
+            this.Size = new System.Drawing.Size(1019, 583);
             this.Load += new System.EventHandler(this.Oferta_UC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -150,6 +157,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha_inicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha_Final;
         private System.Windows.Forms.DataGridViewTextBoxColumn Condiciones;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         private System.Windows.Forms.DataGridViewButtonColumn Editar;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
     }

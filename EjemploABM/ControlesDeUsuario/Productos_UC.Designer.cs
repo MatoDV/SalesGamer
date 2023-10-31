@@ -40,7 +40,7 @@
             this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Distribuidor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Oferta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Agregar = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -59,7 +59,7 @@
             this.Categoria,
             this.Distribuidor,
             this.Oferta,
-            this.Activo,
+            this.Estado,
             this.Editar,
             this.Eliminar,
             this.Agregar});
@@ -138,10 +138,10 @@
             this.Oferta.HeaderText = "Oferta";
             this.Oferta.Name = "Oferta";
             // 
-            // Activo
+            // Estado
             // 
-            this.Activo.HeaderText = "Activo";
-            this.Activo.Name = "Activo";
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
             // 
             // Editar
             // 
@@ -189,7 +189,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn Distribuidor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Oferta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Activo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         private System.Windows.Forms.DataGridViewButtonColumn Editar;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
         private System.Windows.Forms.DataGridViewButtonColumn Agregar;

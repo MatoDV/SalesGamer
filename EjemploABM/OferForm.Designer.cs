@@ -40,6 +40,8 @@
             this.date_final = new System.Windows.Forms.DateTimePicker();
             this.btn_crear = new MaterialSkin.Controls.MaterialButton();
             this.label_titulo = new MaterialSkin.Controls.MaterialLabel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.combox_activo = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // text_nombre
@@ -51,7 +53,7 @@
             // 
             // text_tipo
             // 
-            this.text_tipo.Location = new System.Drawing.Point(306, 190);
+            this.text_tipo.Location = new System.Drawing.Point(306, 174);
             this.text_tipo.Name = "text_tipo";
             this.text_tipo.Size = new System.Drawing.Size(169, 20);
             this.text_tipo.TabIndex = 3;
@@ -68,7 +70,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(226, 193);
+            this.label2.Location = new System.Drawing.Point(226, 177);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(31, 13);
             this.label2.TabIndex = 5;
@@ -77,7 +79,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(226, 248);
+            this.label3.Location = new System.Drawing.Point(226, 224);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 13);
             this.label3.TabIndex = 6;
@@ -86,7 +88,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(226, 362);
+            this.label4.Location = new System.Drawing.Point(226, 314);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(68, 13);
             this.label4.TabIndex = 10;
@@ -95,7 +97,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(226, 307);
+            this.label5.Location = new System.Drawing.Point(226, 271);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(65, 13);
             this.label5.TabIndex = 9;
@@ -103,21 +105,21 @@
             // 
             // text_condiciones
             // 
-            this.text_condiciones.Location = new System.Drawing.Point(306, 359);
+            this.text_condiciones.Location = new System.Drawing.Point(306, 311);
             this.text_condiciones.Name = "text_condiciones";
             this.text_condiciones.Size = new System.Drawing.Size(169, 20);
             this.text_condiciones.TabIndex = 7;
             // 
             // date_inicio
             // 
-            this.date_inicio.Location = new System.Drawing.Point(306, 242);
+            this.date_inicio.Location = new System.Drawing.Point(306, 218);
             this.date_inicio.Name = "date_inicio";
             this.date_inicio.Size = new System.Drawing.Size(169, 20);
             this.date_inicio.TabIndex = 12;
             // 
             // date_final
             // 
-            this.date_final.Location = new System.Drawing.Point(306, 301);
+            this.date_final.Location = new System.Drawing.Point(306, 265);
             this.date_final.Name = "date_final";
             this.date_final.Size = new System.Drawing.Size(169, 20);
             this.date_final.TabIndex = 13;
@@ -153,11 +155,30 @@
             this.label_titulo.TabIndex = 15;
             this.label_titulo.Text = "Crear Oferta";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(223, 356);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Estado:";
+            // 
+            // combox_activo
+            // 
+            this.combox_activo.FormattingEnabled = true;
+            this.combox_activo.Location = new System.Drawing.Point(306, 353);
+            this.combox_activo.Name = "combox_activo";
+            this.combox_activo.Size = new System.Drawing.Size(169, 21);
+            this.combox_activo.TabIndex = 17;
+            // 
             // OferForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(764, 548);
+            this.Controls.Add(this.combox_activo);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.label_titulo);
             this.Controls.Add(this.btn_crear);
             this.Controls.Add(this.date_final);
@@ -190,5 +211,7 @@
         private System.Windows.Forms.DateTimePicker date_final;
         private MaterialSkin.Controls.MaterialButton btn_crear;
         private MaterialSkin.Controls.MaterialLabel label_titulo;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox combox_activo;
     }
 }
