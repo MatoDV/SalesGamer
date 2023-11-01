@@ -32,7 +32,7 @@ namespace SalesGamer.ControlesDeUsuario
 
         private void CargarProductosEnCarrito()
         {
-
+            dataGridView1.Rows.Clear();
             foreach (Producto producto in carritoController.carrito.productosEnCarrito)
             {
                 int rowIndex = dataGridView1.Rows.Add();
@@ -58,6 +58,7 @@ namespace SalesGamer.ControlesDeUsuario
                 Producto_Controller.RemoverProductoDelCarrito(producto, carritoController.carrito);
                 CargarProductosEnCarrito();
                 MessageBox.Show("Producto eliminado del carrito de compras.");
+                
             }
 
         }
