@@ -1,4 +1,5 @@
-﻿using EjemploABM.Modelo;
+﻿using EjemploABM;
+using EjemploABM.Modelo;
 using SalesGamer.Controladores;
 using SalesGamer.Modelo;
 using System;
@@ -21,6 +22,10 @@ namespace SalesGamer.ControlesDeUsuario
         {
             InitializeComponent();
             cargarOfertas();
+            if (Program.logueado.ID_rol != 1)
+            {
+                btn_crear.Hide();
+            }
         }
         private void cargarOfertas()
         {

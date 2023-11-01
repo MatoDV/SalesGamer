@@ -242,7 +242,7 @@ namespace SalesGamer
                 {
                     activo = 1;
                 }
-                else
+                else if (combox_activo.SelectedItem.ToString() == "Desactivado")
                 {
                     activo= 2;
                 }
@@ -381,7 +381,7 @@ namespace SalesGamer
                 {
                     activo = 1;
                 }
-                else
+                else if (combox_activo.SelectedItem.ToString() == "Desactivado")
                 {
                     activo = 2;
                 }

@@ -22,11 +22,17 @@ namespace SalesGamer.ControlesDeUsuario
         Carrito_Controller carritoController;
         private List<Producto> prods;
 
+
         public Productos_UC(Carrito_Controller carritoController)
         {
             InitializeComponent();
             this.carritoController = carritoController;
             cargarProductos();
+            if (Program.logueado.ID_rol != 1)
+            {
+                btn_crear.Hide();
+                
+            }
         }
         private void cargarProductos()
         {
@@ -179,7 +185,7 @@ namespace SalesGamer.ControlesDeUsuario
                     dataGridView1.Rows[rowIndex].Cells[8].Value = "Activo";
 
                 }
-                else
+                else if (prod.Is_active == 2)
                 {
                     dataGridView1.Rows[rowIndex].Cells[8].Value = "Desactivado";
 
@@ -232,6 +238,7 @@ namespace SalesGamer.ControlesDeUsuario
 
                 }
             }
+
 
             if (senderGrid.Columns[e.ColumnIndex].Name == "Eliminar")
             {
