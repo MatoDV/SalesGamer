@@ -11,13 +11,11 @@ namespace EjemploABM.Modelo
 
         public int Id { get; set; }
         public String Nombre_categoria { get; set; }
-        public int Is_active { get; set; }
 
-        public Categoria(int id, string nombre_cat, int is_active)
+        public Categoria(int id, string nombre_cat)
         {
             Id = id;
             Nombre_categoria = nombre_cat;
-            Is_active = is_active;
         }
 
         public Categoria()

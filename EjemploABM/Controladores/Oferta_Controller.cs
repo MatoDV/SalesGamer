@@ -29,7 +29,7 @@ namespace SalesGamer.Controladores
 
                 while (reader.Read())
                 {
-                    list.Add(new Oferta(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetDateTime(3), reader.GetDateTime(4), reader.GetString(5), reader.GetInt32(6)));
+                    list.Add(new Oferta(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetDateTime(3), reader.GetDateTime(4), reader.GetString(5)));
                     Trace.WriteLine("Oferta encontrada, nombre: " + reader.GetString(1));
                 }
 
@@ -95,7 +95,6 @@ namespace SalesGamer.Controladores
                             Fecha_inicio = reader.GetDateTime(3),
                             Fecha_final = reader.GetDateTime(4),
                             Condiciones = reader.GetString(5),
-                            Is_active = reader.GetInt32(6),
                         };
                     }
                     reader.Close();
@@ -111,8 +110,8 @@ namespace SalesGamer.Controladores
         //CREAR OFERTA
         public static bool CrearOferta(Oferta ofert)
         {
-            string query = "INSERT INTO dbo.Oferta (id,nombre,tipo_oferta,fecha_inicio,fecha_final,condiciones,is_active) " +
-                           "VALUES (@id,@nombre,@tipo_oferta,@fecha_inicio,@fecha_final,@condiciones,@activo);";
+            string query = "INSERT INTO dbo.Oferta (id,nombre,tipo_oferta,fecha_inicio,fecha_final,condiciones) " +
+                           "VALUES (@id,@nombre,@tipo_oferta,@fecha_inicio,@fecha_final,@condiciones);";
             using (SqlCommand cmd = new SqlCommand(query, DB_Controller.connection))
             {
                 cmd.Parameters.AddWithValue("@id", obtenerMaxId() + 1);
@@ -121,7 +120,6 @@ namespace SalesGamer.Controladores
                 cmd.Parameters.AddWithValue("@fecha_inicio", ofert.Fecha_inicio);
                 cmd.Parameters.AddWithValue("@fecha_final", ofert.Fecha_final);
                 cmd.Parameters.AddWithValue("@condiciones", ofert.Condiciones);
-                cmd.Parameters.AddWithValue("@activo", ofert.Is_active);
 
                 try
                 {
@@ -147,7 +145,6 @@ namespace SalesGamer.Controladores
                 "fecha_inicio = @fecha_inicio, " +
                 "fecha_final = @fecha_final, " +
                 "condiciones = @condiciones, " +
-                "is_active = @activo, " +
                 "where id = @id ;";
 
             SqlCommand cmd = new SqlCommand(query, DB_Controller.connection);
@@ -157,7 +154,6 @@ namespace SalesGamer.Controladores
             cmd.Parameters.AddWithValue("@fecha_inicio", ofer.Fecha_inicio);
             cmd.Parameters.AddWithValue("@fecha_final", ofer.Fecha_final);
             cmd.Parameters.AddWithValue("@condiciones", ofer.Condiciones);
-            cmd.Parameters.AddWithValue("@activo", ofer.Is_active);
 
 
             try
@@ -177,7 +173,7 @@ namespace SalesGamer.Controladores
         //Eliminar Oferta
         public static bool eliminarOferta(Oferta oferEliminar)
         {
-            string query = "UPDATE dbo.Oferta set is_active = 2 WHERE id = @id;";
+            string query = "DELETE FROM dbo.Oferta WHERE id = @id;";
 
             using (SqlCommand cmd = new SqlCommand(query, DB_Controller.connection))
             {
