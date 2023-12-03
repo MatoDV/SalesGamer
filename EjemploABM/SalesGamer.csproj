@@ -200,6 +200,8 @@
     </Compile>
     <Compile Include="Modelo\Carrito.cs" />
     <Compile Include="Modelo\Categoria.cs" />
+    <Compile Include="Modelo\Metodo_de_pago.cs" />
+    <Compile Include="Modelo\Distribuidor.cs" />
     <Compile Include="Modelo\Oferta.cs" />
     <Compile Include="Modelo\Producto.cs" />
     <Compile Include="Modelo\Usuario.cs" />

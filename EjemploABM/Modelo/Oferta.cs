@@ -14,9 +14,8 @@ namespace SalesGamer.Modelo
         public DateTime Fecha_inicio { get; set; }
         public DateTime Fecha_final { get; set; }
         public string Condiciones { get; set; }
-        public int Is_active { get; set; }
 
-        public Oferta(int id,string nombre,string tipo_oferta,DateTime fecha_inicio, DateTime fecha_Final,string condiciones,int is_active) 
+        public Oferta(int id,string nombre,string tipo_oferta,DateTime fecha_inicio, DateTime fecha_Final,string condiciones) 
         {
             this.Id = id;
             this.Nombre = nombre;
@@ -24,7 +23,6 @@ namespace SalesGamer.Modelo
             this.Fecha_inicio = fecha_inicio;
             this.Fecha_final = fecha_Final;
             this.Condiciones = condiciones;
-            this.Is_active = is_active;
         } 
         public Oferta()
         { 
