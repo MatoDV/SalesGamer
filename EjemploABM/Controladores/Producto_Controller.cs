@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static iTextSharp.tool.xml.html.HTML;
 
 namespace SalesGamer.Controladores
 {
@@ -35,9 +36,10 @@ namespace SalesGamer.Controladores
                         desc: reader.GetString(reader.GetOrdinal("Descripcion")),
                         precio: reader.GetInt32(reader.GetOrdinal("Precio")),
                         cantidad: reader.GetInt32(reader.GetOrdinal("Cantidad")),
+                        categoria_id: ObtenerCategoriaID(reader.GetInt32(reader.GetOrdinal("Categoria_id"))),
                         distribuidor_id: ObtenerDistribuidorId(reader.GetInt32(reader.GetOrdinal("Distribuidor_id"))),
                         oferta_id: ObtenerOfertaId(reader.GetInt32(reader.GetOrdinal("Oferta_id"))),
-                        Imagen: (byte[])reader["img"]
+                        Imagen: reader.GetString(reader.GetOrdinal("img"))
                     );
 
                     list.Add(producto);
@@ -82,7 +84,35 @@ namespace SalesGamer.Controladores
                 throw new Exception("Hay un error en la query: " + ex.Message);
             }
         }
+        public static Categoria ObtenerCategoriaID(int id)
+        {
+            Categoria categoria = new Categoria();
+            string query = "SELECT * FROM dbo.Categoria WHERE id = @id;";
+            using (SqlCommand cmd = new SqlCommand(query, DB_Controller.connection))
+            {
+                cmd.Parameters.AddWithValue("@id", id);
+                try
+                {
+                    DB_Controller.connection.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        categoria = new Categoria
+                        {
+                            Id = reader.GetInt32(0),
+                            Nombre_categoria = reader.GetString(1),
 
+                        };
+                    }
+                    reader.Close();
+                }
+                finally
+                {
+                    DB_Controller.connection.Close();
+                }
+            }
+            return categoria;
+        }
         public static Distribuidor ObtenerDistribuidorId(int id)
         {
             Distribuidor distribuidor = new Distribuidor();
@@ -166,6 +196,8 @@ namespace SalesGamer.Controladores
                     SqlDataReader reader = cmd.ExecuteReader();
                     while (reader.Read())
                     {
+                        int categoriaId = reader.GetInt32(5);
+                        Categoria categoria = ObtenerCategoriaID(categoriaId);
                         int distribuidorId = reader.GetInt32(5);
                         Distribuidor distribuidor = ObtenerDistribuidorId(distribuidorId);
                         int ofertaId = reader.GetInt32(6);
@@ -178,9 +210,10 @@ namespace SalesGamer.Controladores
                             Descripcion = reader.GetString(2),
                             Precio = reader.GetInt32(3),
                             Cantidad = reader.GetInt32(4),
+                            Categoria_id = categoria,
                             Distribuidor_id = distribuidor,
                             Oferta_id = oferta,
-                            img = (byte[])reader["img"]
+                            img = reader.GetString(5),
                         };
                     }
                     reader.Close();
@@ -196,8 +229,8 @@ namespace SalesGamer.Controladores
         //CREAR PRODUCTO
         public static bool CrearProducto(Producto producto)
         {
-            string query = "INSERT INTO dbo.Producto (id,nombre_producto, descripcion, precio, cantidad, Distribuidor_id, Oferta_id, imagen) " +
-                           "VALUES (@id,@nombre, @descripcion, @precio, @cantidad, @distribuidorId, @ofertaId, @imagen);";
+            string query = "INSERT INTO dbo.Producto (id,nombre_producto, descripcion, precio, cantidad,Categoria_id, Distribuidor_id, Oferta_id, imagen) " +
+                           "VALUES (@id,@nombre, @descripcion, @precio, @cantidad,@categoriaId, @distribuidorId, @ofertaId, @imagen);";
             using (SqlCommand cmd = new SqlCommand(query, DB_Controller.connection))
             {
                 cmd.Parameters.AddWithValue("@id", obtenerMaxId() + 1);
@@ -205,6 +238,7 @@ namespace SalesGamer.Controladores
                 cmd.Parameters.AddWithValue("@descripcion", producto.Descripcion);
                 cmd.Parameters.AddWithValue("@precio", producto.Precio);
                 cmd.Parameters.AddWithValue("@cantidad", producto.Cantidad);
+                cmd.Parameters.AddWithValue("@categoriaId", producto.Categoria_id);
                 cmd.Parameters.AddWithValue("@distribuidorId", producto.Distribuidor_id);
                 cmd.Parameters.AddWithValue("@ofertaId", producto.Oferta_id);
                 cmd.Parameters.AddWithValue("@imagen", producto.img);
@@ -231,9 +265,10 @@ namespace SalesGamer.Controladores
                 "descripcion = @descripcion , " +
                 "precio = @precio , " +
                 "cantidad = @cantidad ," +
+                "Categoria_id = @Categoria_id ," +
                 "Distribuidor_id = @Distribuidor_id ," +
                 "Oferta_id = @Oferta_id " +
-                "imagen = @imagen " +
+                "imagen = @imagen" +
                 "where id = @id ;";
 
             SqlCommand cmd = new SqlCommand(query, DB_Controller.connection);
@@ -242,6 +277,7 @@ namespace SalesGamer.Controladores
             cmd.Parameters.AddWithValue("@descripcion", prod.Descripcion);
             cmd.Parameters.AddWithValue("@precio", prod.Precio);
             cmd.Parameters.AddWithValue("@cantidad", prod.Cantidad);
+            cmd.Parameters.AddWithValue("@Categoria_id", prod.Categoria_id);
             cmd.Parameters.AddWithValue("@Distribuidor_id", prod.Distribuidor_id);
             cmd.Parameters.AddWithValue("@Oferta_id", prod.Oferta_id);
             cmd.Parameters.AddWithValue("@imagen", prod.img);

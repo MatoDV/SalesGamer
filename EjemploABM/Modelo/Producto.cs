@@ -15,20 +15,22 @@ namespace EjemploABM.Modelo
         public String Descripcion { get; set; }
         public int Precio { get; set; }
         public int Cantidad { get; set; }
+        public Categoria Categoria_id {  get; set; }
         public Distribuidor Distribuidor_id { get; set; }
         public Oferta Oferta_id { get; set; }
-        public byte[] img { get; set; }
+        public string img { get; set; }
 
 
 
 
-        public Producto(int id, string nombre, string desc, int precio,int cantidad, Distribuidor distribuidor_id, Oferta oferta_id,byte[] Imagen)
+        public Producto(int id, string nombre, string desc, int precio,int cantidad,Categoria categoria_id,Distribuidor distribuidor_id, Oferta oferta_id,string Imagen)
         {
             this.Id = id;
             this.Nombre_producto = nombre;
             this.Descripcion = desc;
             this.Precio = precio;
             this.Cantidad = cantidad;
+            this.Categoria_id = categoria_id;
             this.Distribuidor_id = distribuidor_id;
             this.Oferta_id = oferta_id;
             this.img = Imagen;

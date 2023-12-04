@@ -203,7 +203,10 @@
     <Compile Include="Modelo\Metodo_de_pago.cs" />
     <Compile Include="Modelo\Distribuidor.cs" />
     <Compile Include="Modelo\Oferta.cs" />
+    <Compile Include="Modelo\Pedido.cs" />
+    <Compile Include="Modelo\Pedido_Producto.cs" />
     <Compile Include="Modelo\Producto.cs" />
+    <Compile Include="Modelo\Producto_Carrito.cs" />
     <Compile Include="Modelo\Usuario.cs" />
     <Compile Include="OferForm.cs">
       <SubType>Form</SubType>
@@ -276,6 +279,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="img\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

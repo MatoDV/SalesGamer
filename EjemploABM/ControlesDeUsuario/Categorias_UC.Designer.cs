@@ -34,7 +34,6 @@ namespace EjemploABM.ControlesDeUsuario
             this.btn_crear = new System.Windows.Forms.Button();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -55,18 +54,17 @@ namespace EjemploABM.ControlesDeUsuario
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
             this.Nombre,
-            this.Estado,
             this.Editar,
             this.Eliminar});
             this.dataGridView1.Location = new System.Drawing.Point(38, 51);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(557, 448);
+            this.dataGridView1.Size = new System.Drawing.Size(448, 448);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btn_crear
             // 
-            this.btn_crear.Location = new System.Drawing.Point(265, 13);
+            this.btn_crear.Location = new System.Drawing.Point(211, 15);
             this.btn_crear.Name = "btn_crear";
             this.btn_crear.Size = new System.Drawing.Size(70, 30);
             this.btn_crear.TabIndex = 4;
@@ -83,11 +81,6 @@ namespace EjemploABM.ControlesDeUsuario
             // 
             this.Nombre.HeaderText = "Nombre";
             this.Nombre.Name = "Nombre";
-            // 
-            // Estado
-            // 
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
             // 
             // Editar
             // 
@@ -107,7 +100,7 @@ namespace EjemploABM.ControlesDeUsuario
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Name = "Categorias_UC";
-            this.Size = new System.Drawing.Size(628, 538);
+            this.Size = new System.Drawing.Size(526, 538);
             this.Load += new System.EventHandler(this.Categorias_UC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -122,7 +115,6 @@ namespace EjemploABM.ControlesDeUsuario
         private System.Windows.Forms.Button btn_crear;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         private System.Windows.Forms.DataGridViewButtonColumn Editar;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
     }
