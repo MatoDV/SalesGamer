@@ -192,6 +192,66 @@ namespace SalesGamer.ControlesDeUsuario
 
         private void btn_comprar_Click(object sender, EventArgs e)
         {
+            Document doc = new Document();
+
+            try
+            {
+                string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                string filePath = Path.Combine(desktopPath, "Comprobante_de_pago.pdf");
+
+                // Crear el archivo PDF
+                PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(filePath, FileMode.Create));
+                doc.Open();
+
+                // Añadir contenido al PDF
+                PdfPTable table = new PdfPTable(4); // Crear una tabla con 5 columnas
+                table.WidthPercentage = 100; // Establecer el ancho de la tabla al 100% del tamaño del documento
+
+                // Agregar encabezados
+                string[] headers = { "Nombre", "Cantidad", "Precio", "Descuento" };
+                foreach (var header in headers)
+                {
+                    table.AddCell(header);
+                }
+
+                // Iterar sobre las filas del DataGridView
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    // Obtener los valores de las celdas necesarias y añadirlos a la tabla
+                    string nombre = row.Cells[1].Value?.ToString(); // Columna del nombre
+                    string cantidad = row.Cells[2].Value?.ToString(); // Columna de la cantidad
+                    string precio = row.Cells[3].Value?.ToString(); // Columna del precio
+                    string descuento = row.Cells[4].Value?.ToString(); // Columna del descuento
+
+                    table.AddCell(nombre);
+                    table.AddCell(cantidad);
+                    table.AddCell(precio);
+                    table.AddCell(descuento);
+                }
+
+                // Agregar el total al PDF
+                PdfPCell cellTotal = new PdfPCell(new Phrase($"{txt_Precio.Text}"));
+                cellTotal.Colspan = 4; // Fusionar la celda para abarcar las 4 columnas
+                table.AddCell(cellTotal);
+
+                // Agregar la tabla al documento
+                doc.Add(table);
+
+                // Cerrar el documento
+                doc.Close();
+                MessageBox.Show("PDF generado exitosamente en el escritorio.");
+                Carrito_Controller.VaciarCarrito();
+                Index parentForm = this.ParentForm as Index;
+                if (parentForm != null)
+                {
+                    Productos_UC productosUC = new Productos_UC();
+                    parentForm.addUserControl(productosUC);
+                } 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al generar el PDF: " + ex.Message);
+            }
 
         }
 

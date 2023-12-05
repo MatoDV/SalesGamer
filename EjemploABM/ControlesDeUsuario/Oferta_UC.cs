@@ -36,6 +36,13 @@ namespace SalesGamer.ControlesDeUsuario
             foreach (Oferta ofer in ofertas)
             {
                 int rowIndex = dataGridView1.Rows.Add();
+                if (Program.logueado.ID_rol != 1)
+                {
+                    dataGridView1.Columns[6].Visible = false;
+                    dataGridView1.Columns[7].Visible = false;
+
+
+                }
                 dataGridView1.Rows[rowIndex].Cells[0].Value = ofer.Id.ToString();
                 dataGridView1.Rows[rowIndex].Cells[1].Value = ofer.Nombre.ToString();
                 dataGridView1.Rows[rowIndex].Cells[2].Value = ofer.Tipo_oferta.ToString();

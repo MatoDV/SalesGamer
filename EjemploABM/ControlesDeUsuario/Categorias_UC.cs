@@ -23,6 +23,11 @@ namespace EjemploABM.ControlesDeUsuario
         {
             InitializeComponent();
             cargarCategorias();
+            if (Program.logueado.ID_rol != 1)
+            {
+                btn_crear.Hide();
+
+            }
         }
         private void cargarCategorias()
         {
@@ -31,6 +36,13 @@ namespace EjemploABM.ControlesDeUsuario
             foreach (Categoria cat in categorias)
             {
                 int rowIndex = dataGridView1.Rows.Add();
+                if (Program.logueado.ID_rol != 1)
+                {
+                    dataGridView1.Columns[2].Visible = false;
+                    dataGridView1.Columns[3].Visible = false;
+
+
+                }
                 dataGridView1.Rows[rowIndex].Cells[0].Value = cat.Id.ToString();
                 dataGridView1.Rows[rowIndex].Cells[1].Value = cat.Nombre_categoria.ToString();
                 dataGridView1.Rows[rowIndex].Cells[2].Value = "Editar";

@@ -190,5 +190,25 @@ namespace SalesGamer.Controladores
                 }
             }
         }
+        public static bool VaciarCarrito()
+        {
+            string query = "DELETE FROM dbo.Carrito";
+
+            using (SqlCommand cmd = new SqlCommand(query, DB_Controller.connection))
+            {
+                try
+                {
+                    DB_Controller.connection.Open();
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    DB_Controller.connection.Close();
+
+                    return rowsAffected > 0;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Error al intentar vaciar el Carrito: " + ex.Message);
+                }
+            }
+        }
     }
 }

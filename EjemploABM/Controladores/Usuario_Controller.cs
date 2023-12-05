@@ -19,7 +19,7 @@ namespace EjemploABM.Controladores
         public static bool autenticar(string usr, string pass, bool hasheado)
         {
             Usuario user = new Usuario();
-            string query = "select * from dbo.Usuario where nombre_usuario = @usr and contrasena_usuario = @pass;";
+            string query = "SELECT * FROM dbo.Usuario WHERE nombre_usuario = @usr AND contrasena_usuario = @pass;";
 
             SqlCommand cmd = new SqlCommand(query, DB_Controller.connection);
             cmd.Parameters.AddWithValue("@usr", usr);
@@ -28,22 +28,30 @@ namespace EjemploABM.Controladores
                 cmd.Parameters.AddWithValue("@pass", pass);
             }
 
-
             try
             {
                 DB_Controller.connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
 
-                while (reader.Read())
+                if (reader.HasRows)
                 {
-                    Trace.WriteLine("Usr encontrado, nombre: " + reader.GetString(1));
-                    user = new Usuario(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), "", reader.GetString(4), reader.GetString(5), reader.GetInt32(6), reader.GetString(7), reader.GetInt32(8));
-                }
+                    while (reader.Read())
+                    {
+                        Trace.WriteLine("Usr encontrado, nombre: " + reader.GetString(1));
+                        user = new Usuario(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), "", reader.GetString(4), reader.GetString(5), reader.GetInt32(6), reader.GetString(7), reader.GetInt32(8));
+                    }
 
-                reader.Close();
-                DB_Controller.connection.Close();
-                Program.logueado = user;
-                return true;
+                    reader.Close();
+                    DB_Controller.connection.Close();
+                    Program.logueado = user;
+                    return true;
+                }
+                else
+                {
+                    reader.Close();
+                    DB_Controller.connection.Close();
+                    return false;
+                }
             }
             catch (Exception ex)
             {

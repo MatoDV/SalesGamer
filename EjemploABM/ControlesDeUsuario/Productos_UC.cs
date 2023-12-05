@@ -19,7 +19,6 @@ namespace SalesGamer.ControlesDeUsuario
 {
     public partial class Productos_UC : UserControl
     {
-        Carrito_Controller carritoController;
         private List<Producto> prods;
         private int numeroPagina = 1;
         private int elementosPorPagina = 5;
@@ -39,10 +38,17 @@ namespace SalesGamer.ControlesDeUsuario
         {
             prods = Producto_Controller.obtenerProductos(numeroPagina, elementosPorPagina);
             dataGridView1.Rows.Clear();
-
+            
             foreach (Producto prod in prods)
             {
                 int rowIndex = dataGridView1.Rows.Add();
+                if (Program.logueado.ID_rol != 1)
+                {
+                    dataGridView1.Columns[8].Visible = false;
+                    dataGridView1.Columns[9].Visible = false;
+
+
+                }
 
 
                 dataGridView1.Rows[rowIndex].Cells[0].Value = prod.Id.ToString();
