@@ -85,7 +85,7 @@ namespace EjemploABM
 
         private void crear()
         {
-            if (Validaciones.textVacios(txt_usuario) == false || Validaciones.textVacios(txt_mail) == false || Validaciones.textVacios(txt_contraseña) == false || Validaciones.textVacios(txt_nombre) == false || Validaciones.textVacios(txt_direccion) == false || Validaciones.textVacios(txt_nombre) == false)
+            if (!Validaciones.textVacios(txt_usuario) && !Validaciones.textVacios(txt_mail) && !Validaciones.textVacios(txt_contraseña) && !Validaciones.textVacios(txt_nombre) && !Validaciones.textVacios(txt_direccion) && !Validaciones.textVacios(txt_apellido))
             {
                 int tipo = 2;
                 if (combo_tipo.SelectedItem.ToString() == "Admin")
@@ -93,14 +93,26 @@ namespace EjemploABM
                     tipo = 1;
                 }
 
-                Usuario usr = new Usuario(0, txt_usuario.Text, txt_mail.Text, txt_contraseña.Text, txt_nombre.Text, txt_apellido.Text, 11, txt_direccion.Text, tipo);
-
-                if (Usuario_Controller.crearUsuario(usr))
+                if (!Usuario_Controller.VerificarUsuarioExistente(txt_usuario.Text))
                 {
-                    this.DialogResult = DialogResult.OK;
+                    Usuario usr = new Usuario(0, txt_usuario.Text, txt_mail.Text, txt_contraseña.Text, txt_nombre.Text, txt_apellido.Text, 11, txt_direccion.Text, tipo);
+
+                    if (Usuario_Controller.crearUsuario(usr))
+                    {
+                        this.DialogResult = DialogResult.OK;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("¡El usuario ya existe en la base de datos!");
                 }
             }
+            else
+            {
+                MessageBox.Show("Todos los campos son obligatorios.");
+            }
         }
+
 
         private void editar()
         {

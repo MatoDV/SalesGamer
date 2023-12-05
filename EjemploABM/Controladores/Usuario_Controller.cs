@@ -103,6 +103,28 @@ namespace EjemploABM.Controladores
 
         }
 
+        public static bool VerificarUsuarioExistente(string nombreUsuario)
+        {
+            // Realizar la consulta a la base de datos para verificar si ya existe un producto con este nombre
+            string query = "SELECT COUNT(*) FROM dbo.Usuario WHERE nombre_usuario = @nombreUsuario";
+
+            SqlCommand cmd = new SqlCommand(query, DB_Controller.connection);
+            cmd.Parameters.AddWithValue("@nombreUsuario", nombreUsuario);
+
+            try
+            {
+                DB_Controller.connection.Open();
+                int count = (int)cmd.ExecuteScalar();
+                DB_Controller.connection.Close();
+
+                // Si count es mayor que cero, significa que ya existe un producto con ese nombre
+                return count > 0;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al verificar el Usuario: " + ex.Message);
+            }
+        }
 
         // OBTENER EL MAX ID
 

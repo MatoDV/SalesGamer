@@ -52,25 +52,30 @@ namespace SalesGamer
         }
         private void crear()
         {
-            if(Validaciones.textVacios(txt_nombre) == false)
+            if (!Validaciones.textVacios(txt_nombre))
             {
-                Categoria cat = new Categoria(0, txt_nombre.Text);
-                if (txt_nombre.SelectedText.ToString() == "Placas de video" && txt_nombre.SelectedText.ToString() == "Procesador" 
-                    && txt_nombre.SelectedText.ToString() == "Memoria Ram" && txt_nombre.SelectedText.ToString() == "Placa Madre" 
-                    && txt_nombre.SelectedText.ToString() == "Fuente" && txt_nombre.SelectedText.ToString() == "Disco Rigido"
-                    && txt_nombre.SelectedText.ToString() == "Disco Solido" && txt_nombre.SelectedText.ToString() == "Mouse" 
-                    && txt_nombre.SelectedText.ToString() == "Teclado" && txt_nombre.SelectedText.ToString() == "Monitor" 
-                    && txt_nombre.SelectedText.ToString() == "Auricular" && txt_nombre.SelectedText.ToString() == "Microfono" 
-                    && txt_nombre.SelectedText.ToString() == "Gabinete")
+                string nombreCategoria = txt_nombre.Text;
+
+                if (Categoria_Controller.VerificarCategoriaExistente(nombreCategoria))
                 {
-                    DialogResult result = MessageBox.Show("La categoria que se intento crear ya esta creada");
+                    MessageBox.Show("La categoría que intenta crear ya existe.");
                 }
-                else if (Categoria_Controller.CrearCategoria(cat))
+                else
                 {
-                    this.DialogResult = DialogResult.OK;
+                    Categoria cat = new Categoria(0, nombreCategoria);
+
+                    if (Categoria_Controller.CrearCategoria(cat))
+                    {
+                        this.DialogResult = DialogResult.OK;
+                    }
                 }
-             }
+            }
+            else
+            {
+                MessageBox.Show("El nombre de la categoría no puede estar vacío.");
+            }
         }
+
         private void editar()
         {
             if (Validaciones.textVacios(txt_nombre) == false) 

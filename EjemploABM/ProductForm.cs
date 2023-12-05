@@ -129,29 +129,37 @@ namespace SalesGamer
 
         private void crear()
         {
-            if(Validaciones.textVacios(txt_nombre) == false || Validaciones.textVacios(txt_descripcion) == false || Validaciones.textVacios(txt_cantidad) == false || Validaciones.textVacios(txt_precio) == false)
+            if (!Validaciones.textVacios(txt_nombre) && !Validaciones.textVacios(txt_descripcion) &&
+                !Validaciones.textVacios(txt_cantidad) && !Validaciones.textVacios(txt_precio))
             {
-                Distribuidor distribuidorSeleccionado = (Distribuidor)combox_distribuidor.SelectedItem;
-                int distribuidorId = distribuidorSeleccionado.Id;
-
-                Categoria categoriaSeleccionada = (Categoria)combox_categoria.SelectedItem;
-                int categoriaId = categoriaSeleccionada.Id;
-
-                Oferta ofertaSeleccionada = (Oferta)combox_oferta.SelectedItem;
-                int ofertaId = ofertaSeleccionada.Id;
-
-                int precio;
-                int cantidad;
-                string rutaImagen = "";
-                if (int.TryParse(txt_precio.Text, out precio) && int.TryParse(txt_cantidad.Text, out cantidad))
+                if (!Producto_Controller.VerificarProductoExistente(txt_nombre.Text))
                 {
-                    Producto prod = new Producto(0, txt_nombre.Text, txt_descripcion.Text, precio, cantidad, distribuidorId, ofertaId, rutaImagen, categoriaId);
-                    if (Producto_Controller.CrearProducto(prod))
+                    Distribuidor distribuidorSeleccionado = (Distribuidor)combox_distribuidor.SelectedItem;
+                    int distribuidorId = distribuidorSeleccionado.Id;
+
+                    Categoria categoriaSeleccionada = (Categoria)combox_categoria.SelectedItem;
+                    int categoriaId = categoriaSeleccionada.Id;
+
+                    Oferta ofertaSeleccionada = (Oferta)combox_oferta.SelectedItem;
+                    int ofertaId = ofertaSeleccionada.Id;
+
+                    int precio;
+                    int cantidad;
+                    string rutaImagen = "";
+                    if (int.TryParse(txt_precio.Text, out precio) && int.TryParse(txt_cantidad.Text, out cantidad))
                     {
-                        this.DialogResult = DialogResult.OK;
+                        Producto prod = new Producto(0, txt_nombre.Text, txt_descripcion.Text, precio, cantidad, distribuidorId, ofertaId, rutaImagen, categoriaId);
+                        if (Producto_Controller.CrearProducto(prod))
+                        {
+                            this.DialogResult = DialogResult.OK;
+                        }
                     }
                 }
-            
+                else
+                {
+                    // Muestra un mensaje indicando que el producto ya existe
+                    MessageBox.Show("¡El producto ya existe en la base de datos!");
+                }
             }
 
         }
@@ -207,26 +215,7 @@ namespace SalesGamer
 
         }
 
-        private void txt_nombre_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
-            {
-                MessageBox.Show("Dato inválido, sólo letras", "Alerta", (MessageBoxButtons)MessageBoxButton.OK, (MessageBoxIcon)(MessageBoxImage)MessageBoxIcon.Exclamation);
-                e.Handled = true;
-                return;
-            }
-        }
-
-        private void txt_descripcion_Leave(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
-            {
-                MessageBox.Show("Dato inválido, sólo letras", "Alerta", (MessageBoxButtons)MessageBoxButton.OK, (MessageBoxIcon)(MessageBoxImage)MessageBoxIcon.Exclamation);
-                e.Handled = true;
-                return;
-            }
-
-        }
+        
 
         private void txt_precio_KeyPress(object sender, KeyPressEventArgs e)
         {

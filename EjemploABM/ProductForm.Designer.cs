@@ -111,7 +111,6 @@
             this.txt_nombre.Size = new System.Drawing.Size(130, 20);
             this.txt_nombre.TabIndex = 8;
             this.txt_nombre.TextChanged += new System.EventHandler(this.txt_nombre_TextChanged);
-            this.txt_nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombre_KeyPress);
             this.txt_nombre.Leave += new System.EventHandler(this.txt_nombre_Leave);
             // 
             // txt_descripcion

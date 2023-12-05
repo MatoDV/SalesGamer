@@ -44,6 +44,28 @@ namespace SalesGamer.Controladores
 
             return list;
         }
+        public static bool VerificarCategoriaExistente(string nombreCategoria)
+        {
+            // Realizar la consulta a la base de datos para verificar si ya existe un producto con este nombre
+            string query = "SELECT COUNT(*) FROM dbo.Categoria WHERE nombre_categoria = @nombreCategoria";
+
+            SqlCommand cmd = new SqlCommand(query, DB_Controller.connection);
+            cmd.Parameters.AddWithValue("@nombreCategoria", nombreCategoria);
+
+            try
+            {
+                DB_Controller.connection.Open();
+                int count = (int)cmd.ExecuteScalar();
+                DB_Controller.connection.Close();
+
+                // Si count es mayor que cero, significa que ya existe un producto con ese nombre
+                return count > 0;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al verificar el producto: " + ex.Message);
+            }
+        }
 
         //SACAR EL MAXID
         public static int obtenerMaxId()

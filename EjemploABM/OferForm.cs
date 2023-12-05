@@ -59,26 +59,32 @@ namespace SalesGamer
 
             if (DateTime.TryParse(fechaInicioTexto, out DateTime fechaInicio) && DateTime.TryParse(fechaFinalTexto, out DateTime fechaFinal))
             {
-                Oferta ofer = new Oferta(0, text_nombre.Text, text_tipo.Text, fechaInicio, fechaFinal, text_condiciones.Text);
-
-                if (text_tipo.SelectedText.ToString() == "10% descuento" && text_tipo.SelectedText.ToString() == "20% descuento"
-                && text_tipo.SelectedText.ToString() == "30% descuento" && text_tipo.SelectedText.ToString() == "50% descuento"
-                && text_tipo.SelectedText.ToString() == "sin descuento")
+                if (!Oferta_Controller.VerificarOfertaExistente(text_nombre.Text))
                 {
-                    DialogResult result = MessageBox.Show("La categoria que se intento crear ya esta creada");
-                }
-                else if (Oferta_Controller.CrearOferta(ofer))
-                {
-                    this.DialogResult = DialogResult.OK;
-                }
+                    Oferta ofer = new Oferta(0, text_nombre.Text, text_tipo.Text, fechaInicio, fechaFinal, text_condiciones.Text);
 
+                    if (text_tipo.Text == "10% descuento" || text_tipo.Text == "20% descuento" ||
+                        text_tipo.Text == "30% descuento" || text_tipo.Text == "50% descuento" ||
+                        text_tipo.Text == "sin descuento")
+                    {
+                        DialogResult result = MessageBox.Show("La oferta que se intentó crear ya existe");
+                    }
+                    else if (Oferta_Controller.CrearOferta(ofer))
+                    {
+                        this.DialogResult = DialogResult.OK;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("¡La oferta ya existe en la base de datos!");
+                }
             }
             else
             {
                 MessageBox.Show("Las fechas ingresadas no son válidas.");
             }
-            
         }
+
         private void editar()
         {
             string fechaInicioTexto = date_inicio.Text;
