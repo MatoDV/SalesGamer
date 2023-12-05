@@ -39,6 +39,9 @@ namespace EjemploABM.ControlesDeUsuario
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btn_new = new System.Windows.Forms.Button();
+            this.btn_atras = new System.Windows.Forms.Button();
+            this.btn_siguiente = new System.Windows.Forms.Button();
+            this.txt_pagina = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +67,7 @@ namespace EjemploABM.ControlesDeUsuario
             this.Eliminar});
             this.dataGridView1.Location = new System.Drawing.Point(23, 48);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(867, 197);
+            this.dataGridView1.Size = new System.Drawing.Size(759, 197);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -105,7 +108,7 @@ namespace EjemploABM.ControlesDeUsuario
             // 
             // btn_new
             // 
-            this.btn_new.Location = new System.Drawing.Point(389, 16);
+            this.btn_new.Location = new System.Drawing.Point(350, 13);
             this.btn_new.Name = "btn_new";
             this.btn_new.Size = new System.Drawing.Size(91, 20);
             this.btn_new.TabIndex = 2;
@@ -113,15 +116,47 @@ namespace EjemploABM.ControlesDeUsuario
             this.btn_new.UseVisualStyleBackColor = true;
             this.btn_new.Click += new System.EventHandler(this.btn_new_Click);
             // 
+            // btn_atras
+            // 
+            this.btn_atras.Location = new System.Drawing.Point(23, 292);
+            this.btn_atras.Name = "btn_atras";
+            this.btn_atras.Size = new System.Drawing.Size(75, 23);
+            this.btn_atras.TabIndex = 3;
+            this.btn_atras.Text = "Atras";
+            this.btn_atras.UseVisualStyleBackColor = true;
+            this.btn_atras.Click += new System.EventHandler(this.btn_atras_Click);
+            // 
+            // btn_siguiente
+            // 
+            this.btn_siguiente.Location = new System.Drawing.Point(173, 292);
+            this.btn_siguiente.Name = "btn_siguiente";
+            this.btn_siguiente.Size = new System.Drawing.Size(75, 23);
+            this.btn_siguiente.TabIndex = 4;
+            this.btn_siguiente.Text = "Siguiente";
+            this.btn_siguiente.UseVisualStyleBackColor = true;
+            this.btn_siguiente.Click += new System.EventHandler(this.btn_siguiente_Click);
+            // 
+            // txt_pagina
+            // 
+            this.txt_pagina.AutoSize = true;
+            this.txt_pagina.Location = new System.Drawing.Point(119, 297);
+            this.txt_pagina.Name = "txt_pagina";
+            this.txt_pagina.Size = new System.Drawing.Size(35, 13);
+            this.txt_pagina.TabIndex = 5;
+            this.txt_pagina.Text = "label2";
+            // 
             // Usuarios_UC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.txt_pagina);
+            this.Controls.Add(this.btn_siguiente);
+            this.Controls.Add(this.btn_atras);
             this.Controls.Add(this.btn_new);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Name = "Usuarios_UC";
-            this.Size = new System.Drawing.Size(965, 336);
+            this.Size = new System.Drawing.Size(839, 336);
             this.Load += new System.EventHandler(this.Usuarios_UC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -141,5 +176,8 @@ namespace EjemploABM.ControlesDeUsuario
         private System.Windows.Forms.DataGridViewTextBoxColumn Rol;
         private System.Windows.Forms.DataGridViewButtonColumn Editar;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
+        private System.Windows.Forms.Button btn_atras;
+        private System.Windows.Forms.Button btn_siguiente;
+        private System.Windows.Forms.Label txt_pagina;
     }
 }

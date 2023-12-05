@@ -17,6 +17,8 @@ namespace EjemploABM.ControlesDeUsuario
     public partial class Categorias_UC : UserControl
     {
         private List<Categoria>categorias;
+        private int numeroPagina = 1;
+        private int elementosPorPagina = 5;
         public Categorias_UC()
         {
             InitializeComponent();
@@ -24,7 +26,7 @@ namespace EjemploABM.ControlesDeUsuario
         }
         private void cargarCategorias()
         {
-            categorias = Categoria_Controller.obtenerCategoria();
+            categorias = Categoria_Controller.obtenerCategoria(numeroPagina, elementosPorPagina);
             dataGridView1.Rows.Clear();
             foreach (Categoria cat in categorias)
             {
@@ -34,6 +36,7 @@ namespace EjemploABM.ControlesDeUsuario
                 dataGridView1.Rows[rowIndex].Cells[2].Value = "Editar";
                 dataGridView1.Rows[rowIndex].Cells[3].Value = "Eliminar";
             }
+            txt_pagina.Text = $"Página: {numeroPagina}";
         }
         private void btn_crear_Click_1(object sender, EventArgs e)
         {
@@ -112,6 +115,21 @@ namespace EjemploABM.ControlesDeUsuario
                     }
                 }
             }
+        }
+
+        private void btn_atras_Click(object sender, EventArgs e)
+        {
+            if (numeroPagina > 1)
+            {
+                numeroPagina--; // Disminuir el número de página solo si no es la primera página
+                cargarCategorias(); // Volver a cargar los productos con la nueva página
+            }
+        }
+
+        private void btn_siguiente_Click(object sender, EventArgs e)
+        {
+            numeroPagina++; // Aumentar el número de página
+            cargarCategorias();
         }
     }
 }

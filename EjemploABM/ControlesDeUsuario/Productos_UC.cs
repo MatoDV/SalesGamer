@@ -21,6 +21,8 @@ namespace SalesGamer.ControlesDeUsuario
     {
         Carrito_Controller carritoController;
         private List<Producto> prods;
+        private int numeroPagina = 1;
+        private int elementosPorPagina = 5;
 
 
         public Productos_UC(Carrito_Controller carritoController)
@@ -36,9 +38,9 @@ namespace SalesGamer.ControlesDeUsuario
         }
         private void cargarProductos()
         {
-            prods = Producto_Controller.obtenerProductos();
+            prods = Producto_Controller.obtenerProductos(numeroPagina, elementosPorPagina);
             dataGridView1.Rows.Clear();
-           
+
             foreach (Producto prod in prods)
             {
                 int rowIndex = dataGridView1.Rows.Add();
@@ -51,142 +53,143 @@ namespace SalesGamer.ControlesDeUsuario
                 dataGridView1.Rows[rowIndex].Cells[4].Value = prod.Cantidad.ToString();
                 
 
-                if (prod.Distribuidor_id.Id == 1)
+                if (prod.Distribuidor_id== 1)
                 {
                     dataGridView1.Rows[rowIndex].Cells[6].Value = "GIGABYTE";
 
                 }
-                else if (prod.Distribuidor_id.Id == 2)
+                else if (prod.Distribuidor_id == 2)
                 {
 
                     dataGridView1.Rows[rowIndex].Cells[6].Value = "LOGITECH";
                 }
-                else if (prod.Distribuidor_id.Id == 3)
+                else if (prod.Distribuidor_id == 3)
                 {
 
                     dataGridView1.Rows[rowIndex].Cells[6].Value = "NVIDIA";
                 }
-                else if (prod.Distribuidor_id.Id == 4)
+                else if (prod.Distribuidor_id == 4)
                 {
 
                     dataGridView1.Rows[rowIndex].Cells[6].Value = "AMD";
                 }
-                else if (prod.Distribuidor_id.Id == 5)
+                else if (prod.Distribuidor_id == 5)
                 {
 
                     dataGridView1.Rows[rowIndex].Cells[6].Value = "MSI";
                 }
-                else if (prod.Distribuidor_id.Id == 6)
+                else if (prod.Distribuidor_id == 6)
                 {
 
                     dataGridView1.Rows[rowIndex].Cells[6].Value = "KINGSTON";
                 }
-                else if (prod.Distribuidor_id.Id == 7)
+                else if (prod.Distribuidor_id == 7)
                 {
 
                     dataGridView1.Rows[rowIndex].Cells[6].Value = "CORSAIR";
                 }
-                else if (prod.Distribuidor_id.Id == 8)
+                else if (prod.Distribuidor_id == 8)
                 {
 
                     dataGridView1.Rows[rowIndex].Cells[6].Value = "INTEL";
                 }
 
-                if (prod.Oferta_id.Id == 1)
+                if (prod.Oferta_id == 1)
                 {
                     dataGridView1.Rows[rowIndex].Cells[7].Value = "10% descuento";
 
                 }
-                else if (prod.Oferta_id.Id == 2)
+                else if (prod.Oferta_id == 2)
                 {
 
                     dataGridView1.Rows[rowIndex].Cells[7].Value = "20% descuento";
                 }
-                else if (prod.Oferta_id.Id == 3)
+                else if (prod.Oferta_id == 3)
                 {
 
                     dataGridView1.Rows[rowIndex].Cells[7].Value = "30% descuento";
                 }
-                else if (prod.Oferta_id.Id == 4)
+                else if (prod.Oferta_id == 4)
                 {
 
                     dataGridView1.Rows[rowIndex].Cells[7].Value = "50% descuento";
                 }
-                else if (prod.Oferta_id.Id == 5)
+                else if (prod.Oferta_id == 5)
                 {
 
                     dataGridView1.Rows[rowIndex].Cells[7].Value = "sin descuento";
                 }
-                if (prod.Categoria_id.Id == 1)
+                if (prod.Categoria_id == 1)
                 {
                     dataGridView1.Rows[rowIndex].Cells[5].Value = "Placas de video";
 
                 }
-                else if (prod.Categoria_id.Id == 2)
+                else if (prod.Categoria_id == 2)
                 {
 
                     dataGridView1.Rows[rowIndex].Cells[5].Value = "Procesador";
                 }
-                else if (prod.Categoria_id.Id == 3)
+                else if (prod.Categoria_id == 3)
                 {
 
                     dataGridView1.Rows[rowIndex].Cells[5].Value = "Memoria Ram";
                 }
-                else if (prod.Categoria_id.Id == 4)
+                else if (prod.Categoria_id == 4)
                 {
 
                     dataGridView1.Rows[rowIndex].Cells[5].Value = "Placa Madre";
                 }
-                else if (prod.Categoria_id.Id == 5)
+                else if (prod.Categoria_id == 5)
                 {
 
                     dataGridView1.Rows[rowIndex].Cells[5].Value = "Fuente";
                 }
-                else if (prod.Categoria_id.Id == 6)
+                else if (prod.Categoria_id == 6)
                 {
 
                     dataGridView1.Rows[rowIndex].Cells[5].Value = "Disco Rigido";
                 }
-                else if (prod.Categoria_id.Id == 7)
+                else if (prod.Categoria_id == 7)
                 {
 
                     dataGridView1.Rows[rowIndex].Cells[5].Value = "Disco Solido";
                 }
-                else if (prod.Categoria_id.Id == 8)
+                else if (prod.Categoria_id == 8)
                 {
 
                     dataGridView1.Rows[rowIndex].Cells[5].Value = "Mouse";
                 }
-                else if (prod.Categoria_id.Id == 9)
+                else if (prod.Categoria_id == 9)
                 {
 
                     dataGridView1.Rows[rowIndex].Cells[5].Value = "Teclado";
                 }
-                else if (prod.Categoria_id.Id == 10)
+                else if (prod.Categoria_id == 10)
                 {
 
                     dataGridView1.Rows[rowIndex].Cells[5].Value = "Monitor";
                 }
-                else if (prod.Categoria_id.Id == 11)
+                else if (prod.Categoria_id == 11)
                 {
 
                     dataGridView1.Rows[rowIndex].Cells[5].Value = "Auricular";
                 }
-                else if (prod.Categoria_id.Id == 12)
+                else if (prod.Categoria_id == 12)
                 {
 
                     dataGridView1.Rows[rowIndex].Cells[5].Value = "Microfono";
                 }
-                else if (prod.Categoria_id.Id == 13)
+                else if (prod.Categoria_id == 13)
                 {
 
                     dataGridView1.Rows[rowIndex].Cells[5].Value = "Gabinete";
                 }
-                dataGridView1.Rows[rowIndex].Cells[9].Value = "Editar";
-                dataGridView1.Rows[rowIndex].Cells[10].Value = "Eliminar";
-                dataGridView1.Rows[rowIndex].Cells[11].Value = "Agregar";
+                dataGridView1.Rows[rowIndex].Cells[8].Value = "Editar";
+                dataGridView1.Rows[rowIndex].Cells[9].Value = "Eliminar";
+                dataGridView1.Rows[rowIndex].Cells[10].Value = "Agregar";
 
             }
+            txt_pagina.Text = $"Página: {numeroPagina}";
         }
 
         
@@ -270,7 +273,7 @@ namespace SalesGamer.ControlesDeUsuario
 
                 if (producto != null)
                 {
-                    carritoController.AgregarProductoAlCarrito(producto);
+                    //carritoController.AgregarProductoAlCarrito(producto);
                     MessageBox.Show("Producto agregado al carrito de compras.");
                 }
                 else
@@ -281,6 +284,26 @@ namespace SalesGamer.ControlesDeUsuario
         }
 
         private void Productos_UC_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_atras_Click(object sender, EventArgs e)
+        {
+            if (numeroPagina > 1)
+            {
+                numeroPagina--; // Disminuir el número de página solo si no es la primera página
+                cargarProductos(); // Volver a cargar los productos con la nueva página
+            }
+        }
+
+        private void btn_siguiente_Click(object sender, EventArgs e)
+        {
+            numeroPagina++; // Aumentar el número de página
+            cargarProductos();
+        }
+
+        private void txt_pagina_Click(object sender, EventArgs e)
         {
 
         }

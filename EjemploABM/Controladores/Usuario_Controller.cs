@@ -128,10 +128,11 @@ namespace EjemploABM.Controladores
 
         // GET ALL
 
-        public static List<Usuario> obtenerTodos()
+        public static List<Usuario> obtenerTodos(int paginaActual, int elementosPorPagina)
         {
             List<Usuario> list = new List<Usuario>();
-            string query = "select * from dbo.Usuario;";
+            int offset = (paginaActual - 1) * elementosPorPagina;
+            string query = $"SELECT * FROM dbo.Usuario ORDER BY Id OFFSET {offset} ROWS FETCH NEXT {elementosPorPagina} ROWS ONLY;";
 
             SqlCommand cmd = new SqlCommand(query, DB_Controller.connection);
 

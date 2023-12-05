@@ -1,24 +1,21 @@
 ﻿using EjemploABM.Controladores;
-using EjemploABM.Modelo;
+using SalesGamer.Modelo;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Diagnostics;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SalesGamer.Controladores
 {
-    internal class Categoria_Controller
+    internal class Distribuidor_Controller
     {
-        //OBTENER LA CATEGORIA
-        public static List<Categoria> obtenerCategoria(int paginaActual, int elementosPorPagina)
+        public static List<Distribuidor> obtenerDistribuidor()
         {
-            List<Categoria> list = new List<Categoria>();
-            int offset = (paginaActual - 1) * elementosPorPagina;
-            string query = $"SELECT * FROM dbo.Categoria ORDER BY Id OFFSET {offset} ROWS FETCH NEXT {elementosPorPagina} ROWS ONLY;";
+            List<Distribuidor> list = new List<Distribuidor>();
+            string query = "select * from dbo.Distribuidor;";
 
             SqlCommand cmd = new SqlCommand(query, DB_Controller.connection);
 
@@ -29,8 +26,8 @@ namespace SalesGamer.Controladores
 
                 while (reader.Read())
                 {
-                    list.Add(new Categoria(reader.GetInt32(0), reader.GetString(1)));
-                    Trace.WriteLine("Categoria encontrado, nombre: " + reader.GetString(1));
+                    list.Add(new Distribuidor(reader.GetInt32(0), reader.GetString(1), reader.GetInt32(2)));
+                    Trace.WriteLine("Distribuidor encontrada, nombre: " + reader.GetString(1));
                 }
 
                 reader.Close();
@@ -49,7 +46,7 @@ namespace SalesGamer.Controladores
         public static int obtenerMaxId()
         {
             int MaxId = 0;
-            string query = "select max(id) from dbo.Categoria;";
+            string query = "select max(id) from dbo.Distribuidor;";
 
             SqlCommand cmd = new SqlCommand(query, DB_Controller.connection);
 
@@ -73,11 +70,11 @@ namespace SalesGamer.Controladores
             }
         }
 
-        //OBTENER CATEGORIA POR ID
-        public static Categoria ObtenerCategoriaID(int id)
+        //OBTENER OFERTA POR ID
+        public static Distribuidor ObtenerDistribuidorID(int id)
         {
-            Categoria categoria= new Categoria();
-            string query = "SELECT * FROM dbo.Categoria WHERE id = @id;";
+            Distribuidor distri = new Distribuidor();
+            string query = "SELECT * FROM dbo.Distribuidor WHERE id = @id;";
             using (SqlCommand cmd = new SqlCommand(query, DB_Controller.connection))
             {
                 cmd.Parameters.AddWithValue("@id", id);
@@ -87,11 +84,11 @@ namespace SalesGamer.Controladores
                     SqlDataReader reader = cmd.ExecuteReader();
                     while (reader.Read())
                     {
-                        categoria = new Categoria
+                        distri = new Distribuidor
                         {
                             Id = reader.GetInt32(0),
-                            Nombre_categoria = reader.GetString(1),
-                            
+                            nombre_empresa = reader.GetString(1),
+                            stock = reader.GetInt32(2),
                         };
                     }
                     reader.Close();
@@ -101,18 +98,20 @@ namespace SalesGamer.Controladores
                     DB_Controller.connection.Close();
                 }
             }
-            return categoria;
+            return distri;
         }
 
-        //CREAR CATEGORIA
-        public static bool CrearCategoria(Categoria categoria)
+        //CREAR OFERTA
+        public static bool CrearDistribuidor(Distribuidor distribuidor)
         {
-            string query = "INSERT INTO dbo.Categoria (id,nombre_categoria) " +
-                           "VALUES (@id,@nombre);";
+            string query = "INSERT INTO dbo.Distribuidor (id,nombre_empresa,stock) " +
+                           "VALUES (@id,@nombre_empresa,@stock);";
             using (SqlCommand cmd = new SqlCommand(query, DB_Controller.connection))
             {
                 cmd.Parameters.AddWithValue("@id", obtenerMaxId() + 1);
-                cmd.Parameters.AddWithValue("@nombre", categoria.Nombre_categoria);
+                cmd.Parameters.AddWithValue("@nombre_empresa", distribuidor.nombre_empresa);
+                cmd.Parameters.AddWithValue("@stock", distribuidor.stock);
+
 
                 try
                 {
@@ -127,18 +126,20 @@ namespace SalesGamer.Controladores
             }
         }
 
-        // EDITAR / CREAR CATEGORIA
+        // EDITAR / CREAR OFERTA
 
-        public static bool editarCategoria(Categoria cat)
+        public static bool editarDistribuidor(Distribuidor dis)
         {
             //Darlo de alta en la BBDD
 
-            string query = "update dbo.Categoria set nombre_categoria = @nombre_categoria " +
+            string query = "update dbo.Distribuidor set nombre_empresa = @nombre_empresa , " +
+                "stock = @stock " +
                 "where id = @id ;";
 
             SqlCommand cmd = new SqlCommand(query, DB_Controller.connection);
-            cmd.Parameters.AddWithValue("@id", cat.Id);
-            cmd.Parameters.AddWithValue("@nombre_categoria", cat.Nombre_categoria);
+            cmd.Parameters.AddWithValue("@id", dis.Id);
+            cmd.Parameters.AddWithValue("@nombre_empresa", dis.nombre_empresa);
+            cmd.Parameters.AddWithValue("@stock", dis.stock);
 
 
             try
@@ -155,14 +156,14 @@ namespace SalesGamer.Controladores
 
         }
 
-        //Eliminar Categoria
-        public static bool eliminarCategoria(Categoria catEliminar)
+        //Eliminar Oferta
+        public static bool eliminarDistribuidor(Distribuidor distEliminar)
         {
-            string query = "DELETE FROM dbo.Categoria WHERE id = @id;";
+            string query = "DELETE FROM dbo.Distribuidor WHERE id = @id;";
 
             using (SqlCommand cmd = new SqlCommand(query, DB_Controller.connection))
             {
-                cmd.Parameters.AddWithValue("@id", catEliminar.Id);
+                cmd.Parameters.AddWithValue("@id", distEliminar.Id);
 
                 try
                 {
@@ -178,6 +179,5 @@ namespace SalesGamer.Controladores
                 }
             }
         }
-
     }
 }

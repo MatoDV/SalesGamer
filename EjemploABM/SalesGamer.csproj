@@ -147,15 +147,10 @@
     <Compile Include="Controladores\Carrito_Controller.cs" />
     <Compile Include="Controladores\Categoria_Controller.cs" />
     <Compile Include="Controladores\DB_Controller.cs" />
+    <Compile Include="Controladores\Distribuidor_Controller.cs" />
     <Compile Include="Controladores\Oferta_Controller.cs" />
     <Compile Include="Controladores\Producto_Controller.cs" />
     <Compile Include="Controladores\Usuario_Controller.cs" />
-    <Compile Include="ControlesDeUsuario\Carrito_UC.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ControlesDeUsuario\Carrito_UC.Designer.cs">
-      <DependentUpon>Carrito_UC.cs</DependentUpon>
-    </Compile>
     <Compile Include="ControlesDeUsuario\Categorias_UC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -225,9 +220,6 @@
     <Compile Include="Validaciones.cs" />
     <EmbeddedResource Include="CategoryForm.resx">
       <DependentUpon>CategoryForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ControlesDeUsuario\Carrito_UC.resx">
-      <DependentUpon>Carrito_UC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ControlesDeUsuario\Categorias_UC.resx">
       <DependentUpon>Categorias_UC.cs</DependentUpon>

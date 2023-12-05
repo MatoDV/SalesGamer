@@ -32,8 +32,6 @@
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.btn_crear = new MaterialSkin.Controls.MaterialButton();
             this.label_titulo = new MaterialSkin.Controls.MaterialLabel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.combox_activo = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -62,7 +60,7 @@
             this.btn_crear.DrawShadows = true;
             this.btn_crear.HighEmphasis = true;
             this.btn_crear.Icon = null;
-            this.btn_crear.Location = new System.Drawing.Point(347, 258);
+            this.btn_crear.Location = new System.Drawing.Point(348, 218);
             this.btn_crear.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btn_crear.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_crear.Name = "btn_crear";
@@ -86,30 +84,11 @@
             this.label_titulo.TabIndex = 9;
             this.label_titulo.Text = "Crear Categoria";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(234, 196);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 13);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Estado:";
-            // 
-            // combox_activo
-            // 
-            this.combox_activo.FormattingEnabled = true;
-            this.combox_activo.Location = new System.Drawing.Point(315, 193);
-            this.combox_activo.Name = "combox_activo";
-            this.combox_activo.Size = new System.Drawing.Size(146, 21);
-            this.combox_activo.TabIndex = 11;
-            // 
             // CategoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.combox_activo);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label_titulo);
             this.Controls.Add(this.btn_crear);
             this.Controls.Add(this.txt_nombre);
@@ -127,7 +106,5 @@
         private System.Windows.Forms.TextBox txt_nombre;
         private MaterialSkin.Controls.MaterialButton btn_crear;
         private MaterialSkin.Controls.MaterialLabel label_titulo;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox combox_activo;
     }
 }

@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btn_crear = new System.Windows.Forms.Button();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,6 +40,11 @@
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Agregar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btn_crear = new System.Windows.Forms.Button();
+            this.btn_atras = new System.Windows.Forms.Button();
+            this.btn_siguiente = new System.Windows.Forms.Button();
+            this.txt_pagina = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,28 +65,9 @@
             this.Agregar});
             this.dataGridView1.Location = new System.Drawing.Point(51, 70);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1149, 463);
+            this.dataGridView1.Size = new System.Drawing.Size(1158, 293);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Productos:";
-            // 
-            // btn_crear
-            // 
-            this.btn_crear.Location = new System.Drawing.Point(547, 31);
-            this.btn_crear.Name = "btn_crear";
-            this.btn_crear.Size = new System.Drawing.Size(91, 23);
-            this.btn_crear.TabIndex = 6;
-            this.btn_crear.Text = "Crear";
-            this.btn_crear.UseVisualStyleBackColor = true;
-            this.btn_crear.Click += new System.EventHandler(this.btn_crear_Click);
             // 
             // Id
             // 
@@ -140,15 +124,67 @@
             this.Agregar.HeaderText = "Agregar";
             this.Agregar.Name = "Agregar";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(34, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Productos:";
+            // 
+            // btn_crear
+            // 
+            this.btn_crear.Location = new System.Drawing.Point(547, 31);
+            this.btn_crear.Name = "btn_crear";
+            this.btn_crear.Size = new System.Drawing.Size(91, 23);
+            this.btn_crear.TabIndex = 6;
+            this.btn_crear.Text = "Crear";
+            this.btn_crear.UseVisualStyleBackColor = true;
+            this.btn_crear.Click += new System.EventHandler(this.btn_crear_Click);
+            // 
+            // btn_atras
+            // 
+            this.btn_atras.Location = new System.Drawing.Point(17, 378);
+            this.btn_atras.Name = "btn_atras";
+            this.btn_atras.Size = new System.Drawing.Size(75, 23);
+            this.btn_atras.TabIndex = 7;
+            this.btn_atras.Text = "Atras";
+            this.btn_atras.UseVisualStyleBackColor = true;
+            this.btn_atras.Click += new System.EventHandler(this.btn_atras_Click);
+            // 
+            // btn_siguiente
+            // 
+            this.btn_siguiente.Location = new System.Drawing.Point(182, 378);
+            this.btn_siguiente.Name = "btn_siguiente";
+            this.btn_siguiente.Size = new System.Drawing.Size(75, 23);
+            this.btn_siguiente.TabIndex = 8;
+            this.btn_siguiente.Text = "Siguiente";
+            this.btn_siguiente.UseVisualStyleBackColor = true;
+            this.btn_siguiente.Click += new System.EventHandler(this.btn_siguiente_Click);
+            // 
+            // txt_pagina
+            // 
+            this.txt_pagina.AutoSize = true;
+            this.txt_pagina.Location = new System.Drawing.Point(113, 383);
+            this.txt_pagina.Name = "txt_pagina";
+            this.txt_pagina.Size = new System.Drawing.Size(41, 13);
+            this.txt_pagina.TabIndex = 9;
+            this.txt_pagina.Text = "asdasd";
+            this.txt_pagina.Click += new System.EventHandler(this.txt_pagina_Click);
+            // 
             // Productos_UC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.txt_pagina);
+            this.Controls.Add(this.btn_siguiente);
+            this.Controls.Add(this.btn_atras);
             this.Controls.Add(this.btn_crear);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Productos_UC";
-            this.Size = new System.Drawing.Size(1264, 564);
+            this.Size = new System.Drawing.Size(1244, 413);
             this.Load += new System.EventHandler(this.Productos_UC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -172,5 +208,8 @@
         private System.Windows.Forms.DataGridViewButtonColumn Editar;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
         private System.Windows.Forms.DataGridViewButtonColumn Agregar;
+        private System.Windows.Forms.Button btn_atras;
+        private System.Windows.Forms.Button btn_siguiente;
+        private System.Windows.Forms.Label txt_pagina;
     }
 }

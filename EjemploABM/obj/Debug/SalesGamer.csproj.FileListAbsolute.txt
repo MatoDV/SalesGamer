@@ -43,7 +43,6 @@ C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\bin\Debug\BouncyCastle.Cry
 C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\bin\Debug\itextsharp.dll
 C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\bin\Debug\itextsharp.xmlworker.dll
 C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\bin\Debug\itextsharp.xml
-C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\obj\Debug\SalesGamer.ControlesDeUsuario.Carrito_UC.resources
 C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\bin\Debug\itext.barcodes.dll
 C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\bin\Debug\itext.bouncy-castle-connector.dll
 C:\Users\Matos\Documents\GitHub\SalesGamer\EjemploABM\bin\Debug\itext.commons.dll

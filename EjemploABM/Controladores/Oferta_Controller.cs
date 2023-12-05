@@ -15,10 +15,11 @@ namespace SalesGamer.Controladores
     {
         //OBTENER LA OFERTA
 
-        public static List<Oferta> obtenerOferta()
+        public static List<Oferta> obtenerOferta(int paginaActual, int elementosPorPagina)
         {
             List<Oferta> list = new List<Oferta>();
-            string query = "select * from dbo.Oferta;";
+            int offset = (paginaActual - 1) * elementosPorPagina;
+            string query = $"SELECT * FROM dbo.Oferta ORDER BY Id OFFSET {offset} ROWS FETCH NEXT {elementosPorPagina} ROWS ONLY;";
 
             SqlCommand cmd = new SqlCommand(query, DB_Controller.connection);
 
@@ -144,7 +145,7 @@ namespace SalesGamer.Controladores
                 "tipo_oferta = @tipo_oferta, "+
                 "fecha_inicio = @fecha_inicio, " +
                 "fecha_final = @fecha_final, " +
-                "condiciones = @condiciones, " +
+                "condiciones = @condiciones " +
                 "where id = @id ;";
 
             SqlCommand cmd = new SqlCommand(query, DB_Controller.connection);

@@ -77,10 +77,10 @@ namespace EjemploABM
             this.Hide();
         }
 
-        private void btn_carrito_Click(object sender, EventArgs e)
-        {
-            Carrito_UC carritoUC = new Carrito_UC(carritoController);
-            addUserControl(carritoUC);
-        }
+        //private void btn_carrito_Click(object sender, EventArgs e)
+        //{
+      //      Carrito_UC carritoUC = new Carrito_UC(carritoController);
+       //     addUserControl(carritoUC);
+        //}
     }
 }

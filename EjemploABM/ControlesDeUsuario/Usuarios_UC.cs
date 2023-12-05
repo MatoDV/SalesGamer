@@ -18,6 +18,8 @@ namespace EjemploABM.ControlesDeUsuario
     public partial class Usuarios_UC : UserControl
     {
         List<Usuario> users;
+        private int numeroPagina = 1;
+        private int elementosPorPagina = 5;
 
         public Usuarios_UC()
         {
@@ -27,7 +29,7 @@ namespace EjemploABM.ControlesDeUsuario
 
         private void cargarUsuarios()
         {
-            users = Usuario_Controller.obtenerTodos();
+            users = Usuario_Controller.obtenerTodos(numeroPagina, elementosPorPagina);
             dataGridView1.Rows.Clear();
             foreach(Usuario usr in users)
             {
@@ -51,6 +53,7 @@ namespace EjemploABM.ControlesDeUsuario
                 dataGridView1.Rows[rowIndex].Cells[6].Value = "Eliminar";
 
             }
+            txt_pagina.Text = $"Página: {numeroPagina}";
         }
 
         private void btn_new_Click(object sender, EventArgs e)
@@ -129,6 +132,21 @@ namespace EjemploABM.ControlesDeUsuario
         private void Usuarios_UC_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_atras_Click(object sender, EventArgs e)
+        {
+            if (numeroPagina > 1)
+            {
+                numeroPagina--; // Disminuir el número de página solo si no es la primera página
+                cargarUsuarios(); // Volver a cargar los productos con la nueva página
+            }
+        }
+
+        private void btn_siguiente_Click(object sender, EventArgs e)
+        {
+            numeroPagina++; // Aumentar el número de página
+            cargarUsuarios();
         }
     }
 }

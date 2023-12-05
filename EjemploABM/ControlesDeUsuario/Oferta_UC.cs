@@ -18,6 +18,8 @@ namespace SalesGamer.ControlesDeUsuario
     public partial class Oferta_UC : UserControl
     {
         private List<Oferta> ofertas;
+        private int numeroPagina = 1;
+        private int elementosPorPagina = 5;
         public Oferta_UC()
         {
             InitializeComponent();
@@ -29,7 +31,7 @@ namespace SalesGamer.ControlesDeUsuario
         }
         private void cargarOfertas()
         {
-            ofertas = Oferta_Controller.obtenerOferta();
+            ofertas = Oferta_Controller.obtenerOferta(numeroPagina, elementosPorPagina);
             dataGridView1.Rows.Clear();
             foreach (Oferta ofer in ofertas)
             {
@@ -40,19 +42,10 @@ namespace SalesGamer.ControlesDeUsuario
                 dataGridView1.Rows[rowIndex].Cells[3].Value = ofer.Fecha_inicio.ToString();
                 dataGridView1.Rows[rowIndex].Cells[4].Value = ofer.Fecha_final.ToString();
                 dataGridView1.Rows[rowIndex].Cells[5].Value = ofer.Condiciones.ToString();
-                if (ofer.Is_active == 1)
-                {
-                    dataGridView1.Rows[rowIndex].Cells[6].Value = "Activo";
-
-                }
-                else
-                {
-                    dataGridView1.Rows[rowIndex].Cells[6].Value = "Desactivado";
-
-                }
-                dataGridView1.Rows[rowIndex].Cells[7].Value = "Editar";
-                dataGridView1.Rows[rowIndex].Cells[8].Value = "Eliminar";
+                dataGridView1.Rows[rowIndex].Cells[6].Value = "Editar";
+                dataGridView1.Rows[rowIndex].Cells[7].Value = "Eliminar";
             }
+            txt_pagina.Text = $"Página: {numeroPagina}";
         }
         private void Oferta_UC_Load(object sender, EventArgs e)
         {
@@ -128,6 +121,22 @@ namespace SalesGamer.ControlesDeUsuario
                     }
                 }
             }
+        }
+
+        private void btn_atras_Click(object sender, EventArgs e)
+        {
+            if (numeroPagina > 1)
+            {
+                numeroPagina--; // Disminuir el número de página solo si no es la primera página
+                cargarOfertas(); // Volver a cargar los productos con la nueva página
+            }
+
+        }
+
+        private void btn_siguiente_Click(object sender, EventArgs e)
+        {
+            numeroPagina++; // Aumentar el número de página
+            cargarOfertas();
         }
     }
 }

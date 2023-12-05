@@ -23,8 +23,6 @@ namespace SalesGamer
         public OferForm()
         {
             InitializeComponent();
-            combox_activo.Items.Add("Activo");
-            combox_activo.Items.Add("Desactivado");
             situacion = "creacion";
 
         }
@@ -38,9 +36,6 @@ namespace SalesGamer
             date_inicio.Text = oferta.Fecha_inicio.ToString();
             date_final.Text = oferta.Fecha_final.ToString();
             text_condiciones.Text = oferta.Condiciones.ToString();
-            combox_activo.Items.Add("Activo");
-            combox_activo.Items.Add("Desactivado");
-
             situacion = "edicion";
             label_titulo.Text = "Editar Categoria";
             btn_crear.Text = "Editar";
@@ -59,21 +54,12 @@ namespace SalesGamer
 
         private void crear()
         {
-            int activo = 0;
-            if (combox_activo.SelectedItem.ToString() == "Activo")
-            {
-                activo = 1;
-            }
-            else
-            {
-                activo = 2;
-            }
             string fechaInicioTexto = date_inicio.Text;
             string fechaFinalTexto = date_final.Text;
 
             if (DateTime.TryParse(fechaInicioTexto, out DateTime fechaInicio) && DateTime.TryParse(fechaFinalTexto, out DateTime fechaFinal))
             {
-                Oferta ofer = new Oferta(0, text_nombre.Text, text_tipo.Text, fechaInicio, fechaFinal, text_condiciones.Text,activo);
+                Oferta ofer = new Oferta(0, text_nombre.Text, text_tipo.Text, fechaInicio, fechaFinal, text_condiciones.Text);
 
                 if (text_tipo.SelectedText.ToString() == "10% descuento" && text_tipo.SelectedText.ToString() == "20% descuento"
                 && text_tipo.SelectedText.ToString() == "30% descuento" && text_tipo.SelectedText.ToString() == "50% descuento"
@@ -95,20 +81,11 @@ namespace SalesGamer
         }
         private void editar()
         {
-            int activo = 0;
-            if (combox_activo.SelectedItem.ToString() == "Activo")
-            {
-                activo = 1;
-            }
-            else
-            {
-                activo = 2;
-            }
             string fechaInicioTexto = date_inicio.Text;
             string fechaFinalTexto = date_final.Text;
             if (DateTime.TryParse(fechaInicioTexto, out DateTime fechaInicio) && DateTime.TryParse(fechaFinalTexto, out DateTime fechaFinal))
             {
-                Oferta ofer = new Oferta(id_editar, text_nombre.Text, text_tipo.Text, fechaInicio, fechaFinal, text_condiciones.Text, activo);
+                Oferta ofer = new Oferta(id_editar, text_nombre.Text, text_tipo.Text, fechaInicio, fechaFinal, text_condiciones.Text);
                 if (Oferta_Controller.editarOferta(ofer))
                 {
                     this.DialogResult = DialogResult.OK;
