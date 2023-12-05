@@ -173,3 +173,4 @@ C:\Users\Alumno\Documents\GitHub\SalesGamer\EjemploABM\obj\Debug\SalesGamer.cspr
 C:\Users\Alumno\Documents\GitHub\SalesGamer\EjemploABM\obj\Debug\SalesGamer.csproj.CopyComplete
 C:\Users\Alumno\Documents\GitHub\SalesGamer\EjemploABM\obj\Debug\SalesGamer.exe
 C:\Users\Alumno\Documents\GitHub\SalesGamer\EjemploABM\obj\Debug\SalesGamer.pdb
+C:\Users\matos\Documents\GitHub\SalesGamer\EjemploABM\obj\Debug\SalesGamer.ControlesDeUsuario.Carrito_UC.resources

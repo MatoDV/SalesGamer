@@ -42,7 +42,7 @@ namespace EjemploABM
             // 
             this.panel1.Location = new System.Drawing.Point(1, 66);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1347, 464);
+            this.panel1.Size = new System.Drawing.Size(1347, 601);
             this.panel1.TabIndex = 4;
             // 
             // btn_prods
@@ -157,12 +157,13 @@ namespace EjemploABM
             this.btn_carrito.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btn_carrito.UseAccentColor = false;
             this.btn_carrito.UseVisualStyleBackColor = true;
+            this.btn_carrito.Click += new System.EventHandler(this.btn_carrito_Click_1);
             // 
             // Index
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1352, 579);
+            this.ClientSize = new System.Drawing.Size(1352, 694);
             this.Controls.Add(this.btn_carrito);
             this.Controls.Add(this.btn_cerrarSesion);
             this.Controls.Add(this.btn_cats);

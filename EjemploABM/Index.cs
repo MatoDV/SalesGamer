@@ -17,16 +17,16 @@ namespace EjemploABM
 {
     public partial class Index : MaterialForm
     {
-        Carrito_Controller carritoController = new Carrito_Controller();
+   
         public Index()
         {
             InitializeComponent();
 
 
-            Productos_UC productosUC = new Productos_UC(carritoController);
+            Productos_UC productosUC = new Productos_UC();
             addUserControl(productosUC);
 
-            if(Program.logueado.ID_rol != 1)
+            if (Program.logueado.ID_rol != 1)
             {
                 btn_users.Hide();
                 btn_cats.Hide();
@@ -48,7 +48,7 @@ namespace EjemploABM
 
         private void btn_prods_Click_1(object sender, EventArgs e)
         {
-            Productos_UC productosUC = new Productos_UC(carritoController);
+            Productos_UC productosUC = new Productos_UC();
             addUserControl(productosUC);
         }
 
@@ -77,10 +77,10 @@ namespace EjemploABM
             this.Hide();
         }
 
-        //private void btn_carrito_Click(object sender, EventArgs e)
-        //{
-      //      Carrito_UC carritoUC = new Carrito_UC(carritoController);
-       //     addUserControl(carritoUC);
-        //}
+        private void btn_carrito_Click_1(object sender, EventArgs e)
+        {
+            Carrito_UC carritoUC = new Carrito_UC();
+            addUserControl(carritoUC);
+        }
     }
 }

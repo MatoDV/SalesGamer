@@ -25,10 +25,9 @@ namespace SalesGamer.ControlesDeUsuario
         private int elementosPorPagina = 5;
 
 
-        public Productos_UC(Carrito_Controller carritoController)
+        public Productos_UC()
         {
             InitializeComponent();
-            this.carritoController = carritoController;
             cargarProductos();
             if (Program.logueado.ID_rol != 1)
             {
@@ -273,8 +272,26 @@ namespace SalesGamer.ControlesDeUsuario
 
                 if (producto != null)
                 {
-                    //carritoController.AgregarProductoAlCarrito(producto);
-                    MessageBox.Show("Producto agregado al carrito de compras.");
+                    Carrito carrito = new Carrito
+                    {
+                        nombre_producto = producto.Nombre_producto,
+                        cantidad = 1, // Puedes establecer la cantidad inicial aquí
+                        precio_total = producto.Precio, // O la lógica que necesites para el precio total
+                        Usuario_id = 1 // Ajusta esto al ID del usuario correspondiente
+                    };
+
+                    bool exito = Carrito_Controller.CrearCarrito(carrito);
+
+                    if (exito)
+                    {
+                        MessageBox.Show("Producto agregado al carrito de compras.");
+                        // Aquí podrías actualizar la vista del carrito si es necesario
+                        // Puedes llamar a un método para actualizar la vista del carrito
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al agregar el producto al carrito.");
+                    }
                 }
                 else
                 {
