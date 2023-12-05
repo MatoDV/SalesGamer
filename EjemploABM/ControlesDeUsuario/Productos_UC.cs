@@ -274,10 +274,12 @@ namespace SalesGamer.ControlesDeUsuario
                 {
                     Carrito carrito = new Carrito
                     {
+                        Id = producto.Id,
                         nombre_producto = producto.Nombre_producto,
                         cantidad = 1, // Puedes establecer la cantidad inicial aquí
                         precio_total = producto.Precio, // O la lógica que necesites para el precio total
-                        Usuario_id = 1 // Ajusta esto al ID del usuario correspondiente
+                        Usuario_id = 1,
+                        Oferta_id = producto.Oferta_id,// Ajusta esto al ID del usuario correspondiente
                     };
 
                     bool exito = Carrito_Controller.CrearCarrito(carrito);

@@ -23,18 +23,16 @@ namespace SalesGamer.ControlesDeUsuario
     public partial class Carrito_UC : UserControl
     {
         private List<Carrito> carrito;
-        private List<Oferta> oferta;
-
+        public Carrito_UC()
+        {
+            InitializeComponent();
+            cargarProductAlCarrito();
+            ActualizarPrecioTotalCarrito();
+        }
         private void cargarProductAlCarrito()
         {
-            oferta = Oferta_Controller.obtenerOferta(999, 999);
-            foreach (Oferta oferr in oferta)
-            {
-                int rowIndex = dataGridView1.Rows.Add();
-
-                dataGridView1.Rows[rowIndex].Cells[4].Value = oferr.Tipo_oferta.ToString();
-
-            }
+            dataGridView1.Rows.Clear();
+          
             carrito = Carrito_Controller.obtenerCarrito();
             foreach (Carrito carr in carrito)
             {
@@ -45,6 +43,31 @@ namespace SalesGamer.ControlesDeUsuario
                 dataGridView1.Rows[rowIndex].Cells[1].Value = carr.nombre_producto.ToString();
                 dataGridView1.Rows[rowIndex].Cells[2].Value = carr.cantidad.ToString();
                 dataGridView1.Rows[rowIndex].Cells[3].Value = carr.precio_total.ToString();
+                if (carr.Oferta_id == 1)
+                {
+                    dataGridView1.Rows[rowIndex].Cells[4].Value = "10% descuento";
+
+                }
+                else if (carr.Oferta_id == 2)
+                {
+
+                    dataGridView1.Rows[rowIndex].Cells[4].Value = "20% descuento";
+                }
+                else if (carr.Oferta_id == 3)
+                {
+
+                    dataGridView1.Rows[rowIndex].Cells[4].Value = "30% descuento";
+                }
+                else if (carr.Oferta_id == 4)
+                {
+
+                    dataGridView1.Rows[rowIndex].Cells[4].Value = "50% descuento";
+                }
+                else if (carr.Oferta_id == 5)
+                {
+
+                    dataGridView1.Rows[rowIndex].Cells[4].Value = "sin descuento";
+                }
                 dataGridView1.Rows[rowIndex].Cells[5].Value = "Eliminar";
                 dataGridView1.Rows[rowIndex].Cells[6].Value = "Agregar";
 
@@ -54,6 +77,8 @@ namespace SalesGamer.ControlesDeUsuario
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            cargarProductAlCarrito();
+
             var senderGrid = (DataGridView)sender;
 
 
@@ -78,17 +103,19 @@ namespace SalesGamer.ControlesDeUsuario
                     {
                         MessageBox.Show("Producto eliminado exitosamente.");
                         cargarProductAlCarrito();
+                        ActualizarPrecioTotalCarrito();
                     }
                     else
                     {
                         MessageBox.Show("Error al eliminar el producto.");
                     }
+
                 }
             }
 
 
 
-            if (senderGrid.Columns[e.ColumnIndex].Name == "Agregar")
+            if (senderGrid.Columns[e.ColumnIndex].Name == "agregar")
             {
                 int id = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
                 Carrito carritoItem = Carrito_Controller.ObtenerCarritoID(id);
@@ -105,6 +132,7 @@ namespace SalesGamer.ControlesDeUsuario
                         MessageBox.Show("Cantidad actualizada en el carrito.");
                         // Vuelve a cargar los productos del carrito para actualizar la vista
                         cargarProductAlCarrito();
+                        ActualizarPrecioTotalCarrito();
                     }
                     else
                     {
@@ -118,10 +146,63 @@ namespace SalesGamer.ControlesDeUsuario
 
             }
         }
+        private double CalcularPrecioTotalCarrito()
+        {
+            double precioTotalCarrito = 0;
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.IsNewRow) continue; // Ignora la fila vacía de nueva entrada
+
+                int cantidad = int.Parse(row.Cells[2].Value.ToString());
+                double precioUnitario = double.Parse(row.Cells[3].Value.ToString());
+                string ofertaTexto = row.Cells[4].Value.ToString();
+
+                double precioTotal = cantidad * precioUnitario;
+
+                if (ofertaTexto.Contains("10% descuento"))
+                {
+                    precioTotal *= 0.9; // Aplica un descuento del 10%
+                }
+                else if (ofertaTexto.Contains("20% descuento"))
+                {
+                    precioTotal *= 0.8; // Aplica un descuento del 20%
+                }
+                else if (ofertaTexto.Contains("30% descuento"))
+                {
+                    precioTotal *= 0.7; // Aplica un descuento del 30%
+                }
+                else if (ofertaTexto.Contains("50% descuento"))
+                {
+                    precioTotal *= 0.5; // Aplica un descuento del 50%
+                }
+                // Puedes agregar más condiciones según tu lógica de descuentos
+
+                precioTotalCarrito += precioTotal;
+            }
+
+            return precioTotalCarrito;
+        }
+        private void ActualizarPrecioTotalCarrito()
+        {
+            double precioTotalCarrito = CalcularPrecioTotalCarrito();
+            txt_Precio.Text = "Precio total: $" + precioTotalCarrito.ToString(); // Actualiza el texto del label
+        }
+
 
         private void btn_comprar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_agregarOtro_Click(object sender, EventArgs e)
+        {
+            Index parentForm = this.ParentForm as Index;
+            if (parentForm != null)
+            {
+                Productos_UC productosUC = new Productos_UC();
+                parentForm.addUserControl(productosUC);
+            }
         }
     }
 }

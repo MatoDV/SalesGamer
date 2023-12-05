@@ -22,8 +22,8 @@ namespace SalesGamer
     public partial class ProductForm : MaterialForm
     {
         
-        List<Categoria> listaCategorias = Categoria_Controller.obtenerCategoria(999, 999);
-        List<Oferta> listaOferta = Oferta_Controller.obtenerOferta(999, 999);
+        List<Categoria> listaCategorias = Categoria_Controller.obtenerCategoria(1, 999);
+        List<Oferta> listaOferta = Oferta_Controller.obtenerOferta(1, 999);
         List<Distribuidor> listaDistribuidor = Distribuidor_Controller.obtenerDistribuidor();
         string situacion;
         int id_editar;
@@ -38,7 +38,7 @@ namespace SalesGamer
             combox_distribuidor.DataSource = listaDistribuidor;
             combox_distribuidor.DisplayMember = "nombre_empresa";
             combox_oferta.DataSource = listaOferta;
-            combox_oferta.DisplayMember = "Nombre";
+            combox_oferta.DisplayMember = "Tipo_oferta";
             combox_categoria.DataSource = listaCategorias;
             combox_categoria.DisplayMember = "Nombre_categoria";
 
@@ -63,7 +63,7 @@ namespace SalesGamer
             combox_distribuidor.DataSource = listaDistribuidor;
             combox_distribuidor.DisplayMember = "nombre_empresa";
             combox_oferta.DataSource = listaOferta;
-            combox_oferta.DisplayMember = "Nombre";
+            combox_oferta.DisplayMember = "Tipo_oferta";
             combox_categoria.DataSource = listaCategorias;
             combox_categoria.DisplayMember = "Nombre_categoria";
 
@@ -161,13 +161,13 @@ namespace SalesGamer
             if (Validaciones.textVacios(txt_nombre) == false || Validaciones.textVacios(txt_descripcion) == false || Validaciones.textVacios(txt_cantidad) == false || Validaciones.textVacios(txt_precio) == false)
             {
                 Distribuidor distribuidorSeleccionado = (Distribuidor)combox_distribuidor.SelectedItem;
-                int distribuidorId2 = distribuidorSeleccionado.Id;
+                int distribuidorId = distribuidorSeleccionado.Id;
 
                 Categoria categoriaSeleccionada = (Categoria)combox_categoria.SelectedItem;
-                int categoriaId2 = categoriaSeleccionada.Id;
+                int categoriaId = categoriaSeleccionada.Id;
 
                 Oferta ofertaSeleccionada = (Oferta)combox_oferta.SelectedItem;
-                int ofertaId2 = ofertaSeleccionada.Id;
+                int ofertaId = ofertaSeleccionada.Id;
 
                 int precio;
                 int cantidad;
@@ -175,7 +175,7 @@ namespace SalesGamer
 
                 if (int.TryParse(txt_precio.Text, out precio) && int.TryParse(txt_cantidad.Text, out cantidad))
                 {
-                    Producto prod = new Producto(0, txt_nombre.Text, txt_descripcion.Text, precio, cantidad, distribuidorId2, ofertaId2, rutaImagen, categoriaId2);
+                    Producto prod = new Producto(0, txt_nombre.Text, txt_descripcion.Text, precio, cantidad, distribuidorId, ofertaId, rutaImagen, categoriaId);
                     if (Producto_Controller.editarProducto(prod))
                     {
                         this.DialogResult = DialogResult.OK;
@@ -185,10 +185,7 @@ namespace SalesGamer
             }
 
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void combox_distribuidor_SelectedIndexChanged(object sender, EventArgs e)
         {

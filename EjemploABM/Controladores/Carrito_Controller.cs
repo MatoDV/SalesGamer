@@ -28,7 +28,7 @@ namespace SalesGamer.Controladores
 
                 while (reader.Read())
                 {
-                    list.Add(new Carrito(reader.GetInt32(0), reader.GetString(1),reader.GetInt32(2),reader.GetFloat(3),reader.GetInt32(4)));
+                    list.Add(new Carrito(reader.GetInt32(0), reader.GetString(1),reader.GetInt32(2),reader.GetDouble(3),reader.GetInt32(4),reader.GetInt32(5)));
                     Trace.WriteLine("Carrito encontrado, nombre: " + reader.GetString(1));
                 }
 
@@ -89,8 +89,9 @@ namespace SalesGamer.Controladores
                             Id = reader.GetInt32(0),
                             nombre_producto = reader.GetString(1),
                             cantidad = reader.GetInt32(2),
-                            precio_total = reader.GetFloat(3),
+                            precio_total = reader.GetDouble(3),
                             Usuario_id = reader.GetInt32(4),
+                            Oferta_id = reader.GetInt32(5),
                         };
                     }
                     reader.Close();
@@ -105,8 +106,8 @@ namespace SalesGamer.Controladores
 
         public static bool CrearCarrito(Carrito carrito)
         {
-            string query = "INSERT INTO dbo.Carrito (id,nombre_producto,cantidad,precio_total,Usuario_id) " +
-                           "VALUES (@id,@nombre,@cantidad,@precio_total,@Usuario_id);";
+            string query = "INSERT INTO dbo.Carrito (id,nombre_producto,cantidad,precio_total,Usuario_id,Oferta_id) " +
+                           "VALUES (@id,@nombre,@cantidad,@precio_total,@Usuario_id,@Oferta_id);";
             using (SqlCommand cmd = new SqlCommand(query, DB_Controller.connection))
             {
                 cmd.Parameters.AddWithValue("@id", obtenerMaxId() + 1);
@@ -114,6 +115,8 @@ namespace SalesGamer.Controladores
                 cmd.Parameters.AddWithValue("@cantidad", carrito.cantidad);
                 cmd.Parameters.AddWithValue("@precio_total", carrito.precio_total);
                 cmd.Parameters.AddWithValue("@Usuario_id", carrito.Usuario_id);
+                cmd.Parameters.AddWithValue("@Oferta_id", carrito.Oferta_id);
+
 
                 try
                 {
@@ -134,10 +137,11 @@ namespace SalesGamer.Controladores
         {
             //Darlo de alta en la BBDD
 
-            string query = "update dbo.Categoria set nombre_producto = @nombre_producto, " +
+            string query = "update dbo.Carrito set nombre_producto = @nombre_producto, " +
                 "cantidad = @cantidad, " +
                 "precio_total = @precio_total, " +
-                "Usuario_id = @Usuario_id " +
+                "Usuario_id = @Usuario_id, " +
+                "Oferta_id = @Oferta_id " +
                 "where id = @id ;";
 
             SqlCommand cmd = new SqlCommand(query, DB_Controller.connection);
@@ -146,6 +150,7 @@ namespace SalesGamer.Controladores
             cmd.Parameters.AddWithValue("@cantidad", carr.cantidad);
             cmd.Parameters.AddWithValue("@precio_total", carr.precio_total);
             cmd.Parameters.AddWithValue("@Usuario_id", carr.Usuario_id);
+            cmd.Parameters.AddWithValue("@Oferta_id", carr.Oferta_id);
 
 
             try

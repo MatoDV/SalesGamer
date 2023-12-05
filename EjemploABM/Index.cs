@@ -33,7 +33,7 @@ namespace EjemploABM
             }
         }
 
-        private void addUserControl(UserControl uc)
+        public void addUserControl(UserControl uc)
         {
             uc.Dock = DockStyle.Fill;
             panel1.Controls.Clear();

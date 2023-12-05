@@ -35,9 +35,11 @@
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oferta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.agregar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btn_agregarOtro = new MaterialSkin.Controls.MaterialButton();
+            this.txt_Precio = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,12 +51,12 @@
             this.Nombre,
             this.Cantidad,
             this.Precio,
-            this.descuento,
+            this.oferta,
             this.Eliminar,
             this.agregar});
             this.dataGridView1.Location = new System.Drawing.Point(62, 53);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(752, 404);
+            this.dataGridView1.Size = new System.Drawing.Size(754, 404);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -63,7 +65,7 @@
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(406, 20);
+            this.materialLabel1.Location = new System.Drawing.Point(390, 19);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(48, 19);
@@ -77,7 +79,7 @@
             this.btn_comprar.DrawShadows = true;
             this.btn_comprar.HighEmphasis = true;
             this.btn_comprar.Icon = null;
-            this.btn_comprar.Location = new System.Drawing.Point(381, 480);
+            this.btn_comprar.Location = new System.Drawing.Point(366, 477);
             this.btn_comprar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btn_comprar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_comprar.Name = "btn_comprar";
@@ -91,7 +93,7 @@
             // 
             // id
             // 
-            this.id.HeaderText = "Id";
+            this.id.HeaderText = "ID";
             this.id.Name = "id";
             // 
             // Nombre
@@ -110,10 +112,10 @@
             this.Precio.HeaderText = "Precio Unitario";
             this.Precio.Name = "Precio";
             // 
-            // descuento
+            // oferta
             // 
-            this.descuento.HeaderText = "Descuento";
-            this.descuento.Name = "descuento";
+            this.oferta.HeaderText = "Descuento";
+            this.oferta.Name = "oferta";
             // 
             // Eliminar
             // 
@@ -127,15 +129,45 @@
             this.agregar.HeaderText = "Agregar";
             this.agregar.Name = "agregar";
             // 
+            // btn_agregarOtro
+            // 
+            this.btn_agregarOtro.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_agregarOtro.Depth = 0;
+            this.btn_agregarOtro.DrawShadows = true;
+            this.btn_agregarOtro.HighEmphasis = true;
+            this.btn_agregarOtro.Icon = null;
+            this.btn_agregarOtro.Location = new System.Drawing.Point(647, 477);
+            this.btn_agregarOtro.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_agregarOtro.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_agregarOtro.Name = "btn_agregarOtro";
+            this.btn_agregarOtro.Size = new System.Drawing.Size(130, 36);
+            this.btn_agregarOtro.TabIndex = 3;
+            this.btn_agregarOtro.Text = "Agregar otro";
+            this.btn_agregarOtro.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_agregarOtro.UseAccentColor = false;
+            this.btn_agregarOtro.UseVisualStyleBackColor = true;
+            this.btn_agregarOtro.Click += new System.EventHandler(this.btn_agregarOtro_Click);
+            // 
+            // txt_Precio
+            // 
+            this.txt_Precio.AutoSize = true;
+            this.txt_Precio.Location = new System.Drawing.Point(59, 489);
+            this.txt_Precio.Name = "txt_Precio";
+            this.txt_Precio.Size = new System.Drawing.Size(63, 13);
+            this.txt_Precio.TabIndex = 4;
+            this.txt_Precio.Text = "Precio total:";
+            // 
             // Carrito_UC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.txt_Precio);
+            this.Controls.Add(this.btn_agregarOtro);
             this.Controls.Add(this.btn_comprar);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Carrito_UC";
-            this.Size = new System.Drawing.Size(874, 553);
+            this.Size = new System.Drawing.Size(857, 553);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -151,8 +183,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descuento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oferta;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
         private System.Windows.Forms.DataGridViewButtonColumn agregar;
+        private MaterialSkin.Controls.MaterialButton btn_agregarOtro;
+        private System.Windows.Forms.Label txt_Precio;
     }
 }
